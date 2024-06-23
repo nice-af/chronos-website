@@ -1,0 +1,6 @@
+# By default, ignore everything
+*.*
+
+# Except these...
+!assets/**/*.?css
+!components/**/*.?css
