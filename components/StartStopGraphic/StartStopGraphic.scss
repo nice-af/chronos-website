@@ -1,0 +1,107 @@
+.container {
+  overflow: hidden;
+}
+
+.timerIsActive {
+  .circle {
+    transform: scale(1);
+  }
+
+  .pauseIcon {
+    transform: rotate(0) scale(1);
+  }
+
+  .playIcon {
+    transform: rotate(45deg) scale(0);
+  }
+
+  .durationText {
+    fill: var(--app-green);
+  }
+}
+
+.isClicking {
+  .cursor {
+    animation: cursorMove 1.5s 1;
+  }
+
+  .cursorCircle {
+    animation: cursorCirclePulse 1.5s 1;
+  }
+}
+
+.circle,
+.pauseIcon,
+.playIcon {
+  transition: 0.35s cubic-bezier(0.57, 1.66, 0.45, 0.915);
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+.circle {
+  transform: scale(0);
+}
+
+.pauseIcon {
+  transform: rotate(-45deg) scale(0);
+}
+
+.playIcon {
+  transform: rotate(0deg) scale(1);
+}
+
+.durationText {
+  fill: var(--app-text);
+  transition: 0.25s ease;
+}
+
+.cursor {
+  position: relative;
+  transition: 0.35s ease-out;
+  transform: translate(-20px, 70px);
+}
+
+.cursorCircle {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+@keyframes cursorMove {
+  0% {
+    transform: translate(-20px, 70px);
+  }
+
+  35% {
+    transform: translate(-8px, 0);
+  }
+
+  65% {
+    transform: translate(-8px, 0);
+  }
+
+  100% {
+    transform: translate(20px, 70px);
+  }
+}
+
+@keyframes cursorCirclePulse {
+  35% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  55% {
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+}

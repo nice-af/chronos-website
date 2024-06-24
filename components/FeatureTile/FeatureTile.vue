@@ -5,6 +5,10 @@
       <p :class="featureTile.description">{{ description }}</p>
     </div>
     <slot name="graphic" />
+    <div class="dot is-top-left" />
+    <div class="dot is-top-right" />
+    <div class="dot is-bottom-left" />
+    <div class="dot is-bottom-right" />
   </div>
 </template>
 

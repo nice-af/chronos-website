@@ -13,15 +13,15 @@
         <FeatureTile
           headline="Connect multiple accounts"
           description="Manage worklogs from different accounts and workspaces.">
-          <template v-slot:graphic>
-            <AccountCardsGraphic />
-          </template>
+          <template v-slot:graphic><AccountCardsGraphic /></template>
         </FeatureTile>
       </div>
       <div :class="features.tile">
         <FeatureTile
           headline="Start/stop tracking"
-          description="Start and stop your timers as you go. Track the actual time that you are working on a task." />
+          description="Start and stop your timers as you go. Track the actual time that you are working on a task.">
+          <template v-slot:graphic><StartStopGraphic /></template
+        ></FeatureTile>
       </div>
       <div :class="features.tile">
         <FeatureTile
