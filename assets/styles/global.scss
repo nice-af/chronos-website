@@ -1,3 +1,5 @@
+@use '~/assets/styles/mixins/typography';
+
 :root {
   --neutral-900: #181819;
   --neutral-800: #1d1d20;
@@ -40,8 +42,10 @@ body {
   margin: -1px;
   font-family: 'Mona Sans', Arial, Helvetica, sans-serif;
   font-size: 16px;
+  font-weight: 330;
   line-height: 1.65;
   color: var(--text);
+  letter-spacing: 0.03em;
   background: var(--background);
 }
 
@@ -89,19 +93,13 @@ a {
 }
 
 .headline-xl {
-  margin: 0.17em 0 0.34em;
-  font-size: 92px;
-  line-height: 1.1;
+  @include typography.headline-xl;
 }
 
 .headline-lg {
-  margin: 0.17em 0 0.34em;
-  font-size: 28px;
-  line-height: 1.1;
+  @include typography.headline-lg;
 }
 
 .headline-m {
-  margin: 0.17em 0 0.34em;
-  font-size: 20px;
-  line-height: 1.1;
+  @include typography.headline-m;
 }

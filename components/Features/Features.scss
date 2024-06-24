@@ -1,0 +1,27 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  align-items: stretch;
+  justify-content: stretch;
+  background-color: var(--line);
+  border: 1px solid var(--line);
+  @media (min-width: 576px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.tile {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  container-type: inline-size;
+}
+
+.tileLarge {
+  grid-column: span 3;
+}

@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div :class="heroShineTop.container">
-      <p v-if="!!pill">
+      <p v-if="!!pill" :class="heroShineTop.pillContainer">
         <Button :label="pill.label" :href="pill.href" is-pill variant="secondary">
           <template v-slot:icon><PhArrowRight size="16" weight="bold" /></template>
         </Button>

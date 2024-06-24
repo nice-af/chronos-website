@@ -8,8 +8,8 @@ export default defineNuxtConfig({
       {
         name: 'Mona Sans',
         provider: 'local',
-        weights: ['300', '400', '500', '600'],
-        src: '/fonts/mona-sans',
+        weights: ['330', '400', '500', '600', '700'],
+        src: ['/assets/fonts/mona-sans.woff', '/assets/fonts/mona-sans.woff2'],
       },
     ],
   },

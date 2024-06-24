@@ -12,6 +12,7 @@
   </component>
 </template>
 
+
 <script setup lang="ts">
 interface ButtonBaseProps {
   label: string;
