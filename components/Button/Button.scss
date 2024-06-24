@@ -1,0 +1,68 @@
+.container {
+  position: relative;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 24px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  appearance: none;
+  cursor: pointer;
+  border-radius: 999px;
+  opacity: 1 !important;
+  transition: background-color 0.2s ease;
+
+  > svg,
+  > img {
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.isPrimary {
+  color: var(--neutral-50);
+  background-color: var(--blue-400);
+  box-shadow: var(--button-inner-shadow-strong);
+
+  &:hover {
+    background-color: var(--blue-500);
+  }
+
+  &:active {
+    background-color: var(--blue-600);
+  }
+}
+
+.isSecondary {
+  color: var(--neutral-50);
+  background-color: var(--neutral-600);
+  box-shadow: var(--button-inner-shadow);
+
+  &:hover {
+    background-color: var(--neutral-700);
+  }
+
+  &:active {
+    background-color: var(--neutral-800);
+  }
+}
+
+.isPill {
+  min-height: 36px;
+  padding: 8px 18px;
+  font-size: 16px;
+  line-height: 1;
+
+  > span {
+    opacity: 0.8;
+  }
+
+  > svg,
+  > img {
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+}
