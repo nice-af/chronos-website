@@ -1,0 +1,27 @@
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 462px;
+  height: 321px;
+  margin-top: -63px;
+  margin-bottom: -63px;
+  overflow: hidden;
+
+  &:hover {
+    .screenshot {
+      transform: translateY(-120px);
+    }
+  }
+}
+
+.screenshot {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.35s ease-in-out;
+  transform: translateY(0);
+}

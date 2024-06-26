@@ -7,7 +7,9 @@
           headline="Non hac mattis lectus"
           description="Eros accumsan tempus eleifend purus fringilla elit turpis
         nascetur neque fermentum nulla fames malesuada, pharetra mauris curabitur dis hendrerit class cras primis amet
-        quisque morbi." />
+        quisque morbi.">
+          <template v-slot:graphic><AppOverviewGraphic /></template>
+        </FeatureTile>
       </div>
       <div :class="features.tile">
         <FeatureTile
