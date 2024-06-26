@@ -1,5 +1,7 @@
 .container {
   position: relative;
+  flex-basis: 462px;
+  flex-shrink: 0;
   width: 100%;
   max-width: 462px;
   height: 321px;

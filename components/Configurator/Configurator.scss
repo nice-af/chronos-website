@@ -1,0 +1,31 @@
+@use '~/assets/styles/mixins/typography';
+
+.container {
+  position: relative;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: stretch;
+  padding: 64px;
+  background: var(--background);
+  border: 1px solid var(--line);
+  border-top: none;
+}
+
+.screenshot {
+  display: block;
+}
+
+.headline {
+  margin-top: 0 !important;
+  @include typography.headline-lg;
+}
+
+.description {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.tabsContainer {
+  margin: 34px 0;
+}

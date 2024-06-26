@@ -7,11 +7,9 @@
   padding: 8px 24px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  appearance: none;
-  cursor: pointer;
   border-radius: 999px;
   opacity: 1 !important;
-  transition: background-color 0.2s ease;
+  transition: background 0.2s ease;
 
   > svg,
   > img {
@@ -23,29 +21,29 @@
 
 .isPrimary {
   color: var(--neutral-50);
-  background-color: var(--blue-400);
+  background: var(--blue-400);
   box-shadow: var(--button-inner-shadow-strong);
 
   &:hover {
-    background-color: var(--blue-500);
+    background: var(--blue-500);
   }
 
   &:active {
-    background-color: var(--blue-600);
+    background: var(--blue-600);
   }
 }
 
 .isSecondary {
-  color: var(--neutral-50);
-  background-color: var(--neutral-600);
+  color: var(--text);
+  background: var(--neutral-600);
   box-shadow: var(--button-inner-shadow);
 
   &:hover {
-    background-color: var(--neutral-700);
+    background: var(--neutral-700);
   }
 
   &:active {
-    background-color: var(--neutral-800);
+    background: var(--neutral-800);
   }
 }
 

@@ -14,6 +14,7 @@
     </template>
   </HeroShineTop>
   <Features />
+  <Configurator />
 </template>
 
 <script setup lang="ts">
