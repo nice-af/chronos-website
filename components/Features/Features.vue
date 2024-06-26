@@ -20,13 +20,15 @@
         <FeatureTile
           headline="Start/stop tracking"
           description="Start and stop your timers as you go. Track the actual time that you are working on a task.">
-          <template v-slot:graphic><StartStopGraphic /></template
-        ></FeatureTile>
+          <template v-slot:graphic><StartStopGraphic /></template>
+        </FeatureTile>
       </div>
       <div :class="features.tile">
         <FeatureTile
           headline="Manual submit"
-          description="Take a look at your worklogs and make adjustments before you submit them." />
+          description="Take a look at your worklogs and make adjustments before you submit them.">
+          <template v-slot:graphic><ManualSubmitGraphic /></template>
+        </FeatureTile>
       </div>
     </div>
   </div>

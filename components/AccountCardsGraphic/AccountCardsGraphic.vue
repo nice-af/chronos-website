@@ -12,7 +12,7 @@
         height="50"
         rx="4.5"
         transform="matrix(.99027 -.13917 0 1 .005 39.069)"
-        fill="var(--app-background)"
+        fill="var(--app-surface)"
         stroke="var(--app-border)" />
       <g clip-path="url(#acg_clip_avatar-3)">
         <path transform="matrix(.99027 -.13917 0 1 9.903 51.108)" fill="url(#acg_image_avatar-3)" d="M0 0H24V24H0z" />
@@ -81,7 +81,7 @@
         height="50"
         rx="4.5"
         transform="matrix(.99027 -.13917 0 1 30.005 57.069)"
-        fill="var(--app-background)"
+        fill="var(--app-surface)"
         stroke="var(--app-border)" />
       <g clip-path="url(#acg_clip_avatar-2)">
         <path transform="matrix(.99027 -.13917 0 1 39.903 69.108)" fill="url(#acg_image_avatar-2)" d="M0 0H24V24H0z" />
@@ -150,7 +150,7 @@
         height="51"
         rx="4.5"
         transform="matrix(.99027 -.13917 0 1 60.005 75.069)"
-        fill="var(--app-background)"
+        fill="var(--app-surface)"
         stroke="var(--app-border)" />
       <g clip-path="url(#acg_clip_avatar-1)">
         <path transform="matrix(.99027 -.13917 0 1 69.903 87.608)" fill="url(#acg_image_avatar-1)" d="M0 0H24V24H0z" />
