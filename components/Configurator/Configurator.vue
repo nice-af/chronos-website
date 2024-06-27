@@ -4,7 +4,7 @@
       <img
         :class="configurator.screenshot"
         src="/assets/images/overview-macos-dark.png"
-        srcset="/assets/images/overview-macos-dark@2x.png 2x"
+        srcset="/assets/images/overview-macos-dark@2x.png 2x, /assets/images/overview-macos-dark@3x.png 3x"
         width="462"
         height="509"
         alt="A screenshot of the Chronos app" />
@@ -15,7 +15,17 @@
           options on different platforms right here:
         </p>
         <p :class="configurator.tabsContainer">
-          <Tabs :options="tabsOptions" :value="osValue" @change="value => (osValue = value)" />
+          <Tabs :options="osOptions" :value="osValue" @change="value => (osValue = value)" />
+        </p>
+        <p :class="configurator.cardsContainer">
+          <CardsSelection label="Theme" :options="themeOptions" :value="themeValue" @change="handleThemeChange" />
+        </p>
+        <p :class="configurator.cardsContainer">
+          <CardsSelection
+            label="Layout"
+            :options="currentTheme === 'dark' ? layoutOptionsDark : layoutOptionsLight"
+            :value="layoutValue"
+            @change="value => (layoutValue = value)" />
         </p>
       </div>
       <div class="dot is-bottom-left" />
@@ -25,14 +35,31 @@
 </template>
 
 <script setup lang="ts">
-import Tabs, { type TabsOption } from '../Tabs/Tabs.vue';
+import CardsSelection from '../CardsSelection/CardsSelection.vue';
+import Tabs from '../Tabs/Tabs.vue';
+import {
+  themeOptions,
+  layoutOptionsDark,
+  layoutOptionsLight,
+  osOptions,
+  type ThemeOptionsValue,
+} from './configuratorOptions';
 
-const tabsOptions: TabsOption[] = [
-  { label: 'Mac', value: 'macos', iconUrl: '/assets/images/icon-macos.svg' },
-  { label: 'Windows', value: 'windows', iconUrl: '/assets/images/icon-windows.svg' },
-  { label: 'Linux', value: 'linux', iconUrl: '/assets/images/icon-linux.svg' },
-];
 const osValue = ref('macos');
+
+const themeValue = ref('light');
+const currentTheme = 'dark';
+const systemTheme = 'dark';
+
+function handleThemeChange(value: ThemeOptionsValue) {
+  if (value === 'system') {
+    themeValue.value = systemTheme;
+  } else {
+    themeValue.value = value;
+  }
+}
+
+const layoutValue = ref('default');
 </script>
 
 <style module="configurator" lang="scss" src="./Configurator.scss" />

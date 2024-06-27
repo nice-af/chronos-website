@@ -1,6 +1,7 @@
 <template>
   <div :class="tabs.container">
     <button
+      :key="option.value"
       :class="[tabs.tabButton, { [tabs.tabButtonActive]: option.value === value }]"
       @click="$emit('change', option.value)"
       v-for="option in options">
@@ -10,19 +11,10 @@
   </div>
 </template>
 
-<script setup lang="ts">
-export interface TabsOption {
-  label: string;
-  value: string;
-  iconUrl?: string;
-}
-
-interface TabsProps {
-  options: TabsOption[];
-  value: string;
-}
-
-defineProps<TabsProps>();
+<script setup lang="ts" generic="T extends string">
+import type { TabsProps, TabsEmits } from './tabs.types';
+defineProps<TabsProps<T>>();
+defineEmits<TabsEmits<T>>();
 </script>
 
 <style module="tabs" lang="scss" src="./Tabs.scss" />
