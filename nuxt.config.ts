@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxt/fonts', '@nuxtjs/stylelint-module', 'nuxt-svgo'],
+  modules: ['@nuxt/eslint', '@nuxtjs/stylelint-module', '@nuxt/fonts', 'nuxt-svgo'],
   fonts: {
     families: [
       {
