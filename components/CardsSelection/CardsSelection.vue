@@ -8,6 +8,8 @@
           @click="$emit('change', option.value)">
           <img
             v-if="option.image"
+            :width="option.image.width"
+            :height="option.image.height"
             :class="cardsSelection.image"
             :src="option.image.src"
             :srcset="option.image.srcset"

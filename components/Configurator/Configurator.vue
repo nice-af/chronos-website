@@ -23,9 +23,9 @@
         <p :class="configurator.cardsContainer">
           <CardsSelection
             label="Layout"
-            :options="currentTheme === 'dark' ? layoutOptionsDark : layoutOptionsLight"
-            :value="layoutValue"
-            @change="value => (layoutValue = value)" />
+            :options="appTheme === 'dark' ? sidebarLayoutOptionsDark : sidebarLayoutOptionsLight"
+            :value="sidebarLayout"
+            @change="value => (sidebarLayout = value)" />
         </p>
       </div>
       <div class="dot is-bottom-left" />
@@ -35,31 +35,36 @@
 </template>
 
 <script setup lang="ts">
+import {
+  appSidebarLayoutProvider,
+  appThemeProvider,
+  systemThemeProvider,
+} from '../AppSettingsProvider/appSettingsProvider.types';
 import CardsSelection from '../CardsSelection/CardsSelection.vue';
 import Tabs from '../Tabs/Tabs.vue';
 import {
-  themeOptions,
-  layoutOptionsDark,
-  layoutOptionsLight,
+  sidebarLayoutOptionsDark,
+  sidebarLayoutOptionsLight,
   osOptions,
+  themeOptions,
   type ThemeOptionsValue,
 } from './configuratorOptions';
 
 const osValue = ref('macos');
+const themeValue = ref('system');
 
-const themeValue = ref('light');
-const currentTheme = 'dark';
-const systemTheme = 'dark';
+const systemTheme = inject(systemThemeProvider, { value: 'dark' } as any);
+const appTheme = inject(appThemeProvider, { value: 'dark' } as any);
+const sidebarLayout = inject(appSidebarLayoutProvider, { value: 'normal' } as any);
 
 function handleThemeChange(value: ThemeOptionsValue) {
+  themeValue.value = value;
   if (value === 'system') {
-    themeValue.value = systemTheme;
+    appTheme.value = systemTheme.value;
   } else {
-    themeValue.value = value;
+    appTheme.value = value;
   }
 }
-
-const layoutValue = ref('default');
 </script>
 
 <style module="configurator" lang="scss" src="./Configurator.scss" />
