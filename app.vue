@@ -1,7 +1,9 @@
 <template>
   <Header />
   <HeroShineTop
-    headline="Easy and fast time tracking for Jira"
+    headline-before-icon="Easy and fast time tracking"
+    headline-after-icon="for Jira"
+    show-icon
     description="Use the Chronos app to manage your daily Jira worklogs in an easy and intuitiv way. Stop the time waste of time tracking."
     :pill="{ label: 'Now with a browser extension', href: '/404' }">
     <template #buttons>

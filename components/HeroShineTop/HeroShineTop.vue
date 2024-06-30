@@ -33,7 +33,16 @@
         </Button>
       </p>
       <h1 :class="['headline-xl', 'headline-gradient']" :data-lines="headlineLines ?? undefined" ref="headlineRef">
-        {{ headline }}
+        {{ headlineBeforeIcon }}
+        <img
+          v-if="showIcon"
+          :class="heroShineTop.icon"
+          src="/assets/images/hero-icon.png"
+          srcset="/assets/images/hero-icon@2x.png 2x"
+          width="82"
+          height="82"
+          alt="Chronos app icon" />
+        {{ headlineAfterIcon }}
       </h1>
       <p :class="heroShineTop.description">{{ description }}</p>
       <p v-if="$slots.buttons" :class="heroShineTop.buttonsContainer"><slot name="buttons" /></p>
@@ -57,7 +66,9 @@ interface HeroShineTopProps {
     label: string;
     href: string;
   };
-  headline: string;
+  headlineBeforeIcon: string;
+  headlineAfterIcon: string;
+  showIcon: boolean;
   description: string;
 }
 
@@ -84,7 +95,7 @@ onNuxtReady(() => {
     shineContainerRef.value.classList.remove(`is-shine-${shineIndex}`);
     shineIndex = shineIndex === 4 ? 1 : shineIndex + 1;
     shineContainerRef.value.classList.add(`is-shine-${shineIndex}`);
-  }, 2500);
+  }, 2200);
 });
 
 onUnmounted(() => {
