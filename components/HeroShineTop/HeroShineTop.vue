@@ -47,6 +47,7 @@
       <p :class="heroShineTop.description">{{ description }}</p>
       <p v-if="$slots.buttons" :class="heroShineTop.buttonsContainer"><slot name="buttons" /></p>
       <video
+        v-if="show3dShapes"
         :class="[heroShineTop.shapeVideo, heroShineTop.dodecahedron]"
         src="/assets/videos/shape-dodecahedron.mp4"
         width="105"
@@ -58,6 +59,7 @@
         poster="/assets/videos/shape-dodecahedron-poster.jpg"
         alt="A 3d animation of a dodecahedron" />
       <video
+        v-if="show3dShapes"
         :class="[heroShineTop.shapeVideo, heroShineTop.cone]"
         src="/assets/videos/shape-cone.mp4"
         width="105"

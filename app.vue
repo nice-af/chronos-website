@@ -5,6 +5,7 @@
     headline-after-icon="for Jira"
     show-icon
     description="Use the Chronos app to manage your daily Jira worklogs in an easy and intuitiv way. Stop the time waste of time tracking."
+    show-3d-shapes
     :pill="{ label: 'Now with a browser extension', href: '/404' }">
     <template #buttons>
       <Button label="Download" href="/404">
