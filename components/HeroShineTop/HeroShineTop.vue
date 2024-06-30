@@ -46,6 +46,28 @@
       </h1>
       <p :class="heroShineTop.description">{{ description }}</p>
       <p v-if="$slots.buttons" :class="heroShineTop.buttonsContainer"><slot name="buttons" /></p>
+      <video
+        :class="[heroShineTop.shapeVideo, heroShineTop.dodecahedron]"
+        src="/assets/videos/shape-dodecahedron.mp4"
+        width="105"
+        height="105"
+        autoplay
+        loop
+        muted
+        playsinline
+        poster="/assets/videos/shape-dodecahedron-poster.jpg"
+        alt="A 3d animation of a dodecahedron" />
+      <video
+        :class="[heroShineTop.shapeVideo, heroShineTop.cone]"
+        src="/assets/videos/shape-cone.mp4"
+        width="105"
+        height="105"
+        autoplay
+        loop
+        muted
+        playsinline
+        poster="/assets/videos/shape-cone-poster.jpg"
+        alt="A 3d animation of a cone" />
     </div>
   </div>
 </template>
@@ -69,6 +91,7 @@ interface HeroShineTopProps {
   headlineBeforeIcon: string;
   headlineAfterIcon: string;
   showIcon: boolean;
+  show3dShapes: boolean;
   description: string;
 }
 

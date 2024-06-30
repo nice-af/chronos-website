@@ -26,6 +26,7 @@
 }
 
 .container {
+  position: relative;
   padding: 130px 0;
   text-align: center;
 }
@@ -54,4 +55,23 @@
   justify-content: center;
   margin-top: 40px;
   margin-bottom: 0;
+}
+
+.shapeVideo {
+  position: absolute;
+  left: 50%;
+  z-index: 0;
+  width: 105px;
+  height: 105px;
+  pointer-events: none;
+}
+
+.dodecahedron {
+  bottom: 72px;
+  transform: translateX(-480px);
+}
+
+.cone {
+  bottom: 198px;
+  transform: translateX(440px);
 }
