@@ -18,7 +18,7 @@
 
 .headline {
   margin-top: 0 !important;
-  @include typography.headline-lg;
+  @include typography.headline-m;
 }
 
 .description {

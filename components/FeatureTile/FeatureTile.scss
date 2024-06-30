@@ -23,10 +23,10 @@
   margin-top: 0 !important;
 
   @container (max-width: 699.98px) {
-    @include typography.headline-m;
+    @include typography.headline-s;
   }
   @container (min-width: 700px) {
-    @include typography.headline-lg;
+    @include typography.headline-m;
   }
 }
 

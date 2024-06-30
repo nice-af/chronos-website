@@ -119,10 +119,66 @@ button {
   @include typography.headline-xl;
 }
 
-.headline-lg {
-  @include typography.headline-lg;
+.headline-l {
+  @include typography.headline-l;
 }
 
 .headline-m {
   @include typography.headline-m;
+}
+
+.headline-s {
+  @include typography.headline-s;
+}
+
+.headline-gradient {
+  --start: var(--text);
+  --stop: color-mix(in srgb, var(--text), transparent 23%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  &[data-lines='1'] {
+    background-image: linear-gradient(var(--start) 0%, var(--stop) 100%);
+  }
+
+  &[data-lines='2'] {
+    background-image: linear-gradient(var(--start) 0%, var(--stop) 50%, var(--start) 51%, var(--stop) 100%);
+  }
+
+  &[data-lines='3'] {
+    background-image: linear-gradient(
+      var(--start) 0%,
+      var(--stop) 33%,
+      var(--start) 34%,
+      var(--stop) 66%,
+      var(--start) 67%,
+      var(--stop) 100%
+    );
+  }
+
+  &[data-lines='4'] {
+    background-image: linear-gradient(
+      var(--start) 0%,
+      var(--stop) 25%,
+      var(--start) 26%,
+      var(--stop) 50%,
+      var(--start) 51%,
+      var(--stop) 75%,
+      var(--start) 76%,
+      var(--stop) 100%
+    );
+  }
+
+  &[data-lines='5'] {
+    background-image: linear-gradient(
+      var(--start),
+      var(--stop),
+      var(--stop),
+      var(--stop),
+      var(--stop),
+      var(--stop),
+      var(--start)
+    );
+  }
 }

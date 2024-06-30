@@ -3,10 +3,10 @@
     <div :class="heroShineTop.container">
       <p v-if="!!pill" :class="heroShineTop.pillContainer">
         <Button :label="pill.label" :href="pill.href" is-pill variant="secondary">
-          <template v-slot:icon><PhArrowRight size="16" weight="bold" /></template>
+          <template #icon><PhArrowRight size="16" weight="bold" /></template>
         </Button>
       </p>
-      <h1 :class="['headline-xl', heroShineTop.headline]" :data-lines="headlineLines ?? undefined" ref="headlineRef">
+      <h1 :class="['headline-xl', 'headline-gradient']" :data-lines="headlineLines ?? undefined" ref="headlineRef">
         {{ headline }}
       </h1>
       <p :class="heroShineTop.description">{{ description }}</p>
