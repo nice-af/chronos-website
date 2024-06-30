@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { useResizeObserver } from '@vueuse/core';
-import { throttle } from 'lodash';
+import throttle from 'lodash/throttle';
 
 const headlineRef = ref<HTMLElement | null>(null);
 const headlineLines = ref<number | null>(null);

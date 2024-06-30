@@ -78,7 +78,7 @@
 import type Button from '../Button/Button.vue';
 import { PhArrowRight } from '@phosphor-icons/vue';
 import { useResizeObserver } from '@vueuse/core';
-import { throttle } from 'lodash';
+import throttle from 'lodash/throttle';
 
 const shineContainerRef = ref<HTMLElement | null>(null);
 
