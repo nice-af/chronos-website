@@ -14,9 +14,6 @@
           Chronos offers lots of customization options to make the app fit your needs. Test the look with different
           options on different platforms right here:
         </p>
-        <p :class="configurator.tabsContainer">
-          <Tabs :options="osOptions" :value="osValue" @change="value => (osValue = value)" />
-        </p>
         <p :class="configurator.cardsContainer">
           <CardsSelection label="Theme" :options="themeOptions" :value="themeValue" @change="handleThemeChange" />
         </p>
