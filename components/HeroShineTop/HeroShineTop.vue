@@ -113,8 +113,8 @@ throttledUpdateLines();
 let shineTimer: NodeJS.Timeout;
 onNuxtReady(() => {
   let shineIndex = 2;
-  shineContainerRef.value.classList.remove(`is-shine-1`);
-  shineContainerRef.value.classList.add(`is-shine-${shineIndex}`);
+  shineContainerRef.value?.classList.remove(`is-shine-1`);
+  shineContainerRef.value?.classList.add(`is-shine-${shineIndex}`);
   shineTimer = setInterval(() => {
     if (!shineContainerRef.value) return;
     shineContainerRef.value.classList.remove(`is-shine-${shineIndex}`);
