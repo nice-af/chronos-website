@@ -47,5 +47,6 @@
       "code": ":release:",
       "description": "Publish a release"
     }
-  ]
+  ],
+  "vue.complete.casing.props": "camel"
 }

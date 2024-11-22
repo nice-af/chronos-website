@@ -6,5 +6,6 @@ export default withNuxt({
     '@typescript-eslint/no-explicit-any': 'off',
     'vue/attributes-order': 'off',
     'vue/html-self-closing': 'off',
+    'vue/attribute-hyphenation': 'off',
   },
 });
