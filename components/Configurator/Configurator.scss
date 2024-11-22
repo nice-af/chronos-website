@@ -12,7 +12,19 @@
   border-top: none;
 }
 
-.screenshot {
+
+.screenshotsContainer {
+  position: relative;
+}
+
+.sidebarScreenshot {
+  position: absolute;
+  top: 98px;
+  left: 15px;
+  z-index: 2;
+}
+
+.mainAppscreenshot {
   display: block;
 }
 
