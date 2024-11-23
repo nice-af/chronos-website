@@ -49,7 +49,13 @@ provide(appOSProvider, { ref: appOS, setValue: setAppOS });
 
 const appTheme = ref<ThemeColor>(getMediaPreference());
 function setAppTheme(theme: ThemeColor) {
-  console.log('setAppTheme', theme);
+  if (import.meta.client) {
+    if (theme === 'light') {
+      document.body.classList.add('has-light-app');
+    } else {
+      document.body.classList.remove('has-light-app');
+    }
+  }
   appTheme.value = theme;
 }
 provide(appThemeProvider, { ref: appTheme, setValue: setAppTheme });

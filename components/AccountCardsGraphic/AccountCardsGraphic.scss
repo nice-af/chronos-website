@@ -1,5 +1,10 @@
 .container {
   overflow: visible;
+
+  rect,
+  path {
+    transition: 0.25s ease;
+  }
 }
 
 .card {
