@@ -4,7 +4,7 @@
   flex-shrink: 0;
   width: 100%;
   max-width: 462px;
-  height: 321px;
+  aspect-ratio: 462 / 321;
   margin-top: -63px;
   margin-bottom: -63px;
   overflow: hidden;
@@ -24,6 +24,8 @@
   display: block;
   width: 100%;
   height: auto;
-  transition: transform 0.35s ease-in-out;
+  transition:
+    transform 0.35s ease-in-out,
+    opacity 0.25s ease;
   transform: translateY(0);
 }

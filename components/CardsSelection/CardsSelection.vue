@@ -13,7 +13,21 @@
             :class="cardsSelection.image"
             :src="option.image.src"
             :srcset="option.image.srcset"
-            :alt="`Icon for ${label.toLowerCase()} ${option.label.toLowerCase()}`" />
+            :style="{ opacity: !!option.imageLight && isLight ? 0 : 1 }"
+            :alt="
+              `Icon for ${label.toLowerCase()} ${option.label.toLowerCase()}` && !!option.imageLight
+                ? ' in dark mode'
+                : ''
+            " />
+          <img
+            v-if="option.imageLight"
+            :width="option.imageLight.width"
+            :height="option.imageLight.height"
+            :class="[cardsSelection.image, cardsSelection.imageLight]"
+            :src="option.imageLight.src"
+            :srcset="option.imageLight.srcset"
+            :alt="`Icon for ${label.toLowerCase()} ${option.label.toLowerCase()} in light mode`"
+            :style="{ opacity: isLight ? 1 : 0 }" />
         </button>
         <span :class="[cardsSelection.cardLabel, { [cardsSelection.cardLabelActive]: option.value === modelValue }]">
           {{ option.label }}

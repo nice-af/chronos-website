@@ -61,6 +61,13 @@
   z-index: 1;
   display: block;
   border-radius: 10px;
+  transition: opacity 0.25s ease;
+}
+
+.imageLight {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .cardLabel {

@@ -1,78 +1,80 @@
 <template>
   <div class="wrapper">
     <div :class="configurator.container">
+      <!-- Dark mode -->
       <div :class="configurator.screenshotsContainer">
-        <!-- Dark mode -->
-        <img
-          :class="configurator.sidebarScreenshot"
-          :style="{
-            display: !isLight && sidebarLayout?.ref.value === 'compact' ? 'block' : 'none',
-          }"
-          src="/assets/images/sidebar-compact-macos-dark.png"
-          srcset="
-            /assets/images/sidebar-compact-macos-dark@2x.png 2x,
-            /assets/images/sidebar-compact-macos-dark@3x.png 3x
-          "
-          width="64"
-          height="400"
-          alt="A screenshot of the Chronos app sidebar in compact layout and dark mode" />
-        <img
-          :class="configurator.sidebarScreenshot"
-          :style="{
-            display: !isLight && sidebarLayout?.ref.value === 'micro' ? 'block' : 'none',
-          }"
-          src="/assets/images/sidebar-micro-macos-dark.png"
-          srcset="/assets/images/sidebar-micro-macos-dark@2x.png 2x, /assets/images/sidebar-micro-macos-dark@3x.png 3x"
-          width="64"
-          height="400"
-          alt="A screenshot of the Chronos app sidebar in micro layout and dark mode" />
-        <img
-          :class="configurator.mainAppscreenshot"
-          :style="{
-            display: isLight ? 'none' : 'block',
-          }"
-          src="/assets/images/overview-macos-dark.png"
-          srcset="/assets/images/overview-macos-dark@2x.png 2x, /assets/images/overview-macos-dark@3x.png 3x"
-          width="462"
-          height="509"
-          alt="A screenshot of the Chronos app and dark mode" />
+        <div :class="configurator.themeContainer" :style="{ opacity: isLight ? 0 : 1 }">
+          <img
+            :class="configurator.sidebarScreenshot"
+            :style="{
+              display: sidebarLayout?.ref.value === 'compact' ? 'block' : 'none',
+            }"
+            src="/assets/images/sidebar-compact-macos-dark.png"
+            srcset="
+              /assets/images/sidebar-compact-macos-dark@2x.png 2x,
+              /assets/images/sidebar-compact-macos-dark@3x.png 3x
+            "
+            width="64"
+            height="400"
+            alt="A screenshot of the Chronos app sidebar in compact layout and dark mode" />
+          <img
+            :class="configurator.sidebarScreenshot"
+            :style="{
+              display: sidebarLayout?.ref.value === 'micro' ? 'block' : 'none',
+            }"
+            src="/assets/images/sidebar-micro-macos-dark.png"
+            srcset="
+              /assets/images/sidebar-micro-macos-dark@2x.png 2x,
+              /assets/images/sidebar-micro-macos-dark@3x.png 3x
+            "
+            width="64"
+            height="400"
+            alt="A screenshot of the Chronos app sidebar in micro layout and dark mode" />
+          <img
+            :class="configurator.mainAppscreenshot"
+            src="/assets/images/overview-macos-dark.png"
+            srcset="/assets/images/overview-macos-dark@2x.png 2x, /assets/images/overview-macos-dark@3x.png 3x"
+            width="462"
+            height="509"
+            alt="A screenshot of the Chronos app and dark mode" />
+        </div>
+
         <!-- Light mode -->
-        <img
-          :class="configurator.sidebarScreenshot"
-          :style="{
-            display: isLight && sidebarLayout?.ref.value === 'compact' ? 'block' : 'none',
-          }"
-          src="/assets/images/sidebar-compact-macos-light.png"
-          srcset="
-            /assets/images/sidebar-compact-macos-light@2x.png 2x,
-            /assets/images/sidebar-compact-macos-light@3x.png 3x
-          "
-          width="64"
-          height="400"
-          alt="A screenshot of the Chronos app sidebar in compact layout and light mode" />
-        <img
-          :class="configurator.sidebarScreenshot"
-          :style="{
-            display: isLight && sidebarLayout?.ref.value === 'micro' ? 'block' : 'none',
-          }"
-          src="/assets/images/sidebar-micro-macos-light.png"
-          srcset="
-            /assets/images/sidebar-micro-macos-light@2x.png 2x,
-            /assets/images/sidebar-micro-macos-light@3x.png 3x
-          "
-          width="64"
-          height="400"
-          alt="A screenshot of the Chronos app sidebar in micro layout and light mode" />
-        <img
-          :class="configurator.mainAppscreenshot"
-          :style="{
-            display: isLight ? 'block' : 'none',
-          }"
-          src="/assets/images/overview-macos-light.png"
-          srcset="/assets/images/overview-macos-light@2x.png 2x, /assets/images/overview-macos-light@3x.png 3x"
-          width="462"
-          height="509"
-          alt="A screenshot of the Chronos app and light mode" />
+        <div :class="configurator.themeContainer" :style="{ opacity: isLight ? 1 : 0 }">
+          <img
+            :class="configurator.sidebarScreenshot"
+            :style="{
+              display: sidebarLayout?.ref.value === 'compact' ? 'block' : 'none',
+            }"
+            src="/assets/images/sidebar-compact-macos-light.png"
+            srcset="
+              /assets/images/sidebar-compact-macos-light@2x.png 2x,
+              /assets/images/sidebar-compact-macos-light@3x.png 3x
+            "
+            width="64"
+            height="400"
+            alt="A screenshot of the Chronos app sidebar in compact layout and light mode" />
+          <img
+            :class="configurator.sidebarScreenshot"
+            :style="{
+              display: sidebarLayout?.ref.value === 'micro' ? 'block' : 'none',
+            }"
+            src="/assets/images/sidebar-micro-macos-light.png"
+            srcset="
+              /assets/images/sidebar-micro-macos-light@2x.png 2x,
+              /assets/images/sidebar-micro-macos-light@3x.png 3x
+            "
+            width="64"
+            height="400"
+            alt="A screenshot of the Chronos app sidebar in micro layout and light mode" />
+          <img
+            :class="configurator.mainAppscreenshot"
+            src="/assets/images/overview-macos-light.png"
+            srcset="/assets/images/overview-macos-light@2x.png 2x, /assets/images/overview-macos-light@3x.png 3x"
+            width="462"
+            height="509"
+            alt="A screenshot of the Chronos app and light mode" />
+        </div>
       </div>
       <div>
         <h2 :class="configurator.headline">Highly customizable</h2>
@@ -88,7 +90,8 @@
             v-if="sidebarLayout"
             v-model="sidebarLayoutValue"
             label="Layout"
-            :options="isLight ? sidebarLayoutOptionsLight : sidebarLayoutOptionsDark" />
+            :options="sidebarLayoutOptions"
+            :isLight="isLight" />
         </div>
       </div>
       <div class="dot is-bottom-left"></div>
@@ -106,12 +109,7 @@ import {
   type SidebarLayout,
 } from '../AppSettingsProvider/appSettingsProvider.types';
 import CardsSelection from '../CardsSelection/CardsSelection.vue';
-import {
-  sidebarLayoutOptionsDark,
-  sidebarLayoutOptionsLight,
-  themeOptions,
-  type ThemeOptionsValue,
-} from './configuratorOptions';
+import { sidebarLayoutOptions, themeOptions, type ThemeOptionsValue } from './configuratorOptions';
 
 const appThemeValue = ref<ThemeOptionsValue>('system');
 const sidebarLayoutValue = ref<SidebarLayout>('normal');

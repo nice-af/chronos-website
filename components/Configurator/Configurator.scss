@@ -14,6 +14,16 @@
 
 .screenshotsContainer {
   position: relative;
+  width: 100%;
+  max-width: 462px;
+  aspect-ratio: 462/509;
+}
+
+.themeContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.25s ease;
 }
 
 .sidebarScreenshot {
