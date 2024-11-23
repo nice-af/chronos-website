@@ -6,25 +6,25 @@
         src="/assets/images/shine-1.png"
         width="1114"
         height="634"
-        alt="Lights shining from top" />
+        alt="Lights shining from the top" />
       <img
         :class="heroShineTop.shine"
         src="/assets/images/shine-2.png"
         width="1114"
         height="634"
-        alt="Lights shining from top" />
+        alt="Lights shining from the top" />
       <img
         :class="heroShineTop.shine"
         src="/assets/images/shine-3.png"
         width="1114"
         height="634"
-        alt="Lights shining from top" />
+        alt="Lights shining from the top" />
       <img
         :class="heroShineTop.shine"
         src="/assets/images/shine-4.png"
         width="1114"
         height="634"
-        alt="Lights shining from top" />
+        alt="Lights shining from the top" />
     </div>
     <div :class="heroShineTop.container">
       <p v-if="!!pill" :class="heroShineTop.pillContainer">

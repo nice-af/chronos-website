@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" :class="ctaSection.wrapper">
     <div :class="ctaSection.container">
       <h2 ref="headlineRef" :class="['headline-l', 'headline-gradient']" :data-lines="headlineLines ?? undefined">
         {{ headline }}
@@ -8,6 +8,14 @@
       <p v-if="$slots.buttonsTop" :class="ctaSection.buttonsContainer"><slot name="buttonsTop"></slot></p>
       <p v-if="$slots.buttonsBottom" :class="ctaSection.buttonsContainer"><slot name="buttonsBottom"></slot></p>
     </div>
+    <img
+      :class="ctaSection.shine"
+      src="/assets/images/shine-bottom.jpg"
+      srcset="/assets/images/shine-bottom@2x.jpg 2x, /assets/images/shine-bottom@3x.jpg 3x"
+      alt="Lights shining from the bottom"
+      width="850"
+      height="380"
+      class="shine-bottom" />
   </div>
 </template>
 
