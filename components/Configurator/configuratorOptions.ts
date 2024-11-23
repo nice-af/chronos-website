@@ -67,7 +67,7 @@ export const sidebarLayoutOptionsDark: CardsSelectionOption<SidebarLayout>[] = [
     value: 'micro',
     image: {
       src: `${urlPrefix}/layout-micro-dark.png`,
-      srcset: `${urlPrefix}/layout-micro-dark@2x.png 2x ${urlPrefix}/layout-micro-dark@3x.png 3x`,
+      srcset: `${urlPrefix}/layout-micro-dark@2x.png 2x, ${urlPrefix}/layout-micro-dark@3x.png 3x`,
       ...defaultImageProps,
     },
   },

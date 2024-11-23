@@ -7,9 +7,9 @@ export interface CardsSelectionOption<T> {
 export interface CardsSelectionProps<T> {
   label: string;
   options: CardsSelectionOption<T>[];
-  value: string;
+  modelValue: T;
 }
 
 export type CardsSelectionEmits<T> = {
-  change: [value: T];
+  (e: 'update:modelValue', value: T): void;
 };

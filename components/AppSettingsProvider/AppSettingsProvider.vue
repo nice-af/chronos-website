@@ -14,33 +14,49 @@ import {
   type ThemeColor,
 } from './appSettingsProvider.types';
 
+const matchMediaRef = ref<MediaQueryList | null>(null);
+
 function getMediaPreference() {
   if (typeof window === 'undefined') {
-    return 'light';
-  }
-  const hasDarkPreference = window?.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (hasDarkPreference) {
     return 'dark';
-  } else {
+  }
+  if (matchMediaRef.value?.matches) {
     return 'light';
+  } else {
+    return 'dark';
   }
 }
 
-if (typeof window !== 'undefined') {
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+onMounted(() => {
+  getMediaPreference();
+  matchMediaRef.value = window.matchMedia('(prefers-color-scheme: light)');
+  matchMediaRef.value.addEventListener('change', () => {
     systemTheme.value = getMediaPreference();
   });
-}
+});
 
-const systemTheme = ref<ThemeColor>(getMediaPreference());
-provide(systemThemeProvider, systemTheme);
+const systemTheme = ref<ThemeColor>('dark');
+function setSystemTheme(theme: ThemeColor) {
+  systemTheme.value = theme;
+}
+provide(systemThemeProvider, { ref: systemTheme, setValue: setSystemTheme });
 
 const appOS = ref<OS>('macos');
-provide(appOSProvider, appOS);
+function setAppOS(os: OS) {
+  appOS.value = os;
+}
+provide(appOSProvider, { ref: appOS, setValue: setAppOS });
 
 const appTheme = ref<ThemeColor>(getMediaPreference());
-provide(appThemeProvider, appTheme);
+function setAppTheme(theme: ThemeColor) {
+  console.log('setAppTheme', theme);
+  appTheme.value = theme;
+}
+provide(appThemeProvider, { ref: appTheme, setValue: setAppTheme });
 
 const appSidebarLayout = ref<SidebarLayout>('normal');
-provide(appSidebarLayoutProvider, appSidebarLayout);
+function setAppSidebarLayout(layout: SidebarLayout) {
+  appSidebarLayout.value = layout;
+}
+provide(appSidebarLayoutProvider, { ref: appSidebarLayout, setValue: setAppSidebarLayout });
 </script>

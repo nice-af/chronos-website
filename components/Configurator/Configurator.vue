@@ -5,7 +5,9 @@
         <!-- Dark mode -->
         <img
           :class="configurator.sidebarScreenshot"
-          :style="{ display: appTheme === 'dark' && sidebarLayout === 'compact' ? 'block' : 'none' }"
+          :style="{
+            display: !isLight && sidebarLayout?.ref.value === 'compact' ? 'block' : 'none',
+          }"
           src="/assets/images/sidebar-compact-macos-dark.png"
           srcset="
             /assets/images/sidebar-compact-macos-dark@2x.png 2x,
@@ -16,7 +18,9 @@
           alt="A screenshot of the Chronos app sidebar in compact layout and dark mode" />
         <img
           :class="configurator.sidebarScreenshot"
-          :style="{ display: appTheme === 'dark' && sidebarLayout === 'micro' ? 'block' : 'none' }"
+          :style="{
+            display: !isLight && sidebarLayout?.ref.value === 'micro' ? 'block' : 'none',
+          }"
           src="/assets/images/sidebar-micro-macos-dark.png"
           srcset="/assets/images/sidebar-micro-macos-dark@2x.png 2x, /assets/images/sidebar-micro-macos-dark@3x.png 3x"
           width="64"
@@ -24,7 +28,9 @@
           alt="A screenshot of the Chronos app sidebar in micro layout and dark mode" />
         <img
           :class="configurator.mainAppscreenshot"
-          :style="{ display: appTheme === 'dark' ? 'block' : 'none' }"
+          :style="{
+            display: isLight ? 'none' : 'block',
+          }"
           src="/assets/images/overview-macos-dark.png"
           srcset="/assets/images/overview-macos-dark@2x.png 2x, /assets/images/overview-macos-dark@3x.png 3x"
           width="462"
@@ -33,7 +39,9 @@
         <!-- Light mode -->
         <img
           :class="configurator.sidebarScreenshot"
-          :style="{ display: appTheme === 'light' && sidebarLayout === 'compact' ? 'block' : 'none' }"
+          :style="{
+            display: isLight && sidebarLayout?.ref.value === 'compact' ? 'block' : 'none',
+          }"
           src="/assets/images/sidebar-compact-macos-light.png"
           srcset="
             /assets/images/sidebar-compact-macos-light@2x.png 2x,
@@ -44,7 +52,9 @@
           alt="A screenshot of the Chronos app sidebar in compact layout and light mode" />
         <img
           :class="configurator.sidebarScreenshot"
-          :style="{ display: appTheme === 'light' && sidebarLayout === 'micro' ? 'block' : 'none' }"
+          :style="{
+            display: isLight && sidebarLayout?.ref.value === 'micro' ? 'block' : 'none',
+          }"
           src="/assets/images/sidebar-micro-macos-light.png"
           srcset="
             /assets/images/sidebar-micro-macos-light@2x.png 2x,
@@ -55,7 +65,9 @@
           alt="A screenshot of the Chronos app sidebar in micro layout and light mode" />
         <img
           :class="configurator.mainAppscreenshot"
-          :style="{ display: appTheme === 'light' ? 'block' : 'none' }"
+          :style="{
+            display: isLight ? 'block' : 'none',
+          }"
           src="/assets/images/overview-macos-light.png"
           srcset="/assets/images/overview-macos-light@2x.png 2x, /assets/images/overview-macos-light@3x.png 3x"
           width="462"
@@ -68,16 +80,16 @@
           Chronos offers lots of customization options to make the app fit your needs. Test the look with different
           options on different platforms right here:
         </p>
-        <p :class="configurator.cardsContainer">
-          <CardsSelection label="Theme" :options="themeOptions" :value="themeValue" @change="handleThemeChange" />
-        </p>
-        <p :class="configurator.cardsContainer">
+        <div :class="configurator.cardsContainer">
+          <CardsSelection label="Theme" :options="themeOptions" v-model="appThemeValue" />
+        </div>
+        <div :class="configurator.cardsContainer">
           <CardsSelection
+            v-if="sidebarLayout"
             label="Layout"
-            :options="appTheme === 'dark' ? sidebarLayoutOptionsDark : sidebarLayoutOptionsLight"
-            :value="sidebarLayout"
-            @change="value => (sidebarLayout = value)" />
-        </p>
+            :options="isLight ? sidebarLayoutOptionsLight : sidebarLayoutOptionsDark"
+            v-model="sidebarLayoutValue" />
+        </div>
       </div>
       <div class="dot is-bottom-left" />
       <div class="dot is-bottom-right" />
@@ -90,6 +102,7 @@ import {
   appSidebarLayoutProvider,
   appThemeProvider,
   systemThemeProvider,
+  type SidebarLayout,
 } from '../AppSettingsProvider/appSettingsProvider.types';
 import CardsSelection from '../CardsSelection/CardsSelection.vue';
 import {
@@ -99,19 +112,42 @@ import {
   type ThemeOptionsValue,
 } from './configuratorOptions';
 
-const themeValue = ref('system');
-const systemTheme = inject(systemThemeProvider, { value: 'dark' } as any);
-const appTheme = inject(appThemeProvider, { value: 'dark' } as any);
-const sidebarLayout = inject(appSidebarLayoutProvider, { value: 'normal' } as any);
+const appThemeValue = ref<ThemeOptionsValue>('system');
+const sidebarLayoutValue = ref<SidebarLayout>('normal');
+
+// We need this ref to prevent hydration mismatches
+const isMounted = ref(false);
+const isLight = computed(() => isMounted.value && appTheme?.ref.value === 'light');
+
+const systemTheme = inject(systemThemeProvider);
+const appTheme = inject(appThemeProvider);
+const sidebarLayout = inject(appSidebarLayoutProvider);
 
 function handleThemeChange(value: ThemeOptionsValue) {
-  themeValue.value = value;
+  if (!appTheme || !systemTheme) {
+    return;
+  }
   if (value === 'system') {
-    appTheme.value = systemTheme.value;
+    appTheme.setValue(systemTheme.ref.value);
   } else {
-    appTheme.value = value;
+    appTheme.setValue(value);
   }
 }
+
+watch(appThemeValue, handleThemeChange);
+
+function handleSidebarLayoutChange(value: SidebarLayout) {
+  if (!sidebarLayout) {
+    return;
+  }
+  sidebarLayout.setValue(value);
+}
+
+watch(sidebarLayoutValue, handleSidebarLayoutChange);
+
+onMounted(() => {
+  isMounted.value = true;
+});
 </script>
 
 <style module="configurator" lang="scss" src="./Configurator.scss" />
