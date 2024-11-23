@@ -126,6 +126,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref, watch } from 'vue';
+
 const lastMouseEnterTimestamp = ref<number | null>(null);
 const timerIsActive = ref<boolean>(false);
 const isSubmitting = ref<boolean>(false);

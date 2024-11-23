@@ -1,9 +1,12 @@
 import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: ['@nuxt/eslint', '@nuxtjs/stylelint-module', '@nuxt/fonts', 'nuxt-svgo'],
-  ssr: true,
+  imports: { autoImport: false },
+  routeRules: { '/**': { static: true } },
+  typescript: { typeCheck: true },
+
   fonts: {
     families: [
       {
@@ -14,4 +17,6 @@ export default defineNuxtConfig({
       },
     ],
   },
+
+  compatibilityDate: '2024-11-23',
 });

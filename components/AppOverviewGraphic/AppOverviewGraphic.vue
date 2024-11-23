@@ -20,6 +20,7 @@
 </template>
 
 <script setup lang="ts">
+import { inject, onMounted, ref } from 'vue';
 import { appThemeProvider } from '../AppSettingsProvider/appSettingsProvider.types';
 
 // We need this ref to prevent hydration mismatches

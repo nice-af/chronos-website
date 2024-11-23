@@ -47,13 +47,15 @@
         </nav>
       </div>
       <p :class="footer.bottomText">&copy; {{ thisYear }} Chronos by Adrian Fahrbach & Florian Merz</p>
-      <div class="dot is-top-left" />
-      <div class="dot is-top-right" />
+      <div class="dot is-top-left"></div>
+      <div class="dot is-top-right"></div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { NuxtLink } from '#components';
+
 const thisYear = new Date().getFullYear();
 </script>
 

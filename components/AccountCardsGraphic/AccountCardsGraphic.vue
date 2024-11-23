@@ -227,6 +227,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref, watch } from 'vue';
+
 const hoveredCard = ref<number | null>(null);
 
 function handleMouseEnter(index: number) {
@@ -251,12 +253,12 @@ const initialCardStyles = [
     transform: '0%',
   },
 ];
-const cardStyles = reactive<{ opacity: number; transform: string }[]>(JSON.parse(JSON.stringify(initialCardStyles)));
+const cardStyles = ref<{ opacity: number; transform: string }[]>(initialCardStyles);
 
 watch(hoveredCard, newValue => {
   for (let i = 0; i < 3; i++) {
-    cardStyles[i].opacity = newValue === null ? initialCardStyles[i].opacity : newValue === i ? 1 : 0.1;
-    cardStyles[i].transform = newValue === i ? '-8%' : '0%';
+    cardStyles.value[i].opacity = newValue === null ? initialCardStyles[i].opacity : newValue === i ? 1 : 0.1;
+    cardStyles.value[i].transform = newValue === i ? '-8%' : '0%';
   }
 });
 </script>

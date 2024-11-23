@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div :class="[heroShineTop.shineContainer, 'is-shine-1']" ref="shineContainerRef">
+    <div ref="shineContainerRef" :class="[heroShineTop.shineContainer, 'is-shine-1']">
       <img
         :class="heroShineTop.shine"
         src="/assets/images/shine-1.png"
@@ -32,7 +32,7 @@
           <template #icon><PhArrowRight size="16" weight="bold" /></template>
         </Button>
       </p>
-      <h1 :class="['headline-xl', 'headline-gradient']" :data-lines="headlineLines ?? undefined" ref="headlineRef">
+      <h1 ref="headlineRef" :class="['headline-xl', 'headline-gradient']" :data-lines="headlineLines ?? undefined">
         {{ headlineBeforeIcon }}
         <img
           v-if="showIcon"
@@ -45,7 +45,7 @@
         {{ headlineAfterIcon }}
       </h1>
       <p :class="heroShineTop.description">{{ description }}</p>
-      <p v-if="$slots.buttons" :class="heroShineTop.buttonsContainer"><slot name="buttons" /></p>
+      <p v-if="$slots.buttons" :class="heroShineTop.buttonsContainer"><slot name="buttons"></slot></p>
       <video
         v-if="show3dShapes"
         :class="[heroShineTop.shapeVideo, heroShineTop.dodecahedron]"
@@ -57,7 +57,7 @@
         muted
         playsinline
         poster="/assets/videos/shape-dodecahedron-poster.jpg"
-        alt="A 3d animation of a dodecahedron" />
+        alt="A 3d animation of a dodecahedron"></video>
       <video
         v-if="show3dShapes"
         :class="[heroShineTop.shapeVideo, heroShineTop.cone]"
@@ -69,19 +69,20 @@
         muted
         playsinline
         poster="/assets/videos/shape-cone-poster.jpg"
-        alt="A 3d animation of a cone" />
+        alt="A 3d animation of a cone"></video>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type Button from '../Button/Button.vue';
+import Button from '../Button/Button.vue';
 import { PhArrowRight } from '@phosphor-icons/vue';
 import { useResizeObserver } from '@vueuse/core';
 import throttle from 'lodash/throttle';
+import { onUnmounted, ref } from 'vue';
+import { onNuxtReady } from '~/.nuxt/imports';
 
 const shineContainerRef = ref<HTMLElement | null>(null);
-
 const headlineRef = ref<HTMLElement | null>(null);
 const headlineLines = ref<number | null>(null);
 

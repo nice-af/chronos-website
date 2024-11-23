@@ -36,4 +36,12 @@
   </div>
 </template>
 
+<script setup lang="ts">
+import FeatureTile from '~/components/FeatureTile/FeatureTile.vue';
+import AppOverviewGraphic from '~/components/AppOverviewGraphic/AppOverviewGraphic.vue';
+import AccountCardsGraphic from '~/components/AccountCardsGraphic/AccountCardsGraphic.vue';
+import StartStopGraphic from '~/components/StartStopGraphic/StartStopGraphic.vue';
+import ManualSubmitGraphic from '~/components/ManualSubmitGraphic/ManualSubmitGraphic.vue';
+</script>
+
 <style module="features" lang="scss" src="./Features.scss" />

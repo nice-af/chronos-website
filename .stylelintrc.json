@@ -25,7 +25,6 @@
         ]
       }
     ],
-    "color-function-notation": "legacy",
     "color-named": null,
     "custom-property-no-missing-var-function": [],
     "declaration-empty-line-before": "never",
@@ -48,7 +47,13 @@
       }
     ],
     "selector-max-id": 2,
-    "selector-pseudo-element-colon-notation": "double"
+    "selector-pseudo-element-colon-notation": "double",
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["deep", "global"]
+      }
+    ]
   },
   "plugins": ["stylelint-order"],
   "defaultSeverity": "warning"

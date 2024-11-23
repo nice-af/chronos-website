@@ -42,6 +42,14 @@
 
 <script setup lang="ts">
 import { PhAppStoreLogo, PhGithubLogo } from '@phosphor-icons/vue';
+import AppSettingsProvider from '~/components/AppSettingsProvider/AppSettingsProvider.vue';
+import Button from '~/components/Button/Button.vue';
+import Configurator from '~/components/Configurator/Configurator.vue';
+import CtaSection from '~/components/CtaSection/CtaSection.vue';
+import Features from '~/components/Features/Features.vue';
+import Footer from '~/components/Footer/Footer.vue';
+import Header from '~/components/Header/Header.vue';
+import HeroShineTop from '~/components/HeroShineTop/HeroShineTop.vue';
 </script>
 
 <style lang="scss" src="./assets/styles/global.scss" />

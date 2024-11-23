@@ -81,23 +81,24 @@
           options on different platforms right here:
         </p>
         <div :class="configurator.cardsContainer">
-          <CardsSelection label="Theme" :options="themeOptions" v-model="appThemeValue" />
+          <CardsSelection v-model="appThemeValue" label="Theme" :options="themeOptions" />
         </div>
         <div :class="configurator.cardsContainer">
           <CardsSelection
             v-if="sidebarLayout"
+            v-model="sidebarLayoutValue"
             label="Layout"
-            :options="isLight ? sidebarLayoutOptionsLight : sidebarLayoutOptionsDark"
-            v-model="sidebarLayoutValue" />
+            :options="isLight ? sidebarLayoutOptionsLight : sidebarLayoutOptionsDark" />
         </div>
       </div>
-      <div class="dot is-bottom-left" />
-      <div class="dot is-bottom-right" />
+      <div class="dot is-bottom-left"></div>
+      <div class="dot is-bottom-right"></div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed, inject, onMounted, ref, watch } from 'vue';
 import {
   appSidebarLayoutProvider,
   appThemeProvider,

@@ -1,10 +1,10 @@
 <template>
   <div :class="tabs.container">
     <button
+      v-for="option in options"
       :key="option.value"
       :class="[tabs.tabButton, { [tabs.tabButtonActive]: option.value === value }]"
-      @click="$emit('change', option.value)"
-      v-for="option in options">
+      @click="$emit('change', option.value)">
       <span>{{ option.label }}</span>
       <img v-if="option.iconUrl" :src="option.iconUrl" :alt="`${option.label} icon`" />
     </button>

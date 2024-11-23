@@ -18,10 +18,14 @@
           </li>
         </ul>
       </nav>
-      <div class="dot is-bottom-left" />
-      <div class="dot is-bottom-right" />
+      <div class="dot is-bottom-left"></div>
+      <div class="dot is-bottom-right"></div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { NuxtLink } from '#components';
+</script>
 
 <style module="header" lang="scss" src="./Header.scss" />

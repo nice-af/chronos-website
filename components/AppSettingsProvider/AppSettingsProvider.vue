@@ -1,9 +1,9 @@
 <template>
-  <slot />
+  <slot></slot>
 </template>
 
 <script setup lang="ts">
-import { provide } from 'vue';
+import { onMounted, provide, ref } from 'vue';
 import {
   appOSProvider,
   appSidebarLayoutProvider,

@@ -1,48 +1,27 @@
 <template>
   <component
-    :is="component"
+    :is="props.href ? NuxtLink : 'button'"
     :class="{
       [button.container]: true,
       [button.isSecondary]: variant === 'secondary',
-      [button.isPrimary]: variant === 'primary',
+      [button.isPrimary]: !variant || variant === 'primary',
       [button.isPill]: isPill,
     }">
     <span>{{ label }}</span>
-    <slot name="icon" />
+    <slot name="icon"></slot>
   </component>
 </template>
 
-
 <script setup lang="ts">
-interface ButtonBaseProps {
+import { NuxtLink } from '#components';
+
+const props = defineProps<{
   label: string;
   icon?: Element;
   variant?: 'primary' | 'secondary';
   isPill?: boolean;
-}
-interface ButtonLinkProps extends ButtonBaseProps {
-  href: string;
-  onClick?: never;
-}
-interface ButtonOnClickProps extends ButtonBaseProps {
-  href?: never;
-  onClick: string;
-}
-export type ButtonProps = ButtonLinkProps | ButtonOnClickProps;
-
-const props = withDefaults(defineProps<ButtonProps>(), {
-  variant: 'primary',
-  isPill: false,
-});
-
-const component = computed(() => {
-  if (typeof (props as any).href !== undefined) {
-    return resolveComponent('NuxtLink');
-  }
-  return 'button';
-});
-
-defineExpose({ component });
+  href?: string;
+}>();
 </script>
 
 <style module="button" lang="scss" src="./Button.scss" />

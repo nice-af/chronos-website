@@ -1,3 +1,5 @@
+import type { InjectionKey, Ref } from 'vue';
+
 export type OS = 'macos' | 'windows' | 'linux';
 export type ThemeColor = 'light' | 'dark';
 export type SidebarLayout = 'normal' | 'compact' | 'micro';

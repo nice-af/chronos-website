@@ -2,7 +2,7 @@
   <div>
     <label :class="cardsSelection.label">{{ label }}</label>
     <div :class="cardsSelection.cardsContainer">
-      <div :key="option.value" v-for="option in options">
+      <div v-for="option in options" :key="option.value">
         <button
           :class="[cardsSelection.cardButton, { [cardsSelection.cardButtonActive]: option.value === modelValue }]"
           @click="() => emits('update:modelValue', option.value)">
