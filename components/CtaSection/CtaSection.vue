@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="ctaSection.wrapper">
+  <div id="download" :class="ctaSection.wrapper">
     <div :class="ctaSection.container">
       <h2 ref="headlineRef" :class="['headline-l', 'headline-gradient']" :data-lines="headlineLines ?? undefined">
         {{ headline }}
@@ -24,7 +24,7 @@ import { useResizeObserver } from '@vueuse/core';
 import throttle from 'lodash/throttle';
 import { ref } from 'vue';
 
-const headlineRef = ref<HTMLElement | null>(null);
+const headlineRef = ref<HTMLElement>();
 const headlineLines = ref<number | null>(null);
 
 interface CtaSectionProps {

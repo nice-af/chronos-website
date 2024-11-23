@@ -54,3 +54,12 @@
 .cardsContainer {
   margin-top: 24px;
 }
+
+.shapeVideo {
+  position: absolute;
+  z-index: 3;
+  width: 91px;
+  height: 44px;
+  pointer-events: none;
+  mix-blend-mode: lighten;
+}

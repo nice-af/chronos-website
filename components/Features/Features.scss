@@ -25,3 +25,12 @@
 .tileLarge {
   grid-column: span 3;
 }
+
+.shapeVideo {
+  position: absolute;
+  z-index: 3;
+  width: 86px;
+  height: 62px;
+  pointer-events: none;
+  mix-blend-mode: lighten;
+}
