@@ -269,7 +269,7 @@ const initialCardStyles = [
     transform: '0%',
   },
 ];
-const cardStyles = ref<{ opacity: number; transform: string }[]>(initialCardStyles);
+const cardStyles = ref<{ opacity: number; transform: string }[]>(initialCardStyles.map(style => ({ ...style })));
 
 watch(hoveredCard, newValue => {
   for (let i = 0; i < 3; i++) {
