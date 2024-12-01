@@ -48,5 +48,7 @@
       "description": "Publish a release"
     }
   ],
-  "vue.complete.casing.props": "camel"
+  "vue.complete.casing.props": "camel",
+  "i18n-ally.localesPaths": ["locales"],
+  "i18n-ally.keystyle": "nested"
 }

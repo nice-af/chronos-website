@@ -5,46 +5,60 @@
       src="/assets/images/shine-1.png"
       width="1114"
       height="634"
-      alt="Lights shining from the top" />
+      role="presentation"
+      alt="" />
     <img
       :class="heroShineTop.shine"
       src="/assets/images/shine-2.png"
       width="1114"
       height="634"
-      alt="Lights shining from the top" />
+      role="presentation"
+      alt="" />
     <img
       :class="heroShineTop.shine"
       src="/assets/images/shine-3.png"
       width="1114"
       height="634"
-      alt="Lights shining from the top" />
+      role="presentation"
+      alt="" />
     <img
       :class="heroShineTop.shine"
       src="/assets/images/shine-4.png"
       width="1114"
       height="634"
-      alt="Lights shining from the top" />
+      role="presentation"
+      alt="" />
   </div>
   <div :class="heroShineTop.container">
-    <p v-if="!!pill" :class="heroShineTop.pillContainer">
-      <Button :label="pill.label" :href="pill.href" is-pill variant="secondary">
+    <p :class="heroShineTop.pillContainer">
+      <Button
+        :label="t('heroShineTop.pillLabel')"
+        href="https://github.com/nice-af/chronos-app/releases"
+        isPill
+        variant="secondary">
         <template #icon><PhArrowRight size="16" weight="bold" /></template>
       </Button>
     </p>
-    <h1 ref="headlineRef" class="headline-xl headline-gradient" :data-lines="headlineLines ?? undefined">
-      {{ headlineBeforeIcon }}
+    <h1 ref="headlineRef" class="headline-xl headline-gradient" :data-lines="headlineLines?.toString() ?? undefined">
+      {{ t('heroShineTop.headlineBeforeIcon') }}
       <img
-        v-if="showIcon"
         :class="heroShineTop.icon"
         src="/assets/images/hero-icon.png"
         srcset="/assets/images/hero-icon@2x.png 2x"
         width="82"
         height="82"
         alt="Chronos app icon" />
-      {{ headlineAfterIcon }}
+      {{ t('heroShineTop.headlineAfterIcon') }}
     </h1>
-    <p :class="heroShineTop.description">{{ description }}</p>
-    <p v-if="$slots.buttons" :class="heroShineTop.buttonsContainer"><slot name="buttons"></slot></p>
+    <p :class="heroShineTop.description">{{ t('heroShineTop.description') }}</p>
+    <p :class="heroShineTop.buttonsContainer">
+      <Button :label="t('global.download')" :href="config.public.DOWNLOAD_MACOS_URL">
+        <template #icon><PhAppStoreLogo size="22" weight="bold" /></template>
+      </Button>
+      <Button :label="t('global.sourceCode')" :href="config.public.SOURCE_CODE_URL" variant="secondary">
+        <template #icon><PhGithubLogo size="22" /></template>
+      </Button>
+    </p>
     <video
       :class="[heroShineTop.shapeVideo, heroShineTop.dodecahedron]"
       src="/assets/videos/shape-dodecahedron.mp4"
@@ -55,7 +69,7 @@
       muted
       playsinline
       poster="/assets/videos/shape-dodecahedron-poster.jpg"
-      alt="A 3d animation of a dodecahedron"></video>
+      :title="t('shapes.titleDodecahedron')"></video>
     <video
       :class="[heroShineTop.shapeVideo, heroShineTop.cone]"
       src="/assets/videos/shape-cone.mp4"
@@ -66,32 +80,21 @@
       muted
       playsinline
       poster="/assets/videos/shape-cone-poster.jpg"
-      alt="A 3d animation of a cone"></video>
+      :title="t('shapes.titleCone')"></video>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useTextLines } from '#build/imports';
-import { PhArrowRight } from '@phosphor-icons/vue';
+import { useI18n, useRuntimeConfig, useTextLines } from '#imports';
+import { PhAppStoreLogo, PhArrowRight, PhGithubLogo } from '@phosphor-icons/vue';
 import { onMounted, onUnmounted, ref } from 'vue';
 import Button from '~/components/Button/Button.vue';
-
-interface HeroShineTopProps {
-  pill: {
-    label: string;
-    href: string;
-  };
-  headlineBeforeIcon: string;
-  headlineAfterIcon: string;
-  showIcon: boolean;
-  description: string;
-}
-
-defineProps<HeroShineTopProps>();
 
 const shineContainerRef = ref<HTMLElement>();
 const headlineRef = ref<HTMLElement>();
 const { headlineLines } = useTextLines(headlineRef);
+const { t } = useI18n();
+const config = useRuntimeConfig();
 
 // Add shine classes
 let shineTimer: NodeJS.Timeout;

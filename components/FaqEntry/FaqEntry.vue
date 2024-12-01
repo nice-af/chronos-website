@@ -27,9 +27,7 @@
       </svg>
     </summary>
     <div ref="$answer" :class="faqEntry.answer" @transitionend="handleTransitionEnd">
-      <div :class="faqEntry.answerContainer">
-        {{ answer }}
-      </div>
+      <div :class="faqEntry.answerContainer" v-html="answer"></div>
     </div>
   </details>
 </template>

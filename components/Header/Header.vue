@@ -7,18 +7,16 @@
       <nav>
         <ul :class="header.navList">
           <li>
-            <NuxtLink to="#features">Features</NuxtLink>
+            <NuxtLink to="#features">{{ t('global.features') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="#download">Download</NuxtLink>
+            <NuxtLink to="#download">{{ t('global.download') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="https://chromewebstore.google.com/detail/ffabeiojbdhkmllfadkidohlkjochcan">
-              Companion
-            </NuxtLink>
+            <NuxtLink :to="config.public.COMPANION_CHROME_URL">{{ t('global.companion') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/faq">FAQ</NuxtLink>
+            <NuxtLink to="/faq">{{ t('global.faq') }}</NuxtLink>
           </li>
         </ul>
       </nav>
@@ -29,7 +27,12 @@
 </template>
 
 <script setup lang="ts">
+import { useRuntimeConfig } from '#app';
 import { NuxtLink } from '#components';
+import { useI18n } from '#imports';
+
+const config = useRuntimeConfig();
+const { t } = useI18n();
 </script>
 
 <style module="header" lang="scss" src="./Header.scss" />

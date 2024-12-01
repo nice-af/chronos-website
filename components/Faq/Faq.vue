@@ -1,7 +1,7 @@
 <template>
   <div id="download" :class="faq.wrapper">
     <div :class="faq.headlineContainer">
-      <h2 ref="headlineRef" class="headline-l headline-gradient" :data-lines="headlineLines ?? undefined">
+      <h2 ref="headlineRef" class="headline-l headline-gradient" :data-lines="headlineLines?.toString() ?? undefined">
         {{ headline }}
       </h2>
     </div>

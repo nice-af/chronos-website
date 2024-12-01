@@ -15,7 +15,7 @@
           "
           width="64"
           height="400"
-          alt="A screenshot of the Chronos app sidebar in compact layout and dark mode" />
+          :alt="t('screenshots.sidebarCompactDarkAlt')" />
         <img
           :class="configurator.sidebarScreenshot"
           :style="{
@@ -25,14 +25,14 @@
           srcset="/assets/images/sidebar-micro-macos-dark@2x.png 2x, /assets/images/sidebar-micro-macos-dark@3x.png 3x"
           width="64"
           height="400"
-          alt="A screenshot of the Chronos app sidebar in micro layout and dark mode" />
+          :alt="t('screenshots.sidebarMicroDarkAlt')" />
         <img
           :class="configurator.mainAppscreenshot"
           src="/assets/images/overview-macos-dark.png"
           srcset="/assets/images/overview-macos-dark@2x.png 2x, /assets/images/overview-macos-dark@3x.png 3x"
           width="462"
           height="509"
-          alt="A screenshot of the Chronos app and dark mode" />
+          :alt="t('screenshots.overviewDarkAlt')" />
       </div>
 
       <!-- Light mode -->
@@ -49,7 +49,7 @@
           "
           width="64"
           height="400"
-          alt="A screenshot of the Chronos app sidebar in compact layout and light mode" />
+          :alt="t('screenshots.sidebarCompactLightAlt')" />
         <img
           :class="configurator.sidebarScreenshot"
           :style="{
@@ -62,22 +62,19 @@
           "
           width="64"
           height="400"
-          alt="A screenshot of the Chronos app sidebar in micro layout and light mode" />
+          :alt="t('screenshots.sidebarMicroLightAlt')" />
         <img
           :class="configurator.mainAppscreenshot"
           src="/assets/images/overview-macos-light.png"
           srcset="/assets/images/overview-macos-light@2x.png 2x, /assets/images/overview-macos-light@3x.png 3x"
           width="462"
           height="509"
-          alt="A screenshot of the Chronos app and light mode" />
+          :alt="t('screenshots.overviewLightAlt')" />
       </div>
     </div>
     <div>
-      <h2 :class="configurator.headline">Highly customizable</h2>
-      <p :class="configurator.description">
-        Chronos offers lots of customization options to make the app fit your needs. Test the look with different
-        options on different platforms right here:
-      </p>
+      <h2 :class="configurator.headline">{{ t('configurator.headline') }}</h2>
+      <p :class="configurator.description">{{ t('configurator.description') }}</p>
       <div :class="configurator.cardsContainer">
         <CardsSelection v-model="appThemeValue" label="Theme" :options="themeOptions" />
       </div>
@@ -109,10 +106,11 @@
     muted
     playsinline
     poster="/assets/videos/shape-cylinder-poster.jpg"
-    alt="A 3d animation of a cylinder"></video>
+    :title="t('shapes.titleCylinder')"></video>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from '#imports';
 import { computed, inject, onMounted, onUnmounted, ref, watch } from 'vue';
 import {
   appSidebarLayoutProvider,
@@ -132,6 +130,7 @@ const sidebarLayoutValue = ref<SidebarLayout>('normal');
 // We need this ref to prevent hydration mismatches
 const isMounted = ref(false);
 const isLight = computed(() => isMounted.value && appTheme?.ref.value === 'light');
+const { t } = useI18n();
 
 const systemTheme = inject(systemThemeProvider);
 const appTheme = inject(appThemeProvider);

@@ -1,34 +1,27 @@
 <template>
   <div id="features" :class="features.container">
     <div :class="[features.tile, features.tileLarge]">
-      <FeatureTile
-        :additionalClass="features.largeTile"
-        headline="Non hac mattis lectus"
-        description="Eros accumsan tempus eleifend purus fringilla elit turpis
-        nascetur neque fermentum nulla fames malesuada, pharetra mauris curabitur dis hendrerit class cras primis amet
-        quisque morbi.">
+      <FeatureTile :headline="t('features.appOverview.headline')" :description="t('features.appOverview.description')">
         <template #graphic><AppOverviewGraphic /></template>
       </FeatureTile>
     </div>
     <div :class="features.tile">
       <FeatureTile
         ref="$accountsFeatureTile"
-        headline="Connect multiple accounts"
-        description="Manage worklogs from different accounts and workspaces.">
-        <template #graphic> <AccountCardsGraphic /> </template>
+        :headline="t('features.multipleAccounts.headline')"
+        :description="t('features.multipleAccounts.description')">
+        <template #graphic><AccountCardsGraphic /></template>
       </FeatureTile>
     </div>
     <div :class="features.tile">
-      <FeatureTile
-        headline="Start/stop tracking"
-        description="Start and stop your timers as you go. Track the actual time that you are working on a task.">
+      <FeatureTile :headline="t('features.startStop.headline')" :description="t('features.startStop.description')">
         <template #graphic><StartStopGraphic /></template>
       </FeatureTile>
     </div>
     <div :class="features.tile">
       <FeatureTile
-        headline="Manual submit"
-        description="Take a look at your worklogs and make adjustments before you submit them.">
+        :headline="t('features.manualSubmit.headline')"
+        :description="t('features.manualSubmit.description')">
         <template #graphic><ManualSubmitGraphic /></template>
       </FeatureTile>
     </div>
@@ -49,7 +42,7 @@
     muted
     playsinline
     poster="/assets/videos/shape-sphere-poster.jpg"
-    alt="A 3d animation of a sphere"></video>
+    :title="t('shapes.titleSphere')"></video>
 </template>
 
 <script setup lang="ts">
@@ -59,10 +52,12 @@ import AccountCardsGraphic from '~/components/AccountCardsGraphic/AccountCardsGr
 import StartStopGraphic from '~/components/StartStopGraphic/StartStopGraphic.vue';
 import ManualSubmitGraphic from '~/components/ManualSubmitGraphic/ManualSubmitGraphic.vue';
 import { onMounted, onUnmounted, ref } from 'vue';
+import { useI18n } from '#imports';
 
 const $accountsFeatureTile = ref<InstanceType<typeof FeatureTile>>();
 const $shapeSphere = ref<HTMLVideoElement>();
 const shapeSpherePosition = ref<{ top: string; left: string } | null>(null);
+const { t } = useI18n();
 
 /**
  * Moves sphere shape video to its correct position.

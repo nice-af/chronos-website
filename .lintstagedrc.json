@@ -1,4 +1,5 @@
 {
+  "assets/locales/*.json": "jsonsort",
   "*.scss": "stylelint --fix",
   "*.{js,ts,vue,scss,json,yml}": "prettier --write",
   "*.{ts,vue}": "eslint --fix"
