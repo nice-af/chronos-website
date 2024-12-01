@@ -87,6 +87,9 @@
     "faq": "FAQ",
     "features": "Features",
     "german": "German",
+    "iconForX": "Icon for {x}",
+    "iconForXInDarkMode": "Icon for {x} in dark mode",
+    "iconForXInLightMode": "Icon for {x} in light mode",
     "language": "Language",
     "legalInformation": "Legal information",
     "legalNotice": "Legal notice",
@@ -96,6 +99,7 @@
     "platformCompanion": "{platform} Companion",
     "privacyPolicy": "Privacy policy",
     "resources": "Resources",
+    "selectX": "Select {x}",
     "socials": "Socials",
     "sourceCode": "Source code",
     "support": "Support"
