@@ -31,7 +31,7 @@
         <template #icon><PhArrowRight size="16" weight="bold" /></template>
       </Button>
     </p>
-    <h1 ref="headlineRef" :class="['headline-xl', 'headline-gradient']" :data-lines="headlineLines ?? undefined">
+    <h1 ref="headlineRef" class="headline-xl headline-gradient" :data-lines="headlineLines ?? undefined">
       {{ headlineBeforeIcon }}
       <img
         v-if="showIcon"
@@ -71,16 +71,10 @@
 </template>
 
 <script setup lang="ts">
-import Button from '../Button/Button.vue';
+import { useTextLines } from '#build/imports';
 import { PhArrowRight } from '@phosphor-icons/vue';
-import { useResizeObserver } from '@vueuse/core';
-import throttle from 'lodash/throttle';
-import { onUnmounted, ref } from 'vue';
-import { onNuxtReady } from '~/.nuxt/imports';
-
-const shineContainerRef = ref<HTMLElement>();
-const headlineRef = ref<HTMLElement>();
-const headlineLines = ref<number | null>(null);
+import { onMounted, onUnmounted, ref } from 'vue';
+import Button from '~/components/Button/Button.vue';
 
 interface HeroShineTopProps {
   pill: {
@@ -95,19 +89,13 @@ interface HeroShineTopProps {
 
 defineProps<HeroShineTopProps>();
 
-function updateLines() {
-  const el = headlineRef.value;
-  if (!el) return;
-  headlineLines.value = Math.round(el.offsetHeight / parseInt(window.getComputedStyle(el).lineHeight));
-}
-const throttledUpdateLines = throttle(updateLines, 100);
-
-useResizeObserver(headlineRef, throttledUpdateLines);
-throttledUpdateLines();
+const shineContainerRef = ref<HTMLElement>();
+const headlineRef = ref<HTMLElement>();
+const { headlineLines } = useTextLines(headlineRef);
 
 // Add shine classes
 let shineTimer: NodeJS.Timeout;
-onNuxtReady(() => {
+onMounted(() => {
   let shineIndex = 2;
   shineContainerRef.value?.classList.remove(`is-shine-1`);
   shineContainerRef.value?.classList.add(`is-shine-${shineIndex}`);

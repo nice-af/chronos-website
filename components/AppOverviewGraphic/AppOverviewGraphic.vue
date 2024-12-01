@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import { inject, onMounted, ref } from 'vue';
-import { appThemeProvider } from '../AppSettingsProvider/appSettingsProvider.types';
+import { appThemeProvider } from '~/components/AppSettingsProvider/appSettingsProvider.types';
 
 // We need this ref to prevent hydration mismatches
 const isMounted = ref(false);

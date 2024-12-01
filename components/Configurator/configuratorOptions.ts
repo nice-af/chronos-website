@@ -1,6 +1,6 @@
-import type { OS, SidebarLayout } from '../AppSettingsProvider/appSettingsProvider.types';
-import type { CardsSelectionOption } from '../CardsSelection/cardsSelection.types';
-import type { TabsOption } from '../Tabs/tabs.types';
+import type { OS, SidebarLayout } from '~/components/AppSettingsProvider/appSettingsProvider.types';
+import type { CardsSelectionOption } from '~/components/CardsSelection/cardsSelection.types';
+import type { TabsOption } from '~/components/Tabs/tabs.types';
 
 const urlPrefix = '/assets/images/settings';
 const defaultImageProps = { width: 74, height: 46 };

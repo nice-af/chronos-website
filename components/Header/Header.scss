@@ -21,3 +21,11 @@
   margin: 0;
   list-style: none;
 }
+
+.logoLink {
+  display: block;
+
+  > img {
+    display: block;
+  }
+}

@@ -1,12 +1,26 @@
 <template>
   <div id="download" :class="ctaSection.wrapper">
     <div :class="ctaSection.container">
-      <h2 ref="headlineRef" :class="['headline-l', 'headline-gradient']" :data-lines="headlineLines ?? undefined">
-        {{ headline }}
+      <h2 ref="headlineRef" class="headline-l headline-gradient" :data-lines="headlineLines ?? undefined">
+        Download now
       </h2>
-      <p :class="ctaSection.description">{{ description }}</p>
-      <p v-if="$slots.buttonsTop" :class="ctaSection.buttonsContainer"><slot name="buttonsTop"></slot></p>
-      <p v-if="$slots.buttonsBottom" :class="ctaSection.buttonsContainer"><slot name="buttonsBottom"></slot></p>
+      <p :class="ctaSection.description">
+        Arcu potenti laoreet tristique porttitor lobortis praesent rutrum nisl viverra mi, a duis neque cursus class
+        quam risus nullam.
+      </p>
+      <p :class="ctaSection.buttonsContainer">
+        <Button label="Download for macOS" href="/404">
+          <template #icon><img src="/assets/images/icon-macos.svg" size="20" alt="Apple logo" /></template>
+        </Button>
+      </p>
+      <p :class="ctaSection.buttonsContainer">
+        <Button label="Windows app" href="/404" variant="secondary">
+          <template #icon><img src="/assets/images/icon-windows.svg" size="20" alt="Windows logo" /></template>
+        </Button>
+        <Button label="Linux app" href="/404" variant="secondary">
+          <template #icon><img src="/assets/images/icon-linux.svg" size="20" alt="Linux logo" /></template>
+        </Button>
+      </p>
     </div>
     <img
       :class="ctaSection.shine"
@@ -20,29 +34,12 @@
 </template>
 
 <script setup lang="ts">
-import { useResizeObserver } from '@vueuse/core';
-import throttle from 'lodash/throttle';
 import { ref } from 'vue';
+import Button from '~/components/Button/Button.vue';
+import { useTextLines } from '~/composables/useTextLines';
 
 const headlineRef = ref<HTMLElement>();
-const headlineLines = ref<number | null>(null);
-
-interface CtaSectionProps {
-  headline: string;
-  description: string;
-}
-
-defineProps<CtaSectionProps>();
-
-function updateLines() {
-  const el = headlineRef.value;
-  if (!el) return;
-  headlineLines.value = Math.round(el.offsetHeight / parseInt(window.getComputedStyle(el).lineHeight));
-}
-const throttledUpdateLines = throttle(updateLines, 100);
-
-useResizeObserver(headlineRef, throttledUpdateLines);
-throttledUpdateLines();
+const { headlineLines } = useTextLines(headlineRef);
 </script>
 
 <style module="ctaSection" lang="scss" src="./CtaSection.scss" />

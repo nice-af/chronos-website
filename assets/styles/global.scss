@@ -87,11 +87,13 @@ body {
 body {
   font-family: var(--font-family);
   font-size: 16px;
-  font-weight: 330;
+  font-weight: 400;
   line-height: 1.65;
   color: var(--text);
   letter-spacing: 0.03em;
   background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {

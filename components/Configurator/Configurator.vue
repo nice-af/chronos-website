@@ -119,8 +119,8 @@ import {
   appThemeProvider,
   systemThemeProvider,
   type SidebarLayout,
-} from '../AppSettingsProvider/appSettingsProvider.types';
-import CardsSelection from '../CardsSelection/CardsSelection.vue';
+} from '~/components/AppSettingsProvider/appSettingsProvider.types';
+import CardsSelection from '~/components/CardsSelection/CardsSelection.vue';
 import { sidebarLayoutOptions, themeOptions, type ThemeOptionsValue } from './configuratorOptions';
 
 const $container = ref<HTMLElement>();

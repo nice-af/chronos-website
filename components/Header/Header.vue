@@ -1,7 +1,9 @@
 <template>
   <div class="wrapper">
     <div :class="header.container">
-      <img src="/assets/images/logo-with-text.svg" alt="Vue logo" />
+      <NuxtLink :class="header.logoLink" to="/">
+        <img src="/assets/images/logo-with-text.svg" alt="Vue logo" />
+      </NuxtLink>
       <nav>
         <ul :class="header.navList">
           <li>

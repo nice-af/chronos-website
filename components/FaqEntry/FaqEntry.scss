@@ -1,0 +1,57 @@
+.container {
+  display: block;
+  width: 100%;
+  margin: 6px 0 28px;
+  overflow: hidden;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.question {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.isActive {
+    opacity: 1;
+  }
+
+  &::marker,
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.answer {
+  height: 0;
+  line-height: 1.85;
+  opacity: 0.6;
+  transition:
+    height 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.answerContainer {
+  padding: 8px 16px 16px 0;
+}
+
+.marker {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.markerLine {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  transform-origin: center center;
+}

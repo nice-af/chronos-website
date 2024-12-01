@@ -19,23 +19,7 @@
       <Features />
       <Configurator />
     </AppSettingsProvider>
-    <CtaSection
-      headline="Download now"
-      description="Arcu potenti laoreet tristique porttitor lobortis praesent rutrum nisl viverra mi, a duis neque cursus class quam risus nullam.">
-      <template #buttonsTop>
-        <Button label="Download for macOS" href="/404">
-          <template #icon><img src="/assets/images/icon-macos.svg" size="20" alt="Apple logo" /></template>
-        </Button>
-      </template>
-      <template #buttonsBottom>
-        <Button label="Windows app" href="/404" variant="secondary">
-          <template #icon><img src="/assets/images/icon-windows.svg" size="20" alt="Windows logo" /></template>
-        </Button>
-        <Button label="Linux app" href="/404" variant="secondary">
-          <template #icon><img src="/assets/images/icon-linux.svg" size="20" alt="Linux logo" /></template>
-        </Button>
-      </template>
-    </CtaSection>
+    <CtaSection />
   </div>
 </template>
 
