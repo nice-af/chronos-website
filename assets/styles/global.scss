@@ -11,6 +11,7 @@
   --neutral-200: #8b8b9a;
   --neutral-100: #cbcbdd;
   --neutral-50: #fafafa;
+  --neutral-0: #fff;
 
   --blue-900: #22385d;
   --blue-800: #26487f;
@@ -94,6 +95,11 @@ body {
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--app-blue);
+  outline-offset: 2px;
 }
 
 a {

@@ -20,16 +20,16 @@
 }
 
 .isPrimary {
-  color: var(--neutral-50);
-  background: var(--blue-400);
+  color: var(--neutral-0);
+  background: var(--blue-500);
   box-shadow: var(--button-inner-shadow-strong);
 
   &:hover {
-    background: var(--blue-500);
+    background: var(--blue-600);
   }
 
   &:active {
-    background: var(--blue-600);
+    background: var(--blue-700);
   }
 }
 

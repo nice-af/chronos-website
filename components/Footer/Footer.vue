@@ -46,7 +46,14 @@
           </ul>
         </nav>
       </div>
-      <p :class="footer.bottomText">&copy; {{ thisYear }} Chronos by Adrian Fahrbach & Florian Merz</p>
+      <p :class="footer.bottomText">
+        <span>&copy; {{ thisYear }} Chronos by </span>
+        <a href="https://github.com/nice-af" :class="footer.madeByText" target="_blank" rel="noopener noreferrer">
+          <img :class="footer.niceAFLogo" src="/assets/images/nice-af-pixel-logo.svg" alt="Nice AF logo" />
+          <span :class="footer.niceAF">Nice A.F.</span>
+          <span :class="footer.names">Adrian Fahrbach & Florian Merz</span>
+        </a>
+      </p>
       <div class="dot is-top-left"></div>
       <div class="dot is-top-right"></div>
     </div>

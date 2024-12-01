@@ -5,6 +5,7 @@
       <div v-for="option in options" :key="option.value">
         <button
           :class="[cardsSelection.cardButton, { [cardsSelection.cardButtonActive]: option.value === modelValue }]"
+          :aria-label="`Select ${label.toLowerCase()} ${option.label.toLowerCase()}`"
           @click="() => emits('update:modelValue', option.value)">
           <img
             v-if="option.image"

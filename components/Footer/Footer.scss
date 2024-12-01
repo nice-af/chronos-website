@@ -45,12 +45,53 @@
 
 .listHeadline {
   margin: 0 0 10px;
+  font-weight: 500;
   color: var(--text);
 }
 
 .bottomText {
   margin-top: 70px;
   font-size: 12px;
+  color: var(--text-secondary);
   text-align: center;
-  opacity: 0.25;
+}
+
+.madeByText {
+  position: relative;
+
+  &:hover {
+    opacity: 1;
+
+    .niceAF {
+      opacity: 0;
+    }
+
+    .names {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.niceAFLogo {
+  margin: -2px 4px 0 5px;
+  vertical-align: middle;
+}
+
+.niceAF {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.names {
+  position: absolute;
+  top: -2.45px;
+  left: 30px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+  transform: translateY(60%);
 }
