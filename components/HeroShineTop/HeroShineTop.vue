@@ -69,6 +69,7 @@
       muted
       playsinline
       poster="/assets/videos/shape-dodecahedron-poster.jpg"
+      role="presentation"
       :title="t('shapes.titleDodecahedron')"></video>
     <video
       :class="[heroShineTop.shapeVideo, heroShineTop.cone]"
@@ -80,6 +81,7 @@
       muted
       playsinline
       poster="/assets/videos/shape-cone-poster.jpg"
+      role="presentation"
       :title="t('shapes.titleCone')"></video>
   </div>
 </template>

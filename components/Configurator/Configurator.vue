@@ -106,6 +106,7 @@
     muted
     playsinline
     poster="/assets/videos/shape-cylinder-poster.jpg"
+    role="presentation"
     :title="t('shapes.titleCylinder')"></video>
 </template>
 

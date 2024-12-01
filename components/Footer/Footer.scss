@@ -22,6 +22,14 @@
   justify-content: space-between;
 }
 
+.logoLink {
+  display: block;
+
+  > img {
+    display: block;
+  }
+}
+
 .navContainer {
   display: flex;
   gap: 60px;

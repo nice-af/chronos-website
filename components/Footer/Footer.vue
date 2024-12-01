@@ -2,7 +2,9 @@
   <div class="wrapper">
     <div :class="footer.container">
       <div :class="footer.topRow">
-        <img src="/assets/images/logo-with-text.svg" alt="Chronos logo" />
+        <NuxtLink :class="footer.logoLink" to="/">
+          <img src="/assets/images/logo-with-text.svg" alt="Chronose logo" />
+        </NuxtLink>
         <nav>
           <ul :class="footer.navContainer">
             <li :class="footer.list">

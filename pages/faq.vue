@@ -63,6 +63,10 @@ const categories: FaqProps['categories'] = {
       question: t('faq.supportAndContact.iWantToHelp.question'),
       answer: t('faq.supportAndContact.iWantToHelp.answer', envs),
     },
+    {
+      question: t('faq.supportAndContact.supportLanguage.question'),
+      answer: t('faq.supportAndContact.supportLanguage.answer', envs),
+    },
   ],
 };
 </script>

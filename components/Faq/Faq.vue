@@ -29,9 +29,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useTextLines } from '~/composables/useTextLines';
 import type { FaqEntryProps } from '~/components/FaqEntry/FaqEntry.vue';
 import FaqEntry from '~/components/FaqEntry/FaqEntry.vue';
+import { useTextLines } from '~/composables/useTextLines';
 
 export interface FaqProps {
   headline: string;

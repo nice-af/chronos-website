@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div :class="header.container">
       <NuxtLink :class="header.logoLink" to="/">
-        <img src="/assets/images/logo-with-text.svg" alt="Vue logo" />
+        <img src="/assets/images/logo-with-text.svg" alt="Chronose logo" />
       </NuxtLink>
       <nav>
         <ul :class="header.navList">

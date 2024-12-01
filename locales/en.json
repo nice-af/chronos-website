@@ -1,119 +1,123 @@
 {
-  "global": {
-    "download": "Download",
-    "downloadForPlatform": "Download for {platform}",
-    "sourceCode": "Source code",
-    "language": "Language",
-    "english": "English",
-    "german": "German",
-    "socials": "Socials",
-    "linkedInAdrian": "LinkedIn Adrian",
-    "linkedInFlorian": "LinkedIn Florian",
-    "resources": "Resources",
-    "faq": "FAQ",
-    "support": "Support",
-    "privacyPolicy": "Privacy policy",
-    "legalNotice": "Legal notice",
-    "platformApp": "{platform} app",
-    "platformCompanion": "{platform} Companion",
-    "legalInformation": "Legal information",
-    "by": "by",
-    "companion": "Companion",
-    "features": "Features"
+  "configurator": {
+    "description": "Chronos offers lots of customization options to make the app fit your needs. Test the look with different options on different platforms right here:",
+    "headline": "Highly customizable"
   },
-  "heroShineTop": {
-    "headlineBeforeIcon": "Easy and fast time tracking",
-    "headlineAfterIcon": "for Jira",
-    "description": "Use the Chronos app to manage your daily Jira worklogs in an easy and intuitiv way. Stop the time waste of time tracking.",
-    "pillLabel": "Check the release changelog"
+  "ctaSection": {
+    "description": "Download the app for your platform and start tracking your time in Jira.",
+    "headline": "Get started with Chronos"
   },
-  "shapes": {
-    "titleDodecahedron": "A 3D animation of a dodecahedron",
-    "titleCone": "A 3D animation of a cone",
-    "titleSphere": "A 3D animation of a sphere",
-    "titleCylinder": "A 3D animation of a cylinder"
+  "faq": {
+    "appAndFeatures": {
+      "adminPermissions": {
+        "answer": "<p>Chronos technically connects with your account and not with your workspace. That means that it should work without admin permissions. It does require Jira worklogs to be enabled though and there are a few edge cases where admins can prevent usage of apps like Chronos.</p><p>If our time tracker doesn't work on your workspace then let us know and we will take a look at it. You can also request a refund through <a href='https://support.apple.com/118223' target='_blank' rel='noopener noreferrer'>Apples “report a problem” platform.</a></p>",
+        "question": "Does Chronos require admin permissions in Jira?"
+      },
+      "builtWith": {
+        "answer": "<p>Chronos is built with<a href='https://github.com/microsoft/react-native-macos' target='_blank' rel='noopener noreferrer'>React Native macOS</a> and therfore offers a native experience with a small footprint.</p>",
+        "question": "What technologies is Chronos built with?"
+      },
+      "freeAlternative": {
+        "answer": "<p>We know that there are apps with a similar feature set (e.g. Timkee) and recommend them if you are looking for a free alternative. We have also tried these and found them difficult to use and/or inadequate for our use case. For example, one feature that almost all of them are lacking is the ability to add multiple accounts.</p><p>Please also keep in mind that this is a side project of a relatively small team of two developers. All of our revenue is used for the Apple developer license, web hosting and our domain.</p><p>If you really want to try our app without paying for it, you can always clone our <a href='{SOURCE_CODE_URL}' target='_blank' rel='noopener noreferrer'>GitHub repository</a> and build it yourself.</p>",
+        "question": "Why does this app cost money when there are free alternatives?"
+      },
+      "headline": "App & features",
+      "otherThenJira": {
+        "answer": "<p>Chronos is specifically designed for Jira and does not support other services. We are thinking about adding other services in the future, but for now we are focusing on Jira.</p>",
+        "question": "Can I use Chronos with other services than Jira?"
+      },
+      "supportedPlatforms": {
+        "answer": "<p>Chronos is only available on macOS for now. We currently have no plans to release it on other platforms, but we do have a Windows build laying around. If you are missing a specific platform or are interested in the Windows build then please <a href='mailto:{SUPPORT_EMAIL}'>let us know</a>.</p>",
+        "question": "Which platforms are supported?"
+      },
+      "whatIsChronos": {
+        "answer": "<p>Chronos is a time tracking app for Jira. It helps you to manage your daily Jira worklogs in an easy and intuitive way.</p>",
+        "question": "What is Chronos?"
+      }
+    },
+    "headline": "FAQ",
+    "supportAndContact": {
+      "foundBug": {
+        "answer": "<p>You can contact us via email at <a href='mailto:{SUPPORT_EMAIL}'>{SUPPORT_EMAIL}</a> or through our <a href='{SOURCE_CODE_URL}' target='_blank' rel='noopener noreferrer'>GitHub repository</a>.</p>",
+        "question": "I found a bug. Where can I report it and get help?"
+      },
+      "headline": "Support & contact",
+      "iWantToHelp": {
+        "answer": "<p>Thank you for your interest in contributing to Chronos. You can contribute by reporting bugs, suggesting features or even by contributing to the codebase. You can do this through our <a href='{SOURCE_CODE_URL}' target='_blank' rel='noopener noreferrer'>GitHub repository</a>.</p>",
+        "question": "I want to help developing this further. How can I contribute?"
+      },
+      "missingFeatures": {
+        "answer": "<p>Yes, we are always looking for feedback and feature requests. Please <a href='mailto:{SUPPORT_EMAIL}'>let us know</a> what you are missing and we will try to add it in a future release.</p>",
+        "question": "I am missing a specific feature. Can you add it?"
+      },
+      "notWorkingRefund": {
+        "answer": "<p>If our time tracker doesn't work on your workspace then <a href='mailto:{SUPPORT_EMAIL}'>let us know</a> and we will take a look at it. You can also request a refund through <a href='https://support.apple.com/118223' target='_blank' rel='noopener noreferrer'>Apples “report a problem” platform.</a></p>",
+        "question": "The app is not working for me. Can I get a refund?"
+      },
+      "supportLanguage": {
+        "answer": "<p>You can write us in English or German. We will try to answer in the same language.</p>",
+        "question": "In which languages do you offer support?"
+      }
+    }
   },
   "features": {
     "appOverview": {
-      "headline": "Non hac mattis lectus",
-      "description": "Eros accumsan tempus eleifend purus fringilla elit turpis nascetur neque fermentum nulla fames malesuada, pharetra mauris curabitur dis hendrerit class cras primis amet quisque morbi."
-    },
-    "multipleAccounts": {
-      "headline": "Connect multiple accounts",
-      "description": "Manage worklogs from different accounts and workspaces."
-    },
-    "startStop": {
-      "headline": "Start/stop tracking",
-      "description": "Start and stop your timers as you go. Track the actual time that you are working on a task."
+      "description": "Eros accumsan tempus eleifend purus fringilla elit turpis nascetur neque fermentum nulla fames malesuada, pharetra mauris curabitur dis hendrerit class cras primis amet quisque morbi.",
+      "headline": "Non hac mattis lectus"
     },
     "manualSubmit": {
-      "headline": "Manual submit",
-      "description": "Take a look at your worklogs and make adjustments before you submit them."
+      "description": "Take a look at your worklogs and make adjustments before you submit them.",
+      "headline": "Manual submit"
+    },
+    "multipleAccounts": {
+      "description": "Manage worklogs from different accounts and workspaces.",
+      "headline": "Connect multiple accounts"
+    },
+    "startStop": {
+      "description": "Start and stop your timers as you go. Track the actual time that you are working on a task.",
+      "headline": "Start/stop tracking"
     }
   },
-  "configurator": {
-    "headline": "Highly customizable",
-    "description": "Chronos offers lots of customization options to make the app fit your needs. Test the look with different options on different platforms right here:"
+  "global": {
+    "by": "by",
+    "companion": "Companion",
+    "download": "Download",
+    "downloadForPlatform": "Download for {platform}",
+    "english": "English",
+    "faq": "FAQ",
+    "features": "Features",
+    "german": "German",
+    "language": "Language",
+    "legalInformation": "Legal information",
+    "legalNotice": "Legal notice",
+    "linkedInAdrian": "LinkedIn Adrian",
+    "linkedInFlorian": "LinkedIn Florian",
+    "platformApp": "{platform} app",
+    "platformCompanion": "{platform} Companion",
+    "privacyPolicy": "Privacy policy",
+    "resources": "Resources",
+    "socials": "Socials",
+    "sourceCode": "Source code",
+    "support": "Support"
   },
-  "ctaSection": {
-    "headline": "Get started with Chronos",
-    "description": "Download the app for your platform and start tracking your time in Jira."
+  "heroShineTop": {
+    "description": "Use the Chronos app to manage your daily Jira worklogs in an easy and intuitiv way. Stop the time waste of time tracking.",
+    "headlineAfterIcon": "for Jira",
+    "headlineBeforeIcon": "Easy and fast time tracking",
+    "pillLabel": "Check the release changelog"
   },
   "screenshots": {
+    "overviewDarkAlt": "A screenshot of the Chronos app and dark mode",
+    "overviewLightAlt": "A screenshot of the Chronos app and light mode",
     "sidebarCompactDarkAlt": "A screenshot of the Chronos app sidebar in compact layout and dark mode",
     "sidebarCompactLightAlt": "A screenshot of the Chronos app sidebar in compact layout and light mode",
     "sidebarMicroDarkAlt": "A screenshot of the Chronos app sidebar in micro layout and dark mode",
-    "sidebarMicroLightAlt": "A screenshot of the Chronos app sidebar in micro layout and light mode",
-    "overviewDarkAlt": "A screenshot of the Chronos app and dark mode",
-    "overviewLightAlt": "A screenshot of the Chronos app and light mode"
+    "sidebarMicroLightAlt": "A screenshot of the Chronos app sidebar in micro layout and light mode"
   },
-  "faq": {
-    "headline": "FAQ",
-    "appAndFeatures": {
-      "headline": "App & features",
-      "whatIsChronos": {
-        "question": "What is Chronos?",
-        "answer": "<p>Chronos is a time tracking app for Jira. It helps you to manage your daily Jira worklogs in an easy and intuitive way.</p>"
-      },
-      "adminPermissions": {
-        "question": "Does Chronos require admin permissions in Jira?",
-        "answer": "<p>Chronos technically connects with your account and not with your workspace. That means that it should work without admin permissions. It does require Jira worklogs to be enabled though and there are a few edge cases where admins can prevent usage of apps like Chronos.</p><p>If our time tracker doesn't work on your workspace then let us know and we will take a look at it. You can also request a refund through <a href='https://support.apple.com/118223' target='_blank' rel='noopener noreferrer'>Apples “report a problem” platform.</a></p>"
-      },
-      "freeAlternative": {
-        "question": "Why does this app cost money when there are free alternatives?",
-        "answer": "<p>We know that there are apps with a similar feature set (e.g. Timkee) and recommend them if you are looking for a free alternative. We have also tried these and found them difficult to use and/or inadequate for our use case. For example, one feature that almost all of them are lacking is the ability to add multiple accounts.</p><p>Please also keep in mind that this is a side project of a relatively small team of two developers. All of our revenue is used for the Apple developer license, web hosting and our domain.</p><p>If you really want to try our app without paying for it, you can always clone our <a href='{SOURCE_CODE_URL}' target='_blank' rel='noopener noreferrer'>GitHub repository</a> and build it yourself.</p>"
-      },
-      "supportedPlatforms": {
-        "question": "Which platforms are supported?",
-        "answer": "<p>Chronos is only available on macOS for now. We currently have no plans to release it on other platforms, but we do have a Windows build laying around. If you are missing a specific platform or are interested in the Windows build then please <a href='mailto:{SUPPORT_EMAIL}'>let us know</a>.</p>"
-      },
-      "otherThenJira": {
-        "question": "Can I use Chronos with other services than Jira?",
-        "answer": "<p>Chronos is specifically designed for Jira and does not support other services. We are thinking about adding other services in the future, but for now we are focusing on Jira.</p>"
-      },
-      "builtWith": {
-        "question": "What technologies is Chronos built with?",
-        "answer": "<p>Chronos is built with<a href='https://github.com/microsoft/react-native-macos' target='_blank' rel='noopener noreferrer'>React Native macOS</a> and therfore offers a native experience with a small footprint.</p>"
-      }
-    },
-    "supportAndContact": {
-      "headline": "Support & contact",
-      "foundBug": {
-        "question": "I found a bug. Where can I report it and get help?",
-        "answer": "<p>You can contact us via email at <a href='mailto:{SUPPORT_EMAIL}'>{SUPPORT_EMAIL}</a> or through our <a href='{SOURCE_CODE_URL}' target='_blank' rel='noopener noreferrer'>GitHub repository</a>.</p>"
-      },
-      "missingFeatures": {
-        "question": "I am missing a specific feature. Can you add it?",
-        "answer": "<p>Yes, we are always looking for feedback and feature requests. Please <a href='mailto:{SUPPORT_EMAIL}'>let us know</a> what you are missing and we will try to add it in a future release.</p>"
-      },
-      "notWorkingRefund": {
-        "question": "The app is not working for me. Can I get a refund?",
-        "answer": "<p>If our time tracker doesn't work on your workspace then <a href='mailto:{SUPPORT_EMAIL}'>let us know</a> and we will take a look at it. You can also request a refund through <a href='https://support.apple.com/118223' target='_blank' rel='noopener noreferrer'>Apples “report a problem” platform.</a></p>"
-      },
-      "iWantToHelp": {
-        "question": "I want to help developing this further. How can I contribute?",
-        "answer": "<p>Thank you for your interest in contributing to Chronos. You can contribute by reporting bugs, suggesting features or even by contributing to the codebase. You can do this through our <a href='{SOURCE_CODE_URL}' target='_blank' rel='noopener noreferrer'>GitHub repository</a>.</p>"
-      }
-    }
+  "shapes": {
+    "titleCone": "A 3D animation of a cone",
+    "titleCylinder": "A 3D animation of a cylinder",
+    "titleDodecahedron": "A 3D animation of a dodecahedron",
+    "titleSphere": "A 3D animation of a sphere"
   }
 }
