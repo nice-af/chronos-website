@@ -37,7 +37,7 @@
               <p :class="footer.listHeadline">{{ t('global.resources') }}</p>
               <ul>
                 <li>
-                  <NuxtLink to="/faq">{{ t('global.faq') }}</NuxtLink>
+                  <NuxtLink :to="localePath('faq')">{{ t('global.faq') }}</NuxtLink>
                 </li>
                 <li>
                   <NuxtLink :to="config.public.SUPPORT_URL">{{ t('global.support') }}</NuxtLink>

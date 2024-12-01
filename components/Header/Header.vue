@@ -16,7 +16,7 @@
             <NuxtLink :to="config.public.COMPANION_CHROME_URL">{{ t('global.companion') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/faq">{{ t('global.faq') }}</NuxtLink>
+            <NuxtLink :to="localePath('faq')">{{ t('global.faq') }}</NuxtLink>
           </li>
         </ul>
       </nav>
@@ -29,10 +29,11 @@
 <script setup lang="ts">
 import { useRuntimeConfig } from '#app';
 import { NuxtLink } from '#components';
-import { useI18n } from '#imports';
+import { useI18n, useLocalePath } from '#imports';
 
 const config = useRuntimeConfig();
 const { t } = useI18n();
+const localePath = useLocalePath();
 </script>
 
 <style module="header" lang="scss" src="./Header.scss" />
