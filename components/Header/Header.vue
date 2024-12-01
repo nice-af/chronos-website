@@ -13,7 +13,9 @@
             <NuxtLink to="#download">Download</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/companion">Companion</NuxtLink>
+            <NuxtLink to="https://chromewebstore.google.com/detail/ffabeiojbdhkmllfadkidohlkjochcan">
+              Companion
+            </NuxtLink>
           </li>
           <li>
             <NuxtLink to="/faq">FAQ</NuxtLink>
