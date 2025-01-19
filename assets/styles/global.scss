@@ -123,8 +123,11 @@ button {
 
 .wrapper {
   max-width: 1240px;
-  padding: 0 30px;
+  padding: 0 24px;
   margin: 0 auto;
+  @media (min-width: 576px) {
+    padding: 0 32px;
+  }
 }
 
 .dot {

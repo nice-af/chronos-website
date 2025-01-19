@@ -1,33 +1,59 @@
 @use '~/assets/styles/mixins/typography';
 
 .container {
+  --gap: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--gap);
   align-items: stretch;
   justify-content: space-between;
   width: 100%;
-  padding: 32px;
+  padding: 48px 24px;
+  text-align: center;
   background: var(--background);
   container-type: inline-size;
+  @media (min-width: 768px) {
+    padding: 32px;
+    text-align: left;
+  }
 
-  @container (min-width: 700px) {
-    flex-direction: row;
-    gap: 100px;
+  &.isLarge {
+    --gap: 48px;
     align-items: center;
-    padding: 64px;
+    @media (min-width: 576px) {
+      padding: 64px 32px;
+    }
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+    @media (min-width: 992px) {
+      --gap: 92px;
+    }
+    @media (min-width: 1280px) {
+      padding: 64px;
+    }
+    @media (max-width: 767.98px) {
+      padding-bottom: 1px;
+    }
+
+    .text {
+      @media (min-width: 768px) {
+        flex: 0 1 calc(50% - var(--gap) + 20px);
+        min-width: calc(50% - var(--gap) + 20px);
+      }
+    }
+
+    .headline {
+      @media (min-width: 768px) {
+        @include typography.headline-m;
+      }
+    }
   }
 }
 
 .headline {
   margin-top: 0 !important;
-
-  @container (max-width: 699.98px) {
-    @include typography.headline-s;
-  }
-  @container (min-width: 700px) {
-    @include typography.headline-m;
-  }
+  @include typography.headline-s;
 }
 
 .description {

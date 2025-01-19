@@ -71,10 +71,17 @@
 
 .dodecahedron {
   bottom: 72px;
-  transform: translateX(-480px);
+  transform: translateX(-440px);
+  @media (min-width: 1024px) {
+    transform: translateX(-480px);
+  }
 }
 
 .cone {
-  bottom: 198px;
-  transform: translateX(440px);
+  bottom: 178px;
+  transform: translateX(360px);
+  @media (min-width: 1024px) {
+    bottom: 198px;
+    transform: translateX(440px);
+  }
 }

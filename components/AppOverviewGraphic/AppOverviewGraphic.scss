@@ -1,31 +1,42 @@
 .container {
   position: relative;
-  flex-basis: 462px;
-  flex-shrink: 0;
   width: 100%;
   max-width: 462px;
-  aspect-ratio: 462 / 321;
-  margin-top: -63px;
-  margin-bottom: -63px;
+  aspect-ratio: 1.4;
   overflow: hidden;
+  @media (min-width: 768px) {
+    flex: 0 1 462px;
+    align-self: stretch;
+    aspect-ratio: none;
+    margin-top: -63px;
+    margin-bottom: -63px;
+  }
 
   &:hover {
     .screenshot {
-      transform: translateY(-120px);
+      @media (min-width: 768px) {
+        transform: translateY(-80px);
+      }
+      @media (min-width: 992px) {
+        transform: translateY(-120px);
+      }
     }
   }
 }
 
 .screenshot {
   position: absolute;
-  top: 64px;
+  top: 0;
   left: 0;
   z-index: 1;
   display: block;
   width: 100%;
   height: auto;
-  transition:
-    transform 0.35s ease-in-out,
-    opacity 0.25s ease;
-  transform: translateY(0);
+  @media (min-width: 768px) {
+    top: 64px;
+    transition:
+      transform 0.35s ease-in-out,
+      opacity 0.25s ease;
+    transform: translateY(0);
+  }
 }

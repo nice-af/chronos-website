@@ -1,6 +1,6 @@
 <template>
-  <div :class="featureTile.container">
-    <div>
+  <div :class="[featureTile.container, { [featureTile.isLarge]: isLarge }]">
+    <div :class="featureTile.text">
       <h2 :class="featureTile.headline">{{ headline }}</h2>
       <p :class="featureTile.description">{{ description }}</p>
     </div>
@@ -16,6 +16,7 @@
 interface FeatureTileProps {
   headline: string;
   description: string;
+  isLarge?: boolean;
 }
 
 defineProps<FeatureTileProps>();

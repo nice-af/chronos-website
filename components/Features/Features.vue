@@ -1,7 +1,10 @@
 <template>
   <div id="features" :class="features.container">
     <div :class="[features.tile, features.tileLarge]">
-      <FeatureTile :headline="t('features.appOverview.headline')" :description="t('features.appOverview.description')">
+      <FeatureTile
+        isLarge
+        :headline="t('features.appOverview.headline')"
+        :description="t('features.appOverview.description')">
         <template #graphic><AppOverviewGraphic /></template>
       </FeatureTile>
     </div>
