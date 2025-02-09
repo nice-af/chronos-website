@@ -1,5 +1,5 @@
 <template>
-  <div ref="shineContainerRef" :class="[heroShineTop.shineContainer, 'is-shine-1']">
+  <div ref="shine-container" :class="[heroShineTop.shineContainer, 'is-shine-1']">
     <img
       :class="heroShineTop.shine"
       src="/assets/images/shine-1.png"
@@ -39,7 +39,7 @@
         <template #icon><PhArrowRight size="16" weight="bold" /></template>
       </Button>
     </p>
-    <h1 ref="headlineRef" class="headline-xl headline-gradient" :data-lines="headlineLines?.toString() ?? undefined">
+    <h1 ref="headline" class="headline-xl headline-gradient" :data-lines="headlineLines?.toString() ?? undefined">
       {{ t('heroShineTop.headlineBeforeIcon') }}
       <img
         :class="heroShineTop.icon"
@@ -89,12 +89,12 @@
 <script setup lang="ts">
 import { useI18n, useRuntimeConfig, useTextLines } from '#imports';
 import { PhAppStoreLogo, PhArrowRight, PhGithubLogo } from '@phosphor-icons/vue';
-import { onMounted, onUnmounted, ref } from 'vue';
+import { onMounted, onUnmounted, useTemplateRef } from 'vue';
 import Button from '~/components/Button/Button.vue';
 
-const shineContainerRef = ref<HTMLElement>();
-const headlineRef = ref<HTMLElement>();
-const { headlineLines } = useTextLines(headlineRef);
+const $shineContainer = useTemplateRef('shine-container');
+const headline = useTemplateRef('headline');
+const { headlineLines } = useTextLines(headline);
 const { t } = useI18n();
 const config = useRuntimeConfig();
 
@@ -102,13 +102,13 @@ const config = useRuntimeConfig();
 let shineTimer: NodeJS.Timeout;
 onMounted(() => {
   let shineIndex = 2;
-  shineContainerRef.value?.classList.remove(`is-shine-1`);
-  shineContainerRef.value?.classList.add(`is-shine-${shineIndex}`);
+  $shineContainer.value?.classList.remove(`is-shine-1`);
+  $shineContainer.value?.classList.add(`is-shine-${shineIndex}`);
   shineTimer = setInterval(() => {
-    if (!shineContainerRef.value) return;
-    shineContainerRef.value.classList.remove(`is-shine-${shineIndex}`);
+    if (!$shineContainer.value) return;
+    $shineContainer.value.classList.remove(`is-shine-${shineIndex}`);
     shineIndex = shineIndex === 4 ? 1 : shineIndex + 1;
-    shineContainerRef.value.classList.add(`is-shine-${shineIndex}`);
+    $shineContainer.value.classList.add(`is-shine-${shineIndex}`);
   }, 2200);
 });
 

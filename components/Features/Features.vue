@@ -10,7 +10,7 @@
     </div>
     <div :class="features.tile">
       <FeatureTile
-        ref="$accountsFeatureTile"
+        ref="accounts-feature-tile"
         :headline="t('features.multipleAccounts.headline')"
         :description="t('features.multipleAccounts.description')">
         <template #graphic><AccountCardsGraphic /></template>
@@ -30,7 +30,7 @@
     </div>
   </div>
   <video
-    ref="$shapeSphere"
+    ref="shape-sphere"
     :class="[features.shapeVideo, features.sphere]"
     :style="{
       display: shapeSpherePosition ? 'block' : 'none',
@@ -55,11 +55,11 @@ import AppOverviewGraphic from '~/components/AppOverviewGraphic/AppOverviewGraph
 import AccountCardsGraphic from '~/components/AccountCardsGraphic/AccountCardsGraphic.vue';
 import StartStopGraphic from '~/components/StartStopGraphic/StartStopGraphic.vue';
 import ManualSubmitGraphic from '~/components/ManualSubmitGraphic/ManualSubmitGraphic.vue';
-import { onMounted, onUnmounted, ref } from 'vue';
+import { onMounted, onUnmounted, ref, useTemplateRef } from 'vue';
 import { useI18n } from '#imports';
 
-const $accountsFeatureTile = ref<InstanceType<typeof FeatureTile>>();
-const $shapeSphere = ref<HTMLVideoElement>();
+const $accountsFeatureTile = useTemplateRef('accounts-feature-tile');
+const $shapeSphere = useTemplateRef('shape-sphere');
 const shapeSpherePosition = ref<{ top: string; left: string } | null>(null);
 const { t } = useI18n();
 

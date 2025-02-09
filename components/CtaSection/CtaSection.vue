@@ -1,7 +1,7 @@
 <template>
   <div id="download" :class="ctaSection.wrapper">
     <div :class="ctaSection.container">
-      <h2 ref="headlineRef" class="headline-l headline-gradient" :data-lines="headlineLines?.toString() ?? undefined">
+      <h2 ref="headline" class="headline-l headline-gradient" :data-lines="headlineLines?.toString() ?? undefined">
         {{ t('ctaSection.headline') }}
       </h2>
       <p :class="ctaSection.description">
@@ -29,12 +29,12 @@
 <script setup lang="ts">
 import { useI18n, useRuntimeConfig } from '#imports';
 import { PhAppStoreLogo } from '@phosphor-icons/vue';
-import { ref } from 'vue';
+import { useTemplateRef } from 'vue';
 import Button from '~/components/Button/Button.vue';
 import { useTextLines } from '~/composables/useTextLines';
 
-const headlineRef = ref<HTMLElement>();
-const { headlineLines } = useTextLines(headlineRef);
+const $headline = useTemplateRef('headline');
+const { headlineLines } = useTextLines($headline);
 const { t } = useI18n();
 const config = useRuntimeConfig();
 </script>

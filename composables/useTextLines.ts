@@ -1,7 +1,7 @@
 import { useResizeObserver, useThrottleFn } from '@vueuse/core';
-import { ref, watch, type Ref } from 'vue';
+import { ref, watch, type ShallowRef } from 'vue';
 
-export function useTextLines(headlineRef: Ref<HTMLElement | undefined, HTMLElement | undefined>) {
+export function useTextLines(headlineRef: Readonly<ShallowRef<HTMLHeadingElement | null>>) {
   const headlineLines = ref<number | null>(null);
 
   function updateLines() {

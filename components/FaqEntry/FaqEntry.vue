@@ -1,5 +1,5 @@
 <template>
-  <details ref="$container" :class="faqEntry.container" :open="elementisOpen" @click="handleClick">
+  <details ref="container" :class="faqEntry.container" :open="elementisOpen" @click="handleClick">
     <summary class="headline-s" :class="[faqEntry.question, { [faqEntry.isActive]: isOpen }]">
       {{ question }}
       <svg
@@ -26,14 +26,14 @@
           :style="{ transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }" />
       </svg>
     </summary>
-    <div ref="$answer" :class="faqEntry.answer" @transitionend="handleTransitionEnd">
+    <div ref="answer" :class="faqEntry.answer" @transitionend="handleTransitionEnd">
       <div :class="faqEntry.answerContainer" v-html="answer"></div>
     </div>
   </details>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, useTemplateRef } from 'vue';
 
 export interface FaqEntryProps {
   question: string;
@@ -42,8 +42,8 @@ export interface FaqEntryProps {
 
 defineProps<FaqEntryProps>();
 
-const $container = ref<HTMLDetailsElement>();
-const $answer = ref<HTMLDivElement>();
+const $container = useTemplateRef('container');
+const $answer = useTemplateRef('answer');
 const isOpen = ref(false);
 const elementisOpen = ref(false);
 const isTransitioning = ref(false);

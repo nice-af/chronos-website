@@ -1,5 +1,5 @@
 <template>
-  <div ref="$container" :class="configurator.container">
+  <div ref="container" :class="configurator.container">
     <!-- Dark mode -->
     <div :class="configurator.screenshotsContainer">
       <div :class="configurator.themeContainer" :style="{ opacity: isLight ? 0 : 1 }">
@@ -91,7 +91,7 @@
     <div class="dot is-bottom-right"></div>
   </div>
   <video
-    ref="$shapeCylinder"
+    ref="shape-cylinder"
     :class="configurator.shapeVideo"
     :style="{
       display: shapeCylinderPosition ? 'block' : 'none',
@@ -112,7 +112,7 @@
 
 <script setup lang="ts">
 import { useI18n } from '#imports';
-import { computed, inject, onMounted, onUnmounted, ref, watch } from 'vue';
+import { computed, inject, onMounted, onUnmounted, ref, useTemplateRef, watch } from 'vue';
 import {
   appSidebarLayoutProvider,
   appThemeProvider,
@@ -122,8 +122,8 @@ import {
 import CardsSelection from '~/components/CardsSelection/CardsSelection.vue';
 import { sidebarLayoutOptions, themeOptions, type ThemeOptionsValue } from './configuratorOptions';
 
-const $container = ref<HTMLElement>();
-const $shapeCylinder = ref<HTMLVideoElement>();
+const $container = useTemplateRef('container');
+const $shapeCylinder = useTemplateRef('shape-cylinder');
 const shapeCylinderPosition = ref<{ top: string; left: string } | null>(null);
 const appThemeValue = ref<ThemeOptionsValue>('system');
 const sidebarLayoutValue = ref<SidebarLayout>('normal');
