@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" :class="configurator.container">
+  <section ref="container" :class="configurator.container">
     <!-- Dark mode -->
     <div :class="configurator.screenshotsContainer">
       <div :class="configurator.themeContainer" :style="{ opacity: isLight ? 0 : 1 }">
@@ -89,7 +89,7 @@
     </div>
     <div class="dot is-bottom-left"></div>
     <div class="dot is-bottom-right"></div>
-  </div>
+  </section>
   <video
     ref="shape-cylinder"
     :class="configurator.shapeVideo"

@@ -1,5 +1,5 @@
 <template>
-  <div id="download" :class="faq.wrapper">
+  <section :class="faq.wrapper">
     <div :class="faq.headlineContainer">
       <h2 ref="headline" class="headline-l headline-gradient" :data-lines="headlineLines?.toString() ?? undefined">
         {{ headline }}
@@ -24,7 +24,7 @@
       <div class="dot is-bottom-left"></div>
       <div class="dot is-bottom-right"></div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

@@ -1,5 +1,5 @@
 <template>
-  <div id="features" :class="features.container">
+  <section id="features" :class="features.container">
     <div :class="[features.tile, features.tileLarge]">
       <FeatureTile
         isLarge
@@ -30,7 +30,7 @@
         <template #graphic><ManualSubmitGraphic /></template>
       </FeatureTile>
     </div>
-  </div>
+  </section>
   <video
     ref="shape-sphere"
     :class="[features.shapeVideo, features.sphere]"

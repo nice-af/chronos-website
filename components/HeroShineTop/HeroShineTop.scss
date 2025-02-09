@@ -1,10 +1,17 @@
+.section {
+  position: relative;
+}
+
 .shineContainer {
   position: absolute;
+  top: 0;
+  left: 50%;
   z-index: 9999;
   width: 100%;
   max-width: 1114px;
   aspect-ratio: 1114/634;
   pointer-events: none;
+  transform: translateX(-50%);
 
   @for $i from 1 through 4 {
     &:global.is-shine-#{$i} {

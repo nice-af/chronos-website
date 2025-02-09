@@ -1,5 +1,5 @@
 <template>
-  <div id="download" :class="ctaSection.wrapper">
+  <section id="download" :class="ctaSection.wrapper">
     <div :class="ctaSection.container">
       <h2
         ref="headline"
@@ -27,7 +27,7 @@
       height="380"
       alt=""
       role="presentation" />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
