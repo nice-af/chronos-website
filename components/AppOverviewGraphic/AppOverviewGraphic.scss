@@ -5,9 +5,8 @@
   aspect-ratio: 1.4;
   overflow: hidden;
   @media (min-width: 768px) {
-    flex: 0 1 462px;
-    align-self: stretch;
-    aspect-ratio: none;
+    height: calc(100% + 63px * 2);
+    aspect-ratio: unset;
     margin-top: -63px;
     margin-bottom: -63px;
   }

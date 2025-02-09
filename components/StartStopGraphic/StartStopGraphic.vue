@@ -4,8 +4,7 @@
       startStopGraphic.container,
       { [startStopGraphic.timerIsActive]: timerIsActive, [startStopGraphic.isClicking]: isClicking },
     ]"
-    width="332"
-    height="108"
+    viewBox="0 0 332 108"
     fill="none"
     @mouseenter="handleMouseEnter">
     <rect x="-93.5" y="14.5" width="366" height="79" rx="9.5" fill="var(--app-surface)" stroke="var(--app-border)" />

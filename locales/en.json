@@ -108,7 +108,7 @@
     "description": "Use the Chronos app to manage your daily Jira worklogs in an easy and intuitiv way. Stop the time waste of time tracking.",
     "headlineAfterIcon": "for Jira",
     "headlineBeforeIcon": "Easy and fast time tracking",
-    "pillLabel": "Check the release changelog"
+    "pillLabel": "Release changelog"
   },
   "screenshots": {
     "overviewDarkAlt": "A screenshot of the Chronos app and dark mode",

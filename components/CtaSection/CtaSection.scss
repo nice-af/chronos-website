@@ -5,15 +5,25 @@
 .container {
   position: relative;
   z-index: 2;
-  padding: 130px 0;
+  padding: 72px 0;
   text-align: center;
+  @media (min-width: 768px) {
+    padding: 130px 0;
+  }
+}
+
+.headline {
+  padding: 0 16px;
 }
 
 .description {
   max-width: 670px;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 18px;
   color: var(--text-secondary);
+  @media (min-width: 576px) {
+    font-size: 20px;
+  }
 }
 
 .buttonsContainer {
@@ -37,6 +47,7 @@
   z-index: 1;
   width: 100%;
   max-width: 850px;
+  height: auto;
   aspect-ratio: 850/380;
   transform: translateX(-50%);
 }

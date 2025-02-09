@@ -39,7 +39,11 @@
         <template #icon><PhArrowRight size="16" weight="bold" /></template>
       </Button>
     </p>
-    <h1 ref="headline" class="headline-xl headline-gradient" :data-lines="headlineLines?.toString() ?? undefined">
+    <h1
+      ref="headline"
+      :class="heroShineTop.headline"
+      class="headline-xl headline-gradient"
+      :data-lines="headlineLines?.toString() ?? undefined">
       {{ t('heroShineTop.headlineBeforeIcon') }}
       <img
         :class="heroShineTop.icon"

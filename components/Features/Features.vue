@@ -12,7 +12,8 @@
       <FeatureTile
         ref="accounts-feature-tile"
         :headline="t('features.multipleAccounts.headline')"
-        :description="t('features.multipleAccounts.description')">
+        :description="t('features.multipleAccounts.description')"
+        isReversed>
         <template #graphic><AccountCardsGraphic /></template>
       </FeatureTile>
     </div>
@@ -24,7 +25,8 @@
     <div :class="features.tile">
       <FeatureTile
         :headline="t('features.manualSubmit.headline')"
-        :description="t('features.manualSubmit.description')">
+        :description="t('features.manualSubmit.description')"
+        isReversed>
         <template #graphic><ManualSubmitGraphic /></template>
       </FeatureTile>
     </div>
@@ -73,9 +75,10 @@ function positionShape() {
     return;
   }
   const accountsFeatureTileRect = $accountsFeatureTile.value.$el.getBoundingClientRect();
+  const isMobilePosition = window.innerWidth < 660;
   shapeSpherePosition.value = {
-    top: `${accountsFeatureTileRect.bottom + window.scrollY - 40}px`,
-    left: `${accountsFeatureTileRect.left + window.scrollX - 50}px`,
+    top: `${accountsFeatureTileRect.bottom + window.scrollY - (isMobilePosition ? 32 : 40)}px`,
+    left: `${accountsFeatureTileRect.left + window.scrollX - (isMobilePosition ? 28 : 50)}px`,
   };
 }
 

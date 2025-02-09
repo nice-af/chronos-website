@@ -1,7 +1,11 @@
 <template>
   <div id="download" :class="ctaSection.wrapper">
     <div :class="ctaSection.container">
-      <h2 ref="headline" class="headline-l headline-gradient" :data-lines="headlineLines?.toString() ?? undefined">
+      <h2
+        ref="headline"
+        :class="ctaSection.headline"
+        class="headline-l headline-gradient"
+        :data-lines="headlineLines?.toString() ?? undefined">
         {{ t('ctaSection.headline') }}
       </h2>
       <p :class="ctaSection.description">

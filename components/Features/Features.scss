@@ -6,9 +6,6 @@
   justify-content: stretch;
   background-color: var(--line);
   border: 1px solid var(--line);
-  @media (min-width: 576px) {
-    grid-template-columns: 1fr 1fr;
-  }
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -23,14 +20,20 @@
 }
 
 .tileLarge {
-  grid-column: span 3;
+  @media (min-width: 992px) {
+    grid-column: span 3;
+  }
 }
 
 .shapeVideo {
   position: absolute;
   z-index: 3;
-  width: 86px;
-  height: 62px;
+  width: 75px;
+  height: 54px;
   pointer-events: none;
   mix-blend-mode: lighten;
+  @media (min-width: 660px) {
+    width: 86px;
+    height: 62px;
+  }
 }

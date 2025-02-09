@@ -4,12 +4,15 @@
   gap: 8px;
   align-items: center;
   min-height: 46px;
-  padding: 8px 24px;
+  padding: 6px 22px;
   font-weight: 600;
   letter-spacing: 0.02em;
   border-radius: 999px;
   opacity: 1 !important;
   transition: background 0.2s ease;
+  @media (min-width: 576px) {
+    padding: 8px 24px;
+  }
 
   > svg,
   > img {

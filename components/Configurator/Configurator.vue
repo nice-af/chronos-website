@@ -72,7 +72,7 @@
           :alt="t('screenshots.overviewLightAlt')" />
       </div>
     </div>
-    <div>
+    <div :class="configurator.textContainer">
       <h2 :class="configurator.headline">{{ t('configurator.headline') }}</h2>
       <p :class="configurator.description">{{ t('configurator.description') }}</p>
       <div :class="configurator.cardsContainer">
@@ -170,8 +170,9 @@ function positionShape() {
   }
 
   const containerRect = $container.value.getBoundingClientRect();
+  const isMobilePosition = window.innerWidth < 660;
   shapeCylinderPosition.value = {
-    top: `${containerRect.bottom + window.scrollY - 94}px`,
+    top: `${containerRect.bottom + window.scrollY - (isMobilePosition ? 52 : 94)}px`,
     left: `${containerRect.right + window.scrollX - 40}px`,
   };
 }

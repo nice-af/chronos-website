@@ -5,7 +5,6 @@
   max-width: 1114px;
   aspect-ratio: 1114/634;
   pointer-events: none;
-  transform: translateX(4%);
 
   @for $i from 1 through 4 {
     &:global.is-shine-#{$i} {
@@ -29,15 +28,24 @@
 
 .container {
   position: relative;
-  padding: 130px 0;
+  padding: 72px 0 92px;
   text-align: center;
+  @media (min-width: 768px) {
+    padding: 130px 0;
+  }
 }
 
 .pillContainer {
-  margin-top: 0;
+  margin: 0 0 16px;
+}
+
+.headline {
+  padding: 0 16px;
 }
 
 .icon {
+  width: 0.89130435em;
+  height: 0.89130435em;
   margin: 0.14em 0.05em 0;
   vertical-align: top;
 }
@@ -45,8 +53,11 @@
 .description {
   max-width: 670px;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 18px;
   color: var(--text-secondary);
+  @media (min-width: 576px) {
+    font-size: 20px;
+  }
 }
 
 .buttonsContainer {
@@ -55,31 +66,102 @@
   gap: 16px;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 32px;
   margin-bottom: 0;
+  @media (min-width: 576px) {
+    margin-top: 40px;
+  }
 }
 
 .shapeVideo {
   position: absolute;
   left: 50%;
   z-index: 0;
-  width: 105px;
-  height: 105px;
+  width: 72px;
+  height: 72px;
   pointer-events: none;
   mix-blend-mode: lighten;
+  @media (min-width: 576px) {
+    width: 80px;
+    height: 80px;
+  }
+  @media (min-width: 768px) {
+    width: 96px;
+    height: 96px;
+  }
+  @media (min-width: 840px) {
+    width: 105px;
+    height: 105px;
+  }
 }
 
 .dodecahedron {
-  bottom: 72px;
-  transform: translateX(-440px);
+  bottom: 32px;
+  transform: translateX(-180px);
+  @media (min-width: 360px) {
+    bottom: 12px;
+    transform: translateX(-230px);
+  }
+  @media (min-width: 430px) {
+    bottom: 18px;
+    transform: translateX(-260px);
+  }
+  @media (min-width: 490px) {
+    bottom: 26px;
+    transform: translateX(-280px);
+  }
+  @media (min-width: 576px) {
+    bottom: 44px;
+    transform: translateX(-300px);
+  }
+  @media (min-width: 640px) {
+    bottom: 64px;
+    transform: translateX(-360px);
+  }
+  @media (min-width: 768px) {
+    bottom: 72px;
+    transform: translateX(-400px);
+  }
+  @media (min-width: 840px) {
+    transform: translateX(-440px);
+  }
   @media (min-width: 1024px) {
     transform: translateX(-480px);
   }
 }
 
 .cone {
-  bottom: 178px;
-  transform: translateX(360px);
+  top: 28px;
+  transform: translateX(120px);
+  @media (min-width: 360px) {
+    top: 32px;
+    transform: translateX(140px);
+  }
+  @media (min-width: 430px) {
+    top: 38px;
+    transform: translateX(170px);
+  }
+  @media (min-width: 490px) {
+    top: 46px;
+    transform: translateX(210px);
+  }
+  @media (min-width: 576px) {
+    top: 76px;
+    transform: translateX(250px);
+  }
+  @media (min-width: 640px) {
+    top: 110px;
+    transform: translateX(290px);
+  }
+  @media (min-width: 768px) {
+    top: auto;
+    bottom: 168px;
+    transform: translateX(320px);
+  }
+  @media (min-width: 840px) {
+    bottom: 178px;
+    transform: translateX(360px);
+  }
   @media (min-width: 1024px) {
     bottom: 198px;
     transform: translateX(440px);
