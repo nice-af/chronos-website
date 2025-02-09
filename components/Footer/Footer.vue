@@ -81,7 +81,7 @@
         <a href="https://github.com/nice-af" :class="footer.madeByText" target="_blank" rel="noopener noreferrer">
           <img :class="footer.niceAFLogo" src="/assets/images/nice-af-pixel-logo.svg" alt="Nice AF logo" />
           <span :class="footer.niceAF">Nice A.F.</span>
-          <span :class="footer.names">Adrian Fahrbach & Florian Merz</span>
+          <span :class="footer.names">Adrian & Florian</span>
         </a>
       </p>
       <div class="dot is-top-left"></div>
