@@ -1,28 +1,31 @@
 @use '~/assets/styles/mixins/typography';
 
 .container {
-  padding-block: 48px;
-  overflow: hidden;
+  position: relative;
+  padding-top: 48px;
   text-align: center;
   border: 1px solid var(--line);
   border-top: none;
   @media (min-width: 576px) {
-    padding-block: 64px;
-  }
-  @media (min-width: 1280px) {
-    padding-block: 64px;
+    padding-top: 64px;
   }
 }
 
-.headline {
+.textContainer {
   padding-inline: 24px;
-  margin-top: 0 !important;
-  @include typography.headline-m;
   @media (min-width: 576px) {
     padding-inline: 32px;
   }
   @media (min-width: 1280px) {
     padding-inline: 64px;
+  }
+}
+
+.headline {
+  margin-top: 0 !important;
+  @include typography.headline-s;
+  @media (min-width: 768px) {
+    @include typography.headline-m;
   }
 }
 
@@ -34,18 +37,24 @@
 }
 
 .rowsContainer {
-  margin-top: 32px;
+  padding: 32px 0;
+  overflow: hidden;
 }
 
 .rowContainer {
   position: relative;
   left: 0;
   width: 100%;
-  height: 28px;
-  margin-bottom: 20px;
+  height: 20px;
+  margin-bottom: 16px;
   animation-play-state: running;
+  @media (min-width: 768px) {
+    height: 28px;
+    margin-bottom: 20px;
+  }
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     .row {
       animation-play-state: paused;
     }
@@ -93,9 +102,9 @@
 }
 
 .entry {
-  @include typography.headline-m;
+  @include typography.headline-s;
   padding: 8px;
-  margin: 0 24px 0 0;
+  margin: -8px 16px -8px 0;
   line-height: 1;
   color: var(--text-tertiary);
   white-space: nowrap;
@@ -103,9 +112,45 @@
   background: transparent;
   border: none;
   transition: color 0.25s ease;
+  @media (min-width: 768px) {
+    @include typography.headline-m;
+    margin-right: 24px;
+  }
 
   &:hover,
-  &:focus {
+  &:focus-visible,
+  &.isActive {
     color: var(--text-secondary);
   }
+}
+
+.infoPopup {
+  position: fixed;
+  width: calc(100% - 32px);
+  max-width: 300px;
+  padding: 8px 16px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  pointer-events: none;
+  background: var(--popup-background);
+  border-radius: 4px;
+  opacity: 0;
+  transition:
+    opacity 0.35s ease,
+    margin-top 0.35s ease;
+
+  &.isActive {
+    margin-top: -8px;
+    opacity: 1;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 100%;
+  width: 16px;
+  height: 8px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background: var(--popup-background);
 }
