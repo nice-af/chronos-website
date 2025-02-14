@@ -1,0 +1,111 @@
+@use '~/assets/styles/mixins/typography';
+
+.container {
+  padding-block: 48px;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-top: none;
+  @media (min-width: 576px) {
+    padding-block: 64px;
+  }
+  @media (min-width: 1280px) {
+    padding-block: 64px;
+  }
+}
+
+.headline {
+  padding-inline: 24px;
+  margin-top: 0 !important;
+  @include typography.headline-m;
+  @media (min-width: 576px) {
+    padding-inline: 32px;
+  }
+  @media (min-width: 1280px) {
+    padding-inline: 64px;
+  }
+}
+
+.description {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.rowsContainer {
+  margin-top: 32px;
+}
+
+.rowContainer {
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 28px;
+  margin-bottom: 20px;
+  animation-play-state: running;
+
+  &:hover {
+    .row {
+      animation-play-state: paused;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .runsLeft {
+    animation: runs-left 0s linear infinite;
+  }
+
+  .runsRight {
+    animation: runs-right 0s linear infinite;
+  }
+}
+
+@keyframes runs-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.3333%);
+  }
+}
+
+@keyframes runs-right {
+  0% {
+    transform: translateX(-33.3333%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.entry {
+  @include typography.headline-m;
+  padding: 8px;
+  margin: 0 24px 0 0;
+  line-height: 1;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: color 0.25s ease;
+
+  &:hover,
+  &:focus {
+    color: var(--text-secondary);
+  }
+}

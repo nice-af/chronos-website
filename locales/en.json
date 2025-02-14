@@ -60,6 +60,44 @@
       }
     }
   },
+  "featureCarousel": {
+    "description": "Velit praesent vulputate quam hac efficitur metus diam phasellus, eros sed est sollicitudin malesuada mauris condimentum.",
+    "entries": {
+      "fullscreenMode": {
+        "infoPopup": "Our app is designed to be compact, but if you need more space you can go fullscreen and enjoy a productive layout.",
+        "label": "Fullscreen mode"
+      },
+      "germanTranslation": {
+        "infoPopup": "We got full German translation support.",
+        "label": "German translation"
+      },
+      "menubarWidget": {
+        "infoPopup": "Start and stop your timers directly from the menubar.",
+        "label": "Menubar widget"
+      },
+      "reminderNotification": {
+        "infoPopup": "Busy day at work? We can send you a reminder notification so you don't forget to track your time.",
+        "label": "Reminder Notification"
+      },
+      "rightClickContextMenu": {
+        "infoPopup": "You can skip our beautiful UI and use the right click context menu to clean up your worklogs.",
+        "label": "Right click context menu"
+      },
+      "shortcuts": {
+        "infoPopup": "We got a bunch of shortcuts to make your life easier.",
+        "label": "Shortcuts"
+      },
+      "smartSearch": {
+        "infoPopup": "Our smart search is optimized to easily find recent and current issues that you are working on.",
+        "label": "Smart search"
+      },
+      "workspaceLogos": {
+        "infoPopup": "Lots of Jira workspaces don't setup their workspace logo that is available in the Jira API. We got you covered by providing the header logo aswell.",
+        "label": "Workspace logos"
+      }
+    },
+    "headline": "...and some more nice to haves"
+  },
   "features": {
     "appOverview": {
       "description": "Eros accumsan tempus eleifend purus fringilla elit turpis nascetur neque fermentum nulla fames malesuada, pharetra mauris curabitur dis hendrerit class cras primis amet quisque morbi.",
