@@ -82,7 +82,6 @@
 
 .shapeVideo {
   position: absolute;
-  left: 50%;
   z-index: 0;
   width: 72px;
   height: 72px;
@@ -104,29 +103,26 @@
 
 .dodecahedron {
   bottom: 32px;
-  transform: translateX(-180px);
+  left: -43px;
   @media (min-width: 360px) {
-    bottom: 12px;
-    transform: translateX(-230px);
+    bottom: 16px;
   }
   @media (min-width: 430px) {
     bottom: 18px;
-    transform: translateX(-260px);
   }
   @media (min-width: 490px) {
     bottom: 26px;
-    transform: translateX(-280px);
   }
   @media (min-width: 576px) {
     bottom: 44px;
-    transform: translateX(-300px);
+    left: -48px;
   }
   @media (min-width: 640px) {
     bottom: 64px;
-    transform: translateX(-360px);
   }
   @media (min-width: 768px) {
     bottom: 72px;
+    left: 50%;
     transform: translateX(-400px);
   }
   @media (min-width: 840px) {
@@ -139,30 +135,28 @@
 
 .cone {
   top: 28px;
-  transform: translateX(120px);
+  right: -32px;
   @media (min-width: 360px) {
     top: 32px;
-    transform: translateX(140px);
   }
   @media (min-width: 430px) {
     top: 38px;
-    transform: translateX(170px);
   }
   @media (min-width: 490px) {
     top: 46px;
-    transform: translateX(210px);
   }
   @media (min-width: 576px) {
     top: 76px;
-    transform: translateX(250px);
+    right: -52px;
   }
   @media (min-width: 640px) {
     top: 110px;
-    transform: translateX(290px);
   }
   @media (min-width: 768px) {
     top: auto;
+    right: auto;
     bottom: 168px;
+    left: 50%;
     transform: translateX(320px);
   }
   @media (min-width: 840px) {

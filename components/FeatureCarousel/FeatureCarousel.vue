@@ -60,11 +60,11 @@ import { detectOverflow, arrow as floatingArrow, useFloating, type Middleware } 
 import { useDebounceFn } from '@vueuse/core';
 
 const { t } = useI18n();
-const section = useTemplateRef('section');
-const rowsEls = useTemplateRef<HTMLDivElement[]>('row');
-const buttonEls = useTemplateRef<HTMLButtonElement[]>('button');
-const popupEls = useTemplateRef<HTMLDivElement[]>('popup');
-const arrowEls = useTemplateRef<HTMLDivElement[]>('arrow');
+const $section = useTemplateRef('section');
+const $rows = useTemplateRef<HTMLDivElement[]>('row');
+const $buttons = useTemplateRef<HTMLButtonElement[]>('button');
+const $popups = useTemplateRef<HTMLDivElement[]>('popup');
+const $arrows = useTemplateRef<HTMLDivElement[]>('arrow');
 const animationDurations = ref<number[]>([]);
 
 // We use two separate references and floating elements to fade out the inactive popup when
@@ -74,18 +74,18 @@ const activePopupInstance = ref<1 | 2>(1);
 const activeEntryIds = ref<[string, string] | null>(null);
 const activePopupId1 = ref<string | null>(null);
 const activePopupId2 = ref<string | null>(null);
-const reference1 = ref<HTMLElement | null>(null);
-const reference2 = ref<HTMLElement | null>(null);
-const floating1 = ref<HTMLElement | null>(null);
-const floating2 = ref<HTMLElement | null>(null);
-const arrow1 = ref<HTMLElement | null>(null);
-const arrow2 = ref<HTMLElement | null>(null);
+const $reference1 = ref<HTMLElement | null>(null);
+const $reference2 = ref<HTMLElement | null>(null);
+const $floating1 = ref<HTMLElement | null>(null);
+const $floating2 = ref<HTMLElement | null>(null);
+const $arrow1 = ref<HTMLElement | null>(null);
+const $arrow2 = ref<HTMLElement | null>(null);
 
 const preventOverflowMiddleware: Middleware = {
   name: 'middleware',
   async fn(state) {
     const overflow = await detectOverflow(state, {
-      rootBoundary: section.value?.getBoundingClientRect(),
+      rootBoundary: $section.value?.getBoundingClientRect(),
       padding: 16,
     });
     if (overflow.left > 0) {
@@ -97,13 +97,13 @@ const preventOverflowMiddleware: Middleware = {
   },
 };
 
-const { floatingStyles: floatingStyles1, middlewareData: middlewareData1 } = useFloating(reference1, floating1, {
+const { floatingStyles: floatingStyles1, middlewareData: middlewareData1 } = useFloating($reference1, $floating1, {
   placement: 'top',
-  middleware: [preventOverflowMiddleware, floatingArrow({ element: arrow1, padding: 12 })],
+  middleware: [preventOverflowMiddleware, floatingArrow({ element: $arrow1, padding: 12 })],
 });
-const { floatingStyles: floatingStyles2, middlewareData: middlewareData2 } = useFloating(reference2, floating2, {
+const { floatingStyles: floatingStyles2, middlewareData: middlewareData2 } = useFloating($reference2, $floating2, {
   placement: 'top',
-  middleware: [preventOverflowMiddleware, floatingArrow({ element: arrow2, padding: 12 })],
+  middleware: [preventOverflowMiddleware, floatingArrow({ element: $arrow2, padding: 12 })],
 });
 
 interface Entry {
@@ -153,9 +153,9 @@ const rowsData: Entry[][] = [
 function handleEntryActivation(i: number, j: number) {
   const buttonId = `${i}-${j}`; // We got multiple instances of the "same" button
   const popupId = `${i}-${j % rowsData[i].length}`; // We only got one instance of the popup
-  const buttonEl = buttonEls.value?.find(el => el.dataset.id === buttonId);
-  const popupEl = popupEls.value?.find(el => el.dataset.id === popupId);
-  const arrowEl = arrowEls.value?.find(el => el.dataset.id === popupId);
+  const buttonEl = $buttons.value?.find(el => el.dataset.id === buttonId);
+  const popupEl = $popups.value?.find(el => el.dataset.id === popupId);
+  const arrowEl = $arrows.value?.find(el => el.dataset.id === popupId);
 
   if (!buttonEl || !popupEl || !arrowEl || activeEntryIds.value?.[0] === buttonId) {
     // An element is missing or the popup is already active
@@ -171,15 +171,15 @@ function handleEntryActivation(i: number, j: number) {
   if (activePopupInstance.value === 1) {
     activePopupId1.value = popupId;
     activePopupInstance.value = 2;
-    reference1.value = buttonEl;
-    floating1.value = popupEl;
-    arrow1.value = arrowEl;
+    $reference1.value = buttonEl;
+    $floating1.value = popupEl;
+    $arrow1.value = arrowEl;
   } else {
     activePopupId2.value = popupId;
     activePopupInstance.value = 1;
-    reference2.value = buttonEl;
-    floating2.value = popupEl;
-    arrow2.value = arrowEl;
+    $reference2.value = buttonEl;
+    $floating2.value = popupEl;
+    $arrow2.value = arrowEl;
   }
 }
 const debouncedHandleEntryActivation = useDebounceFn(handleEntryActivation, 100);
@@ -193,9 +193,9 @@ function handleEntryDeactivation() {
  * This is used to make all rows run at the same speed.
  */
 function updateAnimationDurations() {
-  animationDurations.value = rowsEls.value?.map(el => el.scrollWidth / 100) ?? [];
+  animationDurations.value = $rows.value?.map(el => el.scrollWidth / 100) ?? [];
 }
-watch(rowsEls, updateAnimationDurations);
+watch($rows, updateAnimationDurations);
 const debounceUpdateAnimationDurations = useDebounceFn(updateAnimationDurations, 100);
 
 onMounted(() => {

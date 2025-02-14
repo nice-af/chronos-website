@@ -111,7 +111,9 @@ onMounted(() => {
   $shineContainer.value?.classList.remove(`is-shine-1`);
   $shineContainer.value?.classList.add(`is-shine-${shineIndex}`);
   shineTimer = setInterval(() => {
-    if (!$shineContainer.value) return;
+    if (!$shineContainer.value) {
+      return;
+    }
     $shineContainer.value.classList.remove(`is-shine-${shineIndex}`);
     shineIndex = shineIndex === 4 ? 1 : shineIndex + 1;
     $shineContainer.value.classList.add(`is-shine-${shineIndex}`);
