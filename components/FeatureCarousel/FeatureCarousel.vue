@@ -15,7 +15,7 @@
             ref="button"
             :key="entry.label + j"
             :tabindex="j >= rowsData[i].length ? -1 : 0"
-            :class="[featureCarousel.entry, { [featureCarousel.isActive]: activeEntryIds?.[1] === `${i}-${j}` }]"
+            :class="[featureCarousel.entry, { [featureCarousel.isActive]: activeEntryIds?.[0] === `${i}-${j}` }]"
             :data-id="`${i}-${j}`"
             @click="e => (e.target as HTMLElement).blur()"
             @touchstart="() => debouncedHandleEntryActivation(i, j)"
@@ -97,11 +97,19 @@ const preventOverflowMiddleware: Middleware = {
   },
 };
 
-const { floatingStyles: floatingStyles1, middlewareData: middlewareData1 } = useFloating($reference1, $floating1, {
+const {
+  floatingStyles: floatingStyles1,
+  middlewareData: middlewareData1,
+  update: update1,
+} = useFloating($reference1, $floating1, {
   placement: 'top',
   middleware: [preventOverflowMiddleware, floatingArrow({ element: $arrow1, padding: 12 })],
 });
-const { floatingStyles: floatingStyles2, middlewareData: middlewareData2 } = useFloating($reference2, $floating2, {
+const {
+  floatingStyles: floatingStyles2,
+  middlewareData: middlewareData2,
+  update: update2,
+} = useFloating($reference2, $floating2, {
   placement: 'top',
   middleware: [preventOverflowMiddleware, floatingArrow({ element: $arrow2, padding: 12 })],
 });
@@ -162,6 +170,8 @@ function handleEntryActivation(i: number, j: number) {
     return;
   }
   activeEntryIds.value = [buttonId, popupId];
+  update1();
+  update2();
 
   if (activePopupId1.value === popupId || activePopupId2.value === popupId) {
     // The popup already has a floating ui hook assigned
