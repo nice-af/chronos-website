@@ -173,18 +173,21 @@ function handleEntryActivation(i: number, j: number) {
   update1();
   update2();
 
-  if (activePopupId1.value === popupId || activePopupId2.value === popupId) {
-    // The popup already has a floating ui hook assigned
-    return;
-  }
-
   if (activePopupInstance.value === 1) {
+    if (activePopupId2.value === popupId) {
+      // This popup is already active on the second instance
+      activePopupId2.value = null;
+    }
     activePopupId1.value = popupId;
     activePopupInstance.value = 2;
     $reference1.value = buttonEl;
     $floating1.value = popupEl;
     $arrow1.value = arrowEl;
   } else {
+    if (activePopupId1.value === popupId) {
+      // This popup is already active on the first instance
+      activePopupId1.value = null;
+    }
     activePopupId2.value = popupId;
     activePopupInstance.value = 1;
     $reference2.value = buttonEl;
