@@ -128,7 +128,6 @@
     "iconForX": "Icon for {x}",
     "iconForXInDarkMode": "Icon for {x} in dark mode",
     "iconForXInLightMode": "Icon for {x} in light mode",
-    "language": "Language",
     "legalInformation": "Legal information",
     "legalNotice": "Legal notice",
     "linkedInAdrian": "LinkedIn Adrian",
@@ -147,6 +146,12 @@
     "headlineAfterIcon": "for Jira",
     "headlineBeforeIcon": "Easy and fast time tracking",
     "pillLabel": "Release changelog"
+  },
+  "newsletter": {
+    "description": "Get notified on new Nice A.F. releases!",
+    "headline": "Nice A.F Newsletter Signup",
+    "submitAriaLabel": "Subscribe to the newsletter",
+    "successMessage": "Signup successful! You will receive a confirmation email shortly."
   },
   "screenshots": {
     "overviewDarkAlt": "A screenshot of the Chronos app and dark mode",

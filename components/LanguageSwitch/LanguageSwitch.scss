@@ -18,7 +18,9 @@
   min-height: var(--entry-height);
   padding: 11px 16px;
   appearance: none;
+  cursor: pointer;
   background: transparent;
+  border: none;
 
   &:hover {
     .label {

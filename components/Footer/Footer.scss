@@ -1,5 +1,13 @@
 .container {
   position: relative;
+  display: grid;
+  grid-template-areas:
+    'logo nav nav'
+    'newsletter nav nav'
+    'newsletter copyright language-switch';
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 272px 1fr 272px;
+  gap: 20px;
   width: 100%;
   padding: 32px 40px 20px 30px;
   background: var(--background);
@@ -15,24 +23,23 @@
   }
 }
 
-.topRow {
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
 .logoLink {
   display: block;
+  grid-area: logo;
 
   > img {
     display: block;
   }
 }
 
+.nav {
+  grid-area: nav;
+}
+
 .navContainer {
   display: flex;
   gap: 60px;
+  justify-content: flex-end;
   padding: 0;
   margin: 0;
 }
@@ -57,8 +64,23 @@
   color: var(--text);
 }
 
-.bottomText {
-  margin-top: 70px;
+.newsletterContainer {
+  grid-area: newsletter;
+  align-self: flex-end;
+  justify-self: flex-start;
+}
+
+.languageSwitchContainer {
+  grid-area: language-switch;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.copyright {
+  grid-area: copyright;
+  align-self: flex-end;
+  min-width: 70%;
+  margin: 0;
   font-size: 12px;
   color: var(--text-secondary);
   text-align: center;
