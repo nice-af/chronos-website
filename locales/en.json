@@ -63,6 +63,10 @@
   "featureCarousel": {
     "description": "Velit praesent vulputate quam hac efficitur metus diam phasellus, eros sed est sollicitudin malesuada mauris condimentum.",
     "entries": {
+      "desktopWidget": {
+        "infoPopup": "You can add a widget to your desktop for a quick overview of your worklogs.",
+        "label": "Desktop widget"
+      },
       "fullscreenMode": {
         "infoPopup": "Our app is designed to be compact, but if you need more space you can go fullscreen and enjoy a productive layout.",
         "label": "Fullscreen mode"
@@ -149,6 +153,10 @@
   },
   "newsletter": {
     "description": "Get notified on new Nice A.F. releases!",
+    "errorMessage": {
+      "badRequest": "Something went wrong. Please try again later.",
+      "invalid_parameter": "You are already subscribed to the newsletter."
+    },
     "headline": "Nice A.F Newsletter Signup",
     "submitAriaLabel": "Subscribe to the newsletter",
     "successMessage": "Signup successful! You will receive a confirmation email shortly."

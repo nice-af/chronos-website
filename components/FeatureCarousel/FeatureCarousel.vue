@@ -155,6 +155,10 @@ const rowsData: Entry[][] = [
       label: t('featureCarousel.entries.fullscreenMode.label'),
       infoPopup: t('featureCarousel.entries.fullscreenMode.infoPopup'),
     },
+    {
+      label: t('featureCarousel.entries.desktopWidget.label'),
+      infoPopup: t('featureCarousel.entries.desktopWidget.infoPopup'),
+    },
   ],
 ];
 
