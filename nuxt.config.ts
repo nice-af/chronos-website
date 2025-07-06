@@ -15,6 +15,9 @@ export default defineNuxtConfig({
       SUPPORT_EMAIL: 'mailto:support@chronos-for-jira.com',
       SUPPORT_URL: 'mailto:support@chronos-for-jira.com',
     },
+    BREVO_API_KEY: process.env.BREVO_API_KEY,
+    BREVO_LIST_ID: process.env.BREVO_LIST_ID,
+    BREVO_REDIRECTION_URL: process.env.BREVO_REDIRECTION_URL,
   },
 
   i18n: {

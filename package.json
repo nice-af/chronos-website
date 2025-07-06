@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@floating-ui/vue": "^1.1.6",
+    "@getbrevo/brevo": "^2.2.0",
     "@nuxt/eslint": "^0.7.1",
     "@nuxt/fonts": "^0.10.2",
     "@nuxtjs/i18n": "^9.0.0-rc.2",

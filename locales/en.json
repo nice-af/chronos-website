@@ -155,7 +155,11 @@
     "description": "Get notified on new Nice A.F. releases!",
     "errorMessage": {
       "badRequest": "Something went wrong. Please try again later.",
-      "invalid_parameter": "You are already subscribed to the newsletter."
+      "duplicate_parameter": "You are already subscribed to the newsletter.",
+      "invalid_email": "Please provide a valid email address.",
+      "invalid_parameter": "You are already subscribed to the newsletter.",
+      "missing_parameter": "Please provide a valid email address.",
+      "unauthorized": "Service temporarily unavailable. Please try again later."
     },
     "headline": "Nice A.F Newsletter Signup",
     "submitAriaLabel": "Subscribe to the newsletter",
