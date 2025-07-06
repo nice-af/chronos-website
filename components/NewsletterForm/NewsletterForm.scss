@@ -19,7 +19,7 @@
 }
 
 .input {
-  width: 240px;
+  width: 100%;
   height: 42px;
   padding: 10px 12px;
   font-family: var(--font-family);
@@ -29,6 +29,9 @@
   background: transparent;
   border: 1px solid var(--neutral-600);
   transition: border-color 0.25s ease;
+  @media (min-width: 640px) {
+    width: 240px;
+  }
 
   &:hover {
     border-color: var(--neutral-500);
@@ -41,6 +44,7 @@
 
 .submitButton {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: 42px;

@@ -7,21 +7,6 @@
       <nav :class="footer.nav">
         <ul :class="footer.navContainer">
           <li :class="footer.list">
-            <p :class="footer.listHeadline">{{ t('global.socials') }}</p>
-            <ul>
-              <li>
-                <NuxtLink to="https://www.linkedin.com/in/adrian-fahrbach/">
-                  {{ t('global.linkedInAdrian') }}
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink to="https://www.linkedin.com/in/florian-mrz/">
-                  {{ t('global.linkedInFlorian') }}
-                </NuxtLink>
-              </li>
-            </ul>
-          </li>
-          <li :class="footer.list">
             <p :class="footer.listHeadline">{{ t('global.resources') }}</p>
             <ul>
               <li>
@@ -58,6 +43,21 @@
               </li>
               <li>
                 <NuxtLink :to="localePath('privacy')">{{ t('global.privacyPolicy') }}</NuxtLink>
+              </li>
+            </ul>
+          </li>
+          <li :class="footer.list">
+            <p :class="footer.listHeadline">{{ t('global.socials') }}</p>
+            <ul>
+              <li>
+                <NuxtLink to="https://www.linkedin.com/in/adrian-fahrbach/">
+                  {{ t('global.linkedInAdrian') }}
+                </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="https://www.linkedin.com/in/florian-mrz/">
+                  {{ t('global.linkedInFlorian') }}
+                </NuxtLink>
               </li>
             </ul>
           </li>

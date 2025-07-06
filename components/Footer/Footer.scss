@@ -2,18 +2,39 @@
   position: relative;
   display: grid;
   grid-template-areas:
-    'logo nav nav'
-    'newsletter nav nav'
-    'newsletter copyright language-switch';
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 272px 1fr 272px;
-  gap: 20px;
+    'logo'
+    'nav'
+    'newsletter'
+    'language-switch'
+    'copyright';
+  grid-template-columns: 1fr;
+  gap: 40px 20px;
+  justify-items: center;
   width: 100%;
   padding: 32px 40px 20px 30px;
+  text-align: center;
   background: var(--background);
   border-top: 1px solid var(--line);
   border-right: 1px solid var(--line);
   border-left: 1px solid var(--line);
+  @media (min-width: 640px) {
+    grid-template-areas:
+      'logo logo'
+      'nav nav'
+      'newsletter language-switch'
+      'copyright copyright';
+    grid-template-columns: 1fr 1fr;
+    justify-items: unset;
+    text-align: left;
+  }
+  @media (min-width: 1024px) {
+    grid-template-areas:
+      'logo nav nav'
+      'newsletter nav nav'
+      'newsletter copyright language-switch';
+    grid-template-columns: 272px 1fr 272px;
+    gap: 30px 20px;
+  }
 
   ul,
   li {
@@ -38,13 +59,26 @@
 
 .navContainer {
   display: flex;
-  gap: 60px;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 40px;
   padding: 0;
   margin: 0;
+  @media (min-width: 1024px) {
+    flex-wrap: nowrap;
+    gap: 60px;
+    justify-content: flex-end;
+  }
 }
 
 .list {
+  flex: 1 0 140px;
+  @media (min-width: 640px) {
+    flex: 1 0 128px;
+  }
+  @media (min-width: 1024px) {
+    flex: unset;
+  }
+
   a {
     color: var(--text-secondary);
   }
@@ -66,14 +100,18 @@
 
 .newsletterContainer {
   grid-area: newsletter;
-  align-self: flex-end;
-  justify-self: flex-start;
+  @media (min-width: 640px) {
+    align-self: flex-end;
+    justify-self: flex-start;
+  }
 }
 
 .languageSwitchContainer {
   grid-area: language-switch;
-  align-self: flex-end;
-  justify-self: flex-end;
+  @media (min-width: 640px) {
+    align-self: flex-end;
+    justify-self: flex-end;
+  }
 }
 
 .copyright {
