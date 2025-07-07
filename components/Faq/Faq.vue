@@ -9,7 +9,7 @@
       <template v-for="([category, entries], index) in Object.entries(categories)" :key="category">
         <hr v-if="index > 0" :class="faq.line" />
         <div :class="faq.category">
-          <h3 class="headline-m">{{ category }}</h3>
+          <h3 :class="faq.headline" class="headline-m">{{ category }}</h3>
           <div>
             <FaqEntry
               v-for="entry in entries"

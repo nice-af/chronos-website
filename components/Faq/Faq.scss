@@ -7,17 +7,29 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 48px;
   align-items: stretch;
-  padding: 64px;
+  padding: 48px 32px;
   background: var(--background);
   border: 1px solid var(--line);
+  @media (min-width: 768px) {
+    padding: 64px;
+  }
+  @media (min-width: 1024px) {
+    gap: 64px;
+  }
 }
 
 .category {
-  display: grid;
-  grid-template-columns: 280px auto;
-  gap: 40px;
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 280px auto;
+    gap: 40px;
+  }
+}
+
+.headline {
+  margin-bottom: 40px;
 }
 
 .line {
