@@ -5,11 +5,15 @@
   align-items: center;
   min-height: 46px;
   padding: 6px 22px;
+  overflow: hidden;
   font-weight: 600;
   letter-spacing: 0.02em;
   border-radius: 999px;
   opacity: 1 !important;
-  transition: background 0.2s ease;
+  transition:
+    0.2s ease,
+    box-shadow 0.4s ease,
+    text-shadow 0.4s ease;
   @media (min-width: 576px) {
     padding: 8px 24px;
   }
@@ -19,6 +23,47 @@
     display: block;
     width: 22px;
     height: 22px;
+    transition: 0.4s ease;
+  }
+
+  &:hover {
+    text-shadow: var(--button-text-shadow);
+
+    > svg,
+    > img {
+      filter: drop-shadow(var(--button-text-shadow));
+    }
+  }
+
+  &:active {
+    text-shadow: var(--button-text-shadow-invisible);
+
+    > svg,
+    > img {
+      filter: drop-shadow(var(--button-text-shadow-invisible));
+    }
+
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 10px);
+    pointer-events: none;
+    content: '';
+    background: transparent;
+    filter: blur(1px);
+    border-radius: 9999px;
+    box-shadow:
+      inset 0 0 2px rgba(255, 255, 255, 0.6),
+      inset 0 0 0 1px rgba(255, 255, 255, 1);
+    opacity: 0;
+    transition: opacity 0.35s ease;
   }
 }
 
@@ -28,11 +73,16 @@
   box-shadow: var(--button-inner-shadow-strong);
 
   &:hover {
-    background: var(--blue-600);
+    background: var(--blue-400);
+    box-shadow: var(--button-inner-shadow-strong-hover);
+
+    &::after {
+      opacity: 1;
+    }
   }
 
   &:active {
-    background: var(--blue-700);
+    background: var(--blue-600);
   }
 }
 
@@ -42,11 +92,15 @@
   box-shadow: var(--button-inner-shadow);
 
   &:hover {
-    background: var(--neutral-700);
+    background: var(--neutral-500);
+
+    &::after {
+      opacity: 0.35;
+    }
   }
 
   &:active {
-    background: var(--neutral-800);
+    background: var(--neutral-700);
   }
 }
 

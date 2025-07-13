@@ -4,9 +4,9 @@
   --neutral-900: #181819;
   --neutral-800: #1d1d20;
   --neutral-700: #212126;
-  --neutral-600: #26262c;
-  --neutral-500: #32323a;
-  --neutral-400: #45454f;
+  --neutral-600: hsl(240, 7%, 16%);
+  --neutral-500: hsl(240, 7%, 21%);
+  --neutral-400: hsl(240, 7%, 29%);
   --neutral-300: #60606c;
   --neutral-200: #8b8b9a;
   --neutral-100: #cbcbdd;
@@ -52,6 +52,9 @@
 
   --button-inner-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.05);
   --button-inner-shadow-strong: inset 0 2px 3px rgba(255, 255, 255, 0.12);
+  --button-inner-shadow-strong-hover: inset 0 2px 4px rgba(255, 255, 255, 0.275);
+  --button-text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+  --button-text-shadow-invisible: 0 0 4px rgba(255, 255, 255, 0);
   --tabs-inner-shadow: var(--button-inner-shadow), inset 0 -1px 0 rgba(255, 255, 255, 0);
   --tabs-inner-shadow-active: inset 0 1px 10px rgba(0, 0, 0, 0.2), inset 0 -1px 0 rgba(255, 255, 255, 0.03);
 
