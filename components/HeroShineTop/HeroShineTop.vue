@@ -99,7 +99,7 @@
         poster="/assets/videos/shape-dodecahedron-poster.jpg"
         role="presentation"
         :title="t('shapes.titleDodecahedron')"
-        :data-transition-delay="(headline1Array.length + headline2Array.length + 4).toString()"></video>
+        :data-transition-delay="(headline1Array.length + headline2Array.length + 8).toString()"></video>
       <video
         ref="shapeCone"
         :class="[heroShineTop.shapeVideo, heroShineTop.cone]"
@@ -113,7 +113,7 @@
         poster="/assets/videos/shape-cone-poster.jpg"
         role="presentation"
         :title="t('shapes.titleCone')"
-        :data-transition-delay="(headline1Array.length + headline2Array.length + 6).toString()"></video>
+        :data-transition-delay="(headline1Array.length + headline2Array.length + 10).toString()"></video>
     </div>
   </section>
 </template>

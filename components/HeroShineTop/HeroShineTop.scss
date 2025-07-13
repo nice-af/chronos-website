@@ -1,7 +1,7 @@
 .section {
   position: relative;
 
-  @for $i from 1 through 15 {
+  @for $i from 1 through 20 {
     [data-transition-delay='#{$i}'] {
       animation-delay: 0.075s * $i;
     }
