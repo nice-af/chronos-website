@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" :class="header.wrapper">
     <div :class="header.container">
       <NuxtLink :class="header.logoLink" to="/">
         <img src="/assets/images/logo-with-text.svg" alt="Chronose logo" />
