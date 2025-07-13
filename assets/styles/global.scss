@@ -185,53 +185,58 @@ button {
 }
 
 .headline-gradient {
-  --start: var(--text);
-  --stop: color-mix(in srgb, var(--text), transparent 23%);
+  --gradient-start: var(--text);
+  --gradient-stop: color-mix(in srgb, var(--text), transparent 23%);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
 
   &[data-lines='1'] {
-    background-image: linear-gradient(var(--start) 0%, var(--stop) 100%);
+    background-image: linear-gradient(var(--gradient-start) 0%, var(--gradient-stop) 100%);
   }
 
   &[data-lines='2'] {
-    background-image: linear-gradient(var(--start) 0%, var(--stop) 50%, var(--start) 51%, var(--stop) 100%);
+    background-image: linear-gradient(
+      var(--gradient-start) 0%,
+      var(--gradient-stop) 50%,
+      var(--gradient-start) 51%,
+      var(--gradient-stop) 100%
+    );
   }
 
   &[data-lines='3'] {
     background-image: linear-gradient(
-      var(--start) 0%,
-      var(--stop) 33%,
-      var(--start) 34%,
-      var(--stop) 66%,
-      var(--start) 67%,
-      var(--stop) 100%
+      var(--gradient-start) 0%,
+      var(--gradient-stop) 33%,
+      var(--gradient-start) 34%,
+      var(--gradient-stop) 66%,
+      var(--gradient-start) 67%,
+      var(--gradient-stop) 100%
     );
   }
 
   &[data-lines='4'] {
     background-image: linear-gradient(
-      var(--start) 0%,
-      var(--stop) 25%,
-      var(--start) 26%,
-      var(--stop) 50%,
-      var(--start) 51%,
-      var(--stop) 75%,
-      var(--start) 76%,
-      var(--stop) 100%
+      var(--gradient-start) 0%,
+      var(--gradient-stop) 25%,
+      var(--gradient-start) 26%,
+      var(--gradient-stop) 50%,
+      var(--gradient-start) 51%,
+      var(--gradient-stop) 75%,
+      var(--gradient-start) 76%,
+      var(--gradient-stop) 100%
     );
   }
 
   &[data-lines='5'] {
     background-image: linear-gradient(
-      var(--start),
-      var(--stop),
-      var(--stop),
-      var(--stop),
-      var(--stop),
-      var(--stop),
-      var(--start)
+      var(--gradient-start),
+      var(--gradient-stop),
+      var(--gradient-stop),
+      var(--gradient-stop),
+      var(--gradient-stop),
+      var(--gradient-stop),
+      var(--gradient-start)
     );
   }
 }

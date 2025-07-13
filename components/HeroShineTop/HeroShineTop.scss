@@ -1,5 +1,11 @@
 .section {
   position: relative;
+
+  @for $i from 1 through 15 {
+    [data-transition-delay='#{$i}'] {
+      animation-delay: 0.075s * $i;
+    }
+  }
 }
 
 .shineContainer {
@@ -11,7 +17,10 @@
   max-width: 1114px;
   aspect-ratio: 1114/634;
   pointer-events: none;
+  filter: blur(6px);
+  opacity: 0.2;
   transform: translateX(-50%);
+  animation: shine-fade-in 2s linear forwards;
 
   @for $i from 1 through 4 {
     &:global.is-shine-#{$i} {
@@ -19,6 +28,18 @@
         opacity: 1;
       }
     }
+  }
+}
+
+@keyframes shine-fade-in {
+  from {
+    filter: blur(6px);
+    opacity: 0.2;
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
   }
 }
 
@@ -48,6 +69,33 @@
 
 .headline {
   padding: 0 16px;
+  perspective: 1000px;
+
+  span,
+  img {
+    display: inline-block;
+    margin-right: 0.115em;
+    margin-left: 0.115em;
+    filter: blur(6px);
+    opacity: 0;
+    transform: translateY(30%) rotateX(-30deg);
+    transform-origin: center top;
+    animation: headline-fade-in 0.65s ease forwards;
+  }
+}
+
+@keyframes headline-fade-in {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+    transform: translateY(30%) rotateX(-30deg);
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
 }
 
 .icon {
@@ -81,13 +129,37 @@
   }
 }
 
+.pillContainer,
+.description,
+.buttonsContainer {
+  filter: blur(6px);
+  opacity: 0;
+  animation: text-fade-in 0.65s ease forwards;
+}
+
+@keyframes text-fade-in {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
 .shapeVideo {
   position: absolute;
   z-index: 0;
   width: 72px;
   height: 72px;
   pointer-events: none;
+  filter: blur(6px);
   mix-blend-mode: lighten;
+  opacity: 0;
+  scale: 0.8;
+  animation: shape-video-fade-in 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   @media (min-width: 576px) {
     width: 80px;
     height: 80px;
@@ -161,5 +233,24 @@
   @media (min-width: 1024px) {
     bottom: 198px;
     transform: translateX(440px);
+  }
+}
+
+@keyframes shape-video-fade-in {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+    scale: 0.8;
+  }
+
+  90% {
+    filter: blur(0);
+    opacity: 1;
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+    scale: 1;
   }
 }
