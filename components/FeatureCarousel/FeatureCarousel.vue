@@ -1,5 +1,5 @@
 <template>
-  <section id="other-features" ref="section" :class="featureCarousel.container">
+  <section id="other-features" ref="section" :class="featureCarousel.container" @mouseleave="handleEntryDeactivation">
     <div :class="featureCarousel.textContainer">
       <h2 :class="featureCarousel.headline">{{ t('featureCarousel.headline') }}</h2>
       <p :class="featureCarousel.description">{{ t('featureCarousel.description') }}</p>
