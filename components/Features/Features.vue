@@ -10,7 +10,7 @@
     </div>
     <div :class="features.tile">
       <FeatureTile
-        ref="accounts-feature-tile"
+        ref="accountsFeatureTile"
         :headline="t('features.multipleAccounts.headline')"
         :description="t('features.multipleAccounts.description')"
         isReversed>
@@ -32,7 +32,7 @@
     </div>
   </section>
   <video
-    ref="shape-sphere"
+    ref="shapeSphere"
     :class="[features.shapeVideo, features.sphere]"
     :style="{
       display: shapeSpherePosition ? 'block' : 'none',
@@ -52,18 +52,21 @@
 </template>
 
 <script setup lang="ts">
-import FeatureTile from '~/components/FeatureTile/FeatureTile.vue';
-import AppOverviewGraphic from '~/components/AppOverviewGraphic/AppOverviewGraphic.vue';
-import AccountCardsGraphic from '~/components/AccountCardsGraphic/AccountCardsGraphic.vue';
-import StartStopGraphic from '~/components/StartStopGraphic/StartStopGraphic.vue';
-import ManualSubmitGraphic from '~/components/ManualSubmitGraphic/ManualSubmitGraphic.vue';
-import { onMounted, onUnmounted, ref, useTemplateRef } from 'vue';
 import { useI18n } from '#imports';
+import { onMounted, onUnmounted, ref, useTemplateRef } from 'vue';
+import AccountCardsGraphic from '~/components/AccountCardsGraphic/AccountCardsGraphic.vue';
+import AppOverviewGraphic from '~/components/AppOverviewGraphic/AppOverviewGraphic.vue';
+import FeatureTile from '~/components/FeatureTile/FeatureTile.vue';
+import ManualSubmitGraphic from '~/components/ManualSubmitGraphic/ManualSubmitGraphic.vue';
+import StartStopGraphic from '~/components/StartStopGraphic/StartStopGraphic.vue';
+import { useParallaxScrolling } from '~/composables/useParallaxScrolling';
 
-const $accountsFeatureTile = useTemplateRef('accounts-feature-tile');
-const $shapeSphere = useTemplateRef('shape-sphere');
+const $accountsFeatureTile = useTemplateRef('accountsFeatureTile');
+const $shapeSphere = useTemplateRef('shapeSphere');
 const shapeSpherePosition = ref<{ top: string; left: string } | null>(null);
 const { t } = useI18n();
+
+useParallaxScrolling([{ el: $shapeSphere, speed: -0.05 }]);
 
 /**
  * Moves sphere shape video to its correct position.
@@ -77,7 +80,7 @@ function positionShape() {
   const accountsFeatureTileRect = $accountsFeatureTile.value.$el.getBoundingClientRect();
   const isMobilePosition = window.innerWidth < 660;
   shapeSpherePosition.value = {
-    top: `${accountsFeatureTileRect.bottom + window.scrollY - (isMobilePosition ? 32 : 40)}px`,
+    top: `${accountsFeatureTileRect.bottom + window.scrollY - (isMobilePosition ? 2 : 10)}px`,
     left: `${accountsFeatureTileRect.left + window.scrollX - (isMobilePosition ? 28 : 50)}px`,
   };
 }

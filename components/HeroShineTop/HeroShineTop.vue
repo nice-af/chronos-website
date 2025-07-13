@@ -1,7 +1,7 @@
 <template>
   <section :class="heroShineTop.section">
     <div
-      ref="shine-container"
+      ref="shineContainer"
       :class="[heroShineTop.shineContainer, 'is-shine-1']"
       :data-transition-delay="(headline1Array.length + headline2Array.length).toString()">
       <img
@@ -87,6 +87,7 @@
         </Button>
       </p>
       <video
+        ref="shapeDodecahedron"
         :class="[heroShineTop.shapeVideo, heroShineTop.dodecahedron]"
         src="/assets/videos/shape-dodecahedron.mp4"
         width="105"
@@ -100,6 +101,7 @@
         :title="t('shapes.titleDodecahedron')"
         :data-transition-delay="(headline1Array.length + headline2Array.length + 4).toString()"></video>
       <video
+        ref="shapeCone"
         :class="[heroShineTop.shapeVideo, heroShineTop.cone]"
         src="/assets/videos/shape-cone.mp4"
         width="105"
@@ -121,12 +123,20 @@ import { useI18n, useRuntimeConfig } from '#imports';
 import { PhAppStoreLogo, PhArrowRight, PhGithubLogo } from '@phosphor-icons/vue';
 import { computed, onMounted, onUnmounted, useTemplateRef } from 'vue';
 import Button from '~/components/Button/Button.vue';
+import { useParallaxScrolling } from '~/composables/useParallaxScrolling';
 
-const $shineContainer = useTemplateRef('shine-container');
+const $shineContainer = useTemplateRef('shineContainer');
 const { t } = useI18n();
 const config = useRuntimeConfig();
 const headline1Array = computed(() => t('heroShineTop.headlineBeforeIcon').split(' '));
 const headline2Array = computed(() => t('heroShineTop.headlineAfterIcon').split(' '));
+const $shapeDodecahedron = useTemplateRef('shapeDodecahedron');
+const $shapeCone = useTemplateRef('shapeCone');
+
+useParallaxScrolling([
+  { el: $shapeDodecahedron, speed: 0.08 },
+  { el: $shapeCone, speed: 0.2 },
+]);
 
 // Add shine classes
 let shineTimer: NodeJS.Timeout;

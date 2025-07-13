@@ -160,6 +160,8 @@
   opacity: 0;
   scale: 0.8;
   animation: shape-video-fade-in 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: transform;
+
   @media (min-width: 576px) {
     width: 80px;
     height: 80px;
@@ -177,6 +179,7 @@
 .dodecahedron {
   bottom: 32px;
   left: -43px;
+  transform-origin: 20vw -10vh;
   @media (min-width: 360px) {
     bottom: 38px;
   }
@@ -193,21 +196,22 @@
   @media (min-width: 768px) {
     bottom: 72px;
     left: 50%;
-    transform: translateX(-400px);
+    margin-left: -400px;
   }
   @media (min-width: 840px) {
-    transform: translateX(-440px);
+    margin-left: -440px;
   }
   @media (min-width: 1024px) {
-    transform: translateX(-480px);
+    margin-left: -480px;
   }
 }
 
 .cone {
-  top: 58px;
+  top: 108px;
   right: -32px;
+  transform-origin: -20vw -8vh;
   @media (min-width: 360px) {
-    top: 92px;
+    top: 142px;
   }
   @media (min-width: 430px) {
     top: 88px;
@@ -224,15 +228,15 @@
     right: auto;
     bottom: 168px;
     left: 50%;
-    transform: translateX(320px);
+    margin-left: 320px;
   }
   @media (min-width: 840px) {
     bottom: 178px;
-    transform: translateX(360px);
+    margin-left: 360px;
   }
   @media (min-width: 1024px) {
     bottom: 198px;
-    transform: translateX(440px);
+    margin-left: 440px;
   }
 }
 

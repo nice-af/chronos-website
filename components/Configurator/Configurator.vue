@@ -91,7 +91,7 @@
     <div class="dot is-bottom-right"></div>
   </section>
   <video
-    ref="shape-cylinder"
+    ref="shapeCylinder"
     :class="configurator.shapeVideo"
     :style="{
       display: shapeCylinderPosition ? 'block' : 'none',
@@ -120,13 +120,16 @@ import {
   type SidebarLayout,
 } from '~/components/AppSettingsProvider/appSettingsProvider.types';
 import CardsSelection from '~/components/CardsSelection/CardsSelection.vue';
+import { useParallaxScrolling } from '~/composables/useParallaxScrolling';
 import { sidebarLayoutOptions, themeOptions, type ThemeOptionsValue } from './configuratorOptions';
 
 const $container = useTemplateRef('container');
-const $shapeCylinder = useTemplateRef('shape-cylinder');
+const $shapeCylinder = useTemplateRef('shapeCylinder');
 const shapeCylinderPosition = ref<{ top: string; left: string } | null>(null);
 const appThemeValue = ref<ThemeOptionsValue>('system');
 const sidebarLayoutValue = ref<SidebarLayout>('normal');
+
+useParallaxScrolling([{ el: $shapeCylinder, speed: -0.05 }]);
 
 // We need this ref to prevent hydration mismatches
 const isMounted = ref(false);
