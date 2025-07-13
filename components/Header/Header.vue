@@ -12,7 +12,10 @@
         <span :class="[header.line, header.line2]"></span>
         <span :class="[header.line, header.line3]"></span>
       </button>
-      <nav :class="[header.navContainer, { [header.isOpen]: menuIsOpen }]">
+      <nav
+        ref="nav"
+        :class="[header.navContainer, { [header.isOpen]: menuIsOpen }]"
+        :style="mobileMenuForcedHeight !== null ? { height: `${mobileMenuForcedHeight}px` } : undefined">
         <ul :class="header.navList">
           <li>
             <NuxtLink to="#features">{{ t('global.features') }}</NuxtLink>
@@ -27,8 +30,8 @@
             <NuxtLink :to="localePath('faq')">{{ t('global.faq') }}</NuxtLink>
           </li>
         </ul>
-        <div :class="header.navDot" class="dot is-bottom-left"></div>
-        <div :class="header.navDot" class="dot is-bottom-right"></div>
+        <div :class="[header.navDot, header.isBottomLeft]" class="dot is-bottom-left"></div>
+        <div :class="[header.navDot, header.isBottomRight]" class="dot is-bottom-right"></div>
       </nav>
       <div class="dot is-bottom-left"></div>
       <div class="dot is-bottom-right"></div>
@@ -37,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { nextTick, ref, useTemplateRef } from 'vue';
 import { useRuntimeConfig } from '#app';
 import { NuxtLink } from '#components';
 import { useI18n, useLocalePath } from '#imports';
@@ -46,9 +49,20 @@ const config = useRuntimeConfig();
 const { t } = useI18n();
 const localePath = useLocalePath();
 const menuIsOpen = ref(false);
+const $nav = useTemplateRef('nav');
+const mobileMenuForcedHeight = ref<number | null>(null);
 
-function toggleMenu() {
-  menuIsOpen.value = !menuIsOpen.value;
+async function toggleMenu() {
+  if (!$nav.value) {
+    return;
+  }
+  mobileMenuForcedHeight.value = $nav.value.scrollHeight;
+  await nextTick(() => {
+    // $nav.value?.addEventListener('transitionend', () => (mobileMenuForcedHeight.value = null), { once: true });
+    // We set the target height after one tick to ensure the transition is applied correctly
+    mobileMenuForcedHeight.value = menuIsOpen.value ? 0 : $nav.value!.scrollHeight;
+    menuIsOpen.value = !menuIsOpen.value;
+  });
 }
 </script>
 

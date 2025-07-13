@@ -101,22 +101,35 @@
     width: calc(100% + 2px);
     height: 0;
     overflow: hidden;
+    pointer-events: none;
     background: var(--background);
-    border-right: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    border-left: 1px solid var(--line);
+    box-shadow:
+      inset 1px 0 0 var(--line),
+      inset -1px 0 0 var(--line),
+      inset 0 -1px 0 var(--line);
+    transition: height 0.35s ease;
   }
 
   &.isOpen {
     @media (max-width: 767.98px) {
       height: auto;
+      pointer-events: auto;
     }
   }
 }
 
 .navDot {
+  bottom: 0 !important;
   @media (min-width: 768px) {
     display: none;
+  }
+
+  &.isBottomLeft {
+    left: 0 !important;
+  }
+
+  &.isBottomRight {
+    right: 0 !important;
   }
 }
 
