@@ -2,5 +2,5 @@
 *.*
 
 # Except these...
-!assets/**/*.?css
-!components/**/*.?css
+!app/assets/**/*.?css
+!app/components/**/*.?css

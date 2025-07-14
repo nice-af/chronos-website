@@ -15,27 +15,27 @@
     "lint:fix": "eslint . --fix && prettier --write --list-different ."
   },
   "dependencies": {
-    "nuxt": "^3.14.1592",
+    "nuxt": "^4.0.0-rc",
     "vue": "^3.5.13",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@floating-ui/vue": "^1.1.6",
     "@getbrevo/brevo": "^2.2.0",
-    "@nuxt/eslint": "^0.7.1",
-    "@nuxt/fonts": "^0.10.2",
-    "@nuxtjs/i18n": "^9.0.0-rc.2",
+    "@nuxt/eslint": "^1.5.2",
+    "@nuxt/fonts": "^0.11.4",
+    "@nuxtjs/i18n": "^10.0.0-rc.2",
     "@nuxtjs/stylelint-module": "^5.2.0",
     "@phosphor-icons/vue": "^2.2.1",
     "@types/lodash": "^4.17.13",
-    "@vueuse/core": "^11.3.0",
-    "eslint": "^9.15.0",
-    "eslint-config-prettier": "^9.1.0",
+    "@vueuse/core": "^13.5.0",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.2.1",
-    "globals": "^15.12.0",
+    "globals": "^16.3.0",
     "husky": "^9.1.7",
     "json-sort-cli": "^4.0.4",
-    "lint-staged": "^15.2.10",
+    "lint-staged": "^16.1.2",
     "lodash": "^4.17.21",
     "nuxt-svgo": "^4.0.9",
     "prettier": "^3.3.3",
@@ -48,6 +48,6 @@
     "stylelint-config-standard": "^36.0.1",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.15.0",
-    "vue-tsc": "^2.1.10"
+    "vue-tsc": "^3.0.1"
   }
 }

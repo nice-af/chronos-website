@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 462px;
+  aspect-ratio: 1.4;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    height: calc(100% + 63px * 2);
+    aspect-ratio: unset;
+    margin-top: -63px;
+    margin-bottom: -63px;
+  }
+
+  &:hover {
+    .screenshot {
+      @media (min-width: 768px) {
+        transform: translateY(-80px);
+      }
+
+      @media (min-width: 992px) {
+        transform: translateY(-120px);
+      }
+    }
+  }
+}
+
+.screenshot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+
+  @media (min-width: 768px) {
+    top: 64px;
+    transition:
+      transform 0.35s ease-in-out,
+      opacity 0.25s ease;
+    transform: translateY(0);
+  }
+}

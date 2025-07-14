@@ -1,0 +1,102 @@
+@use '~/assets/styles/mixins/typography';
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 48px;
+  align-items: center;
+  justify-content: stretch;
+  padding: 48px 32px;
+  text-align: center;
+  background: var(--background);
+  border: 1px solid var(--line);
+  border-top: none;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    padding-block: 64px;
+    text-align: left;
+  }
+
+  @media (min-width: 1024px) {
+    padding-inline: 64px;
+  }
+
+  @media (min-width: 1280px) {
+    gap: 100px;
+  }
+}
+
+.screenshotsContainer {
+  position: relative;
+  width: 100%;
+  max-width: 462px;
+  aspect-ratio: 462/509;
+}
+
+.themeContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.25s ease;
+}
+
+.sidebarScreenshot {
+  position: absolute;
+  top: 19.253438%;
+  left: 3.246753%;
+  z-index: 2;
+  width: 13.852814%;
+  height: auto;
+}
+
+.mainAppscreenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.textContainer {
+  flex: 1 0 280px;
+  max-width: 420px;
+}
+
+.headline {
+  margin-top: 0 !important;
+
+  @include typography.headline-s;
+
+  @media (min-width: 992px) {
+    @include typography.headline-m;
+  }
+}
+
+.description {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.tabsContainer {
+  margin: 34px 0;
+}
+
+.cardsContainer {
+  margin-top: 24px;
+}
+
+.shapeVideo {
+  position: absolute;
+  z-index: 3;
+  width: 79px;
+  height: 38px;
+  pointer-events: none;
+  mix-blend-mode: lighten;
+
+  @media (min-width: 660px) {
+    width: 91px;
+    height: 44px;
+  }
+}

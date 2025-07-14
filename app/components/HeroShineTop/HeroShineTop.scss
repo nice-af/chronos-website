@@ -1,0 +1,279 @@
+.section {
+  position: relative;
+
+  @for $i from 1 through 20 {
+    [data-transition-delay='#{$i}'] {
+      animation-delay: 0.075s * $i;
+    }
+  }
+}
+
+.shineContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 4;
+  width: 100%;
+  max-width: 1114px;
+  aspect-ratio: 1114/634;
+  pointer-events: none;
+  filter: blur(6px);
+  opacity: 0.2;
+  transform: translateX(-50%);
+  animation: shine-fade-in 2s linear forwards;
+
+  @for $i from 1 through 4 {
+    &:global.is-shine-#{$i} {
+      img:nth-child(#{$i}) {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes shine-fade-in {
+  from {
+    filter: blur(6px);
+    opacity: 0.2;
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2.2s linear;
+}
+
+.container {
+  position: relative;
+  padding: 130px 0 92px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 130px 0;
+  }
+}
+
+.pillContainer {
+  margin: 0 0 16px;
+}
+
+.headline {
+  padding: 0 16px;
+  perspective: 1000px;
+
+  span,
+  img {
+    display: inline-block;
+    margin-right: 0.115em;
+    margin-left: 0.115em;
+    filter: blur(6px);
+    opacity: 0;
+    transform: translateY(30%) rotateX(-30deg);
+    transform-origin: center top;
+    animation: headline-fade-in 0.65s ease forwards;
+  }
+}
+
+@keyframes headline-fade-in {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+    transform: translateY(30%) rotateX(-30deg);
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+.icon {
+  width: 0.89130435em;
+  height: 0.89130435em;
+  margin: 0.14em 0.05em 0;
+  vertical-align: top;
+}
+
+.description {
+  max-width: 670px;
+  margin: 0 auto;
+  font-size: 18px;
+  color: var(--text-secondary);
+
+  @media (min-width: 576px) {
+    font-size: 20px;
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+  margin-top: 32px;
+  margin-bottom: 0;
+
+  @media (min-width: 576px) {
+    margin-top: 40px;
+  }
+}
+
+.pillContainer,
+.description,
+.buttonsContainer {
+  filter: blur(6px);
+  opacity: 0;
+  animation: text-fade-in 0.65s ease forwards;
+}
+
+@keyframes text-fade-in {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.shapeVideo {
+  position: absolute;
+  z-index: 0;
+  width: 72px;
+  height: 72px;
+  pointer-events: none;
+  filter: blur(6px);
+  mix-blend-mode: lighten;
+  opacity: 0;
+  scale: 0.8;
+  animation: shape-video-fade-in 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: transform;
+
+  @media (min-width: 576px) {
+    width: 80px;
+    height: 80px;
+  }
+
+  @media (min-width: 768px) {
+    width: 96px;
+    height: 96px;
+  }
+
+  @media (min-width: 840px) {
+    width: 105px;
+    height: 105px;
+  }
+}
+
+.dodecahedron {
+  bottom: 32px;
+  left: -43px;
+  transform-origin: 20vw -10vh;
+
+  @media (min-width: 360px) {
+    bottom: 38px;
+  }
+
+  @media (min-width: 490px) {
+    bottom: 30px;
+  }
+
+  @media (min-width: 576px) {
+    bottom: 44px;
+    left: -48px;
+  }
+
+  @media (min-width: 640px) {
+    bottom: 64px;
+  }
+
+  @media (min-width: 768px) {
+    bottom: 72px;
+    left: 50%;
+    margin-left: -400px;
+  }
+
+  @media (min-width: 840px) {
+    margin-left: -440px;
+  }
+
+  @media (min-width: 1024px) {
+    margin-left: -480px;
+  }
+}
+
+.cone {
+  top: 108px;
+  right: -32px;
+  transform-origin: -20vw -8vh;
+
+  @media (min-width: 360px) {
+    top: 142px;
+  }
+
+  @media (min-width: 430px) {
+    top: 88px;
+  }
+
+  @media (min-width: 576px) {
+    top: 76px;
+    right: -52px;
+  }
+
+  @media (min-width: 640px) {
+    top: 110px;
+  }
+
+  @media (min-width: 768px) {
+    top: auto;
+    right: auto;
+    bottom: 168px;
+    left: 50%;
+    margin-left: 320px;
+  }
+
+  @media (min-width: 840px) {
+    bottom: 178px;
+    margin-left: 360px;
+  }
+
+  @media (min-width: 1024px) {
+    bottom: 198px;
+    margin-left: 440px;
+  }
+}
+
+@keyframes shape-video-fade-in {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+    scale: 0.8;
+  }
+
+  90% {
+    filter: blur(0);
+    opacity: 1;
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+    scale: 1;
+  }
+}

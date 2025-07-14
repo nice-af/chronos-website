@@ -5,7 +5,6 @@ export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxtjs/stylelint-module', '@nuxt/fonts', 'nuxt-svgo', '@nuxtjs/i18n'],
   imports: { autoImport: false },
   routeRules: { '/**': { static: true } },
-  typescript: { typeCheck: true },
 
   runtimeConfig: {
     public: {
@@ -20,10 +19,17 @@ export default defineNuxtConfig({
     BREVO_REDIRECTION_URL: process.env.BREVO_REDIRECTION_URL,
   },
 
+  typescript: {
+    typeCheck: true,
+    tsConfig: {
+      include: ['../types/vue-html.d.ts'],
+    },
+  },
+
   i18n: {
     locales: ['en', 'de'],
     defaultLocale: 'en',
-    vueI18n: './i18n.config.ts',
+    vueI18n: '../app/i18n.config.ts',
     strategy: 'prefix',
   },
 
@@ -33,10 +39,11 @@ export default defineNuxtConfig({
         name: 'Mona Sans',
         provider: 'local',
         weights: ['330', '400', '500', '600', '700'],
+        display: 'block',
         src: ['/assets/fonts/mona-sans.woff', '/assets/fonts/mona-sans.woff2'],
       },
     ],
   },
 
-  compatibilityDate: '2024-11-23',
+  compatibilityDate: '2025-07-14',
 });

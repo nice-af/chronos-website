@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  align-items: stretch;
+  justify-content: stretch;
+  background-color: var(--line);
+  border: 1px solid var(--line);
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.tile {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  container-type: inline-size;
+}
+
+.tileLarge {
+  @media (min-width: 992px) {
+    grid-column: span 3;
+  }
+}
+
+.shapeVideo {
+  position: absolute;
+  z-index: 3;
+  width: 75px;
+  height: 54px;
+  pointer-events: none;
+  mix-blend-mode: lighten;
+
+  @media (min-width: 660px) {
+    width: 86px;
+    height: 62px;
+  }
+}
