@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ['@nuxt/eslint', '@nuxt/fonts', 'nuxt-svgo', '@nuxtjs/i18n'],
   imports: { autoImport: false },
-  routeRules: { '/**': { static: true } },
 
   runtimeConfig: {
     public: {
@@ -24,6 +23,11 @@ export default defineNuxtConfig({
     tsConfig: {
       include: ['../types/vue-html.d.ts'],
     },
+  },
+
+  routeRules: {
+    '/**': process.env.ENV === 'development' ? { cache: false } : { swr: 600 },
+    '/api/**': { cache: false },
   },
 
   i18n: {

@@ -2,7 +2,7 @@
   <section :class="heroShineTop.section">
     <div
       ref="shineContainer"
-      :class="[heroShineTop.shineContainer, 'is-shine-1']"
+      :class="[heroShineTop.shineContainer, 'is-shine-1', { [heroShineTop.runAnimation!]: isLoaded }]"
       :data-transition-delay="(headline1Array.length + headline2Array.length).toString()">
       <img
         :class="heroShineTop.shine"
@@ -35,7 +35,7 @@
     </div>
     <div :class="heroShineTop.container">
       <p
-        :class="heroShineTop.pillContainer"
+        :class="[heroShineTop.pillContainer, { [heroShineTop.runAnimation!]: isLoaded }]"
         :data-transition-delay="(headline1Array.length + headline2Array.length + 3).toString()">
         <Button
           :label="t('heroShineTop.pillLabel')"
@@ -45,7 +45,7 @@
           <template #icon><PhArrowRight size="16" weight="bold" /></template>
         </Button>
       </p>
-      <h1 ref="headline" :class="heroShineTop.headline" class="headline-xl">
+      <h1 :class="[heroShineTop.headline, { [heroShineTop.runAnimation!]: isLoaded }]" class="headline-xl">
         <span
           v-for="(word, index) in headline1Array"
           :key="`${index}_${word}`"
@@ -55,6 +55,7 @@
           {{ word }}{{ ' ' }}
         </span>
         <img
+          ref="logoIcon"
           :class="heroShineTop.icon"
           src="/assets/images/hero-icon.png"
           srcset="/assets/images/hero-icon@2x.png 2x"
@@ -72,12 +73,12 @@
         </span>
       </h1>
       <p
-        :class="heroShineTop.description"
+        :class="[heroShineTop.description, { [heroShineTop.runAnimation!]: isLoaded }]"
         :data-transition-delay="(headline1Array.length + headline2Array.length + 3).toString()">
         {{ t('heroShineTop.description') }}
       </p>
       <p
-        :class="heroShineTop.buttonsContainer"
+        :class="[heroShineTop.buttonsContainer, { [heroShineTop.runAnimation!]: isLoaded }]"
         :data-transition-delay="(headline1Array.length + headline2Array.length + 5).toString()">
         <Button :label="t('global.download')" :href="config.public.DOWNLOAD_MACOS_URL">
           <template #icon><PhAppStoreLogo size="22" weight="bold" /></template>
@@ -88,7 +89,7 @@
       </p>
       <video
         ref="shapeDodecahedron"
-        :class="[heroShineTop.shapeVideo, heroShineTop.dodecahedron]"
+        :class="[heroShineTop.shapeVideo, heroShineTop.dodecahedron, { [heroShineTop.runAnimation!]: isLoaded }]"
         src="/assets/videos/shape-dodecahedron.mp4"
         width="105"
         height="105"
@@ -102,7 +103,7 @@
         :data-transition-delay="(headline1Array.length + headline2Array.length + 8).toString()"></video>
       <video
         ref="shapeCone"
-        :class="[heroShineTop.shapeVideo, heroShineTop.cone]"
+        :class="[heroShineTop.shapeVideo, heroShineTop.cone, { [heroShineTop.runAnimation!]: isLoaded }]"
         src="/assets/videos/shape-cone.mp4"
         width="105"
         height="105"
@@ -121,7 +122,7 @@
 <script setup lang="ts">
 import { useI18n, useRuntimeConfig } from '#imports';
 import { PhAppStoreLogo, PhArrowRight, PhGithubLogo } from '@phosphor-icons/vue';
-import { computed, onMounted, onUnmounted, useTemplateRef } from 'vue';
+import { computed, onMounted, onUnmounted, ref, useTemplateRef } from 'vue';
 import Button from '~/components/Button/Button.vue';
 import { useParallaxScrolling } from '~/composables/useParallaxScrolling';
 
@@ -132,15 +133,28 @@ const headline1Array = computed(() => t('heroShineTop.headlineBeforeIcon').split
 const headline2Array = computed(() => t('heroShineTop.headlineAfterIcon').split(' '));
 const $shapeDodecahedron = useTemplateRef('shapeDodecahedron');
 const $shapeCone = useTemplateRef('shapeCone');
+const $logoIcon = useTemplateRef('logoIcon');
+const isLoaded = ref(false);
 
 useParallaxScrolling([
   { el: $shapeDodecahedron, speed: 0.08 },
   { el: $shapeCone, speed: 0.2 },
 ]);
 
-// Add shine classes
+/**
+ * Check if videos and image are loaded
+ */
+function checkLoaded() {
+  const videosLoaded = $shapeDodecahedron.value?.readyState === 4 && $shapeCone.value?.readyState === 4;
+  const logoIconLoaded = $logoIcon.value?.complete;
+  if (videosLoaded && logoIconLoaded) {
+    isLoaded.value = true;
+  }
+}
+
 let shineTimer: NodeJS.Timeout;
 onMounted(() => {
+  // Add shine classes
   let shineIndex = 2;
   $shineContainer.value?.classList.remove(`is-shine-1`);
   $shineContainer.value?.classList.add(`is-shine-${shineIndex}`);
@@ -152,10 +166,19 @@ onMounted(() => {
     shineIndex = shineIndex === 4 ? 1 : shineIndex + 1;
     $shineContainer.value.classList.add(`is-shine-${shineIndex}`);
   }, 2200);
+
+  // Check for and/or trigger the fade in animation
+  checkLoaded();
+  $shapeDodecahedron.value?.addEventListener('loadeddata', checkLoaded);
+  $shapeCone.value?.addEventListener('loadeddata', checkLoaded);
+  $logoIcon.value?.addEventListener('load', checkLoaded);
 });
 
 onUnmounted(() => {
   clearInterval(shineTimer);
+  $shapeDodecahedron.value?.removeEventListener('loadeddata', checkLoaded);
+  $shapeCone.value?.removeEventListener('loadeddata', checkLoaded);
+  $logoIcon.value?.removeEventListener('load', checkLoaded);
 });
 </script>
 
