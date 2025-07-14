@@ -17,7 +17,6 @@
   border-top: 1px solid var(--line);
   border-right: 1px solid var(--line);
   border-left: 1px solid var(--line);
-
   @media (min-width: 640px) {
     grid-template-areas:
       'logo logo'
@@ -28,11 +27,9 @@
     justify-items: unset;
     text-align: left;
   }
-
   @media (min-width: 768px) {
     padding: 32px 40px 20px 30px;
   }
-
   @media (min-width: 1024px) {
     grid-template-areas:
       'logo nav nav'
@@ -69,7 +66,6 @@
   gap: 40px;
   padding: 0;
   margin: 0;
-
   @media (min-width: 1024px) {
     flex-wrap: nowrap;
     gap: 60px;
@@ -79,11 +75,9 @@
 
 .list {
   flex: 1 0 140px;
-
   @media (min-width: 640px) {
     flex: 1 0 128px;
   }
-
   @media (min-width: 1024px) {
     flex: unset;
   }
@@ -109,7 +103,6 @@
 
 .newsletterContainer {
   grid-area: newsletter;
-
   @media (min-width: 640px) {
     align-self: flex-end;
     justify-self: flex-start;
@@ -118,7 +111,6 @@
 
 .languageSwitchContainer {
   grid-area: language-switch;
-
   @media (min-width: 640px) {
     align-self: flex-end;
     justify-self: flex-end;

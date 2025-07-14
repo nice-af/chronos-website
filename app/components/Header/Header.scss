@@ -20,7 +20,6 @@
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   border-left: 1px solid var(--line);
-
   @media (min-width: 768px) {
     padding: 0 30px;
   }
@@ -46,7 +45,6 @@
   cursor: pointer;
   background: none;
   border: none;
-
   @media (min-width: 768px) {
     display: none;
   }
@@ -130,7 +128,6 @@
 
 .navDot {
   bottom: 0 !important;
-
   @media (min-width: 768px) {
     display: none;
   }
@@ -152,7 +149,6 @@
   padding: 16px 16px 24px;
   margin: 0;
   list-style: none;
-
   @media (min-width: 768px) {
     flex-direction: row;
     padding: 0;

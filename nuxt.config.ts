@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: ['@nuxt/eslint', '@nuxtjs/stylelint-module', '@nuxt/fonts', 'nuxt-svgo', '@nuxtjs/i18n'],
+  modules: ['@nuxt/eslint', '@nuxt/fonts', 'nuxt-svgo', '@nuxtjs/i18n'],
   imports: { autoImport: false },
   routeRules: { '/**': { static: true } },
 

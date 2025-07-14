@@ -12,17 +12,14 @@
   background: var(--background);
   border: 1px solid var(--line);
   border-top: none;
-
   @media (min-width: 768px) {
     flex-direction: row;
     padding-block: 64px;
     text-align: left;
   }
-
   @media (min-width: 1024px) {
     padding-inline: 64px;
   }
-
   @media (min-width: 1280px) {
     gap: 100px;
   }
@@ -65,10 +62,8 @@
 }
 
 .headline {
-  margin-top: 0 !important;
-
   @include typography.headline-s;
-
+  margin-top: 0 !important;
   @media (min-width: 992px) {
     @include typography.headline-m;
   }
@@ -94,7 +89,6 @@
   height: 38px;
   pointer-events: none;
   mix-blend-mode: lighten;
-
   @media (min-width: 660px) {
     width: 91px;
     height: 44px;

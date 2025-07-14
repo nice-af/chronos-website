@@ -6,7 +6,6 @@
   text-align: center;
   border: 1px solid var(--line);
   border-top: none;
-
   @media (min-width: 576px) {
     padding-top: 64px;
     padding-bottom: 24px;
@@ -15,21 +14,17 @@
 
 .textContainer {
   padding-inline: 24px;
-
   @media (min-width: 576px) {
     padding-inline: 32px;
   }
-
   @media (min-width: 1280px) {
     padding-inline: 64px;
   }
 }
 
 .headline {
-  margin-top: 0 !important;
-
   @include typography.headline-s;
-
+  margin-top: 0 !important;
   @media (min-width: 768px) {
     @include typography.headline-m;
   }
@@ -54,7 +49,6 @@
   height: 20px;
   margin-bottom: 16px;
   animation-play-state: running;
-
   @media (min-width: 768px) {
     height: 28px;
     margin-bottom: 20px;
@@ -119,7 +113,6 @@
   background: transparent;
   border: none;
   transition: color 0.25s ease;
-
   @media (min-width: 768px) {
     @include typography.headline-m;
     margin-right: 24px;

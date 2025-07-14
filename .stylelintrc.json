@@ -25,6 +25,7 @@
         ]
       }
     ],
+    "at-rule-empty-line-before": null,
     "color-named": null,
     "custom-property-no-missing-var-function": [],
     "declaration-empty-line-before": "never",
@@ -43,7 +44,8 @@
     "rule-empty-line-before": [
       "always",
       {
-        "except": ["first-nested"]
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
       }
     ],
     "selector-max-id": 2,
