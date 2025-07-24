@@ -1,5 +1,5 @@
 <template>
-  <section ref="container" :class="configurator.container">
+  <section :class="configurator.container">
     <!-- Dark mode -->
     <div :class="configurator.screenshotsContainer">
       <div :class="configurator.themeContainer" :style="{ opacity: isLight ? 0 : 1 }">
@@ -89,30 +89,25 @@
     </div>
     <div class="dot is-bottom-left"></div>
     <div class="dot is-bottom-right"></div>
+    <video
+      ref="shapeCylinder"
+      :class="configurator.shapeVideo"
+      src="/assets/videos/shape-cylinder.mp4"
+      width="91"
+      height="44"
+      autoplay
+      loop
+      muted
+      playsinline
+      poster="/assets/videos/shape-cylinder-poster.jpg"
+      role="presentation"
+      :title="t('shapes.titleCylinder')"></video>
   </section>
-  <video
-    ref="shapeCylinder"
-    :class="configurator.shapeVideo"
-    :style="{
-      display: shapeCylinderPosition ? 'block' : 'none',
-      top: shapeCylinderPosition?.top,
-      left: shapeCylinderPosition?.left,
-    }"
-    src="/assets/videos/shape-cylinder.mp4"
-    width="91"
-    height="44"
-    autoplay
-    loop
-    muted
-    playsinline
-    poster="/assets/videos/shape-cylinder-poster.jpg"
-    role="presentation"
-    :title="t('shapes.titleCylinder')"></video>
 </template>
 
 <script setup lang="ts">
 import { useI18n } from '#imports';
-import { computed, inject, onMounted, onUnmounted, ref, useTemplateRef, watch } from 'vue';
+import { computed, inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 import {
   appSidebarLayoutProvider,
   appThemeProvider,
@@ -123,9 +118,7 @@ import CardsSelection from '~/components/CardsSelection/CardsSelection.vue';
 import { useParallaxScrolling } from '~/composables/useParallaxScrolling';
 import { sidebarLayoutOptions, themeOptions, type ThemeOptionsValue } from './configuratorOptions';
 
-const $container = useTemplateRef('container');
 const $shapeCylinder = useTemplateRef('shapeCylinder');
-const shapeCylinderPosition = ref<{ top: string; left: string } | null>(null);
 const appThemeValue = ref<ThemeOptionsValue>('system');
 const sidebarLayoutValue = ref<SidebarLayout>('normal');
 
@@ -162,32 +155,8 @@ function handleSidebarLayoutChange(value: SidebarLayout) {
 
 watch(sidebarLayoutValue, handleSidebarLayoutChange);
 
-/**
- * Moves cylinder shape video to its correct position.
- * We have to do this, because the mix-blend-mode of the videos only works on the parent element.
- * The videos would overlay their parents if positioned inside them, so we had to move them out and do this.
- */
-function positionShape() {
-  if (!$container.value || !$shapeCylinder.value) {
-    return;
-  }
-
-  const containerRect = $container.value.getBoundingClientRect();
-  const isMobilePosition = window.innerWidth < 660;
-  shapeCylinderPosition.value = {
-    top: `${containerRect.bottom + window.scrollY - (isMobilePosition ? 52 : 94)}px`,
-    left: `${containerRect.right + window.scrollX - 40}px`,
-  };
-}
-
 onMounted(() => {
   isMounted.value = true;
-  positionShape();
-  window.addEventListener('resize', positionShape);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('resize', positionShape);
 });
 </script>
 
