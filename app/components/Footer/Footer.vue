@@ -35,14 +35,17 @@
               </li>
             </ul>
           </li>
-          <li :class="footer.list">
+          <li :class="[footer.list, footer.isLegalInformation]">
             <p :class="footer.listHeadline">{{ t('global.legalInformation') }}</p>
             <ul>
               <li>
                 <NuxtLink :to="localePath('legalNotice')">{{ t('global.legalNotice') }}</NuxtLink>
               </li>
               <li>
-                <NuxtLink :to="localePath('privacy')">{{ t('global.privacyPolicy') }}</NuxtLink>
+                <NuxtLink :to="localePath('privacyWebsite')">{{ t('global.privacyPolicyWebsite') }}</NuxtLink>
+              </li>
+              <li>
+                <NuxtLink :to="localePath('privacyApp')">{{ t('global.privacyPolicyApp') }}</NuxtLink>
               </li>
             </ul>
           </li>

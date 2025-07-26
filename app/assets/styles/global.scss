@@ -104,6 +104,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  min-height: 100dvh;
+}
+
 :focus:not(:focus-visible) {
   outline: none;
 }
