@@ -66,7 +66,7 @@
         "question": "I want to help develop this further. How can I contribute?"
       },
       "loginError": {
-        "answer": "<p>If you encounter the error <em>'This app requires access to a Jira & User identity site which you don’t have or don’t have the permission to access.'</em>, it usually means your account doesn’t have access to Jira or external app access is restricted. Please ensure you are using the correct email address and verify that you can log in to the Jira web interface with your account. If you can access Jira but still face this issue, contact your Jira administrator as they may have restrictions in place.</p>",
+        "answer": "<p>If you encounter the error <em>\"This app requires access to a Jira & User identity site which you don’t have or don’t have the permission to access.\"</em>, it usually means your account doesn’t have access to Jira or external app access is restricted. Please ensure you are using the correct email address and verify that you can log in to the Jira web interface with your account. If you can access Jira but still face this issue, contact your Jira administrator as they may have restrictions in place.</p>",
         "question": "Why do I get a Jira & User identity access error when logging in?"
       },
       "missingFeatures": {
@@ -99,7 +99,7 @@
         "label": "German Translation"
       },
       "menubarWidget": {
-        "infoPopup": "Start and stop your timers directly from the menubar for quick access.",
+        "infoPopup": "Start and stop your timers directly from the menubar for quick access to start and stop timers.",
         "label": "Menubar Widget"
       },
       "reminderNotification": {
@@ -111,7 +111,7 @@
         "label": "Right click context menu"
       },
       "shortcuts": {
-        "infoPopup": "We got a bunch of shortcuts to make your life easier.",
+        "infoPopup": "We got a few shortcuts to make your life easier.",
         "label": "Shortcuts"
       },
       "smartSearch": {
@@ -119,7 +119,7 @@
         "label": "Smart search"
       },
       "workspaceLogos": {
-        "infoPopup": "Lots of Jira workspaces don't setup their workspace logo that is available in the Jira API. We got you covered by providing the header logo aswell.",
+        "infoPopup": "Lots of Jira workspaces don't setup their workspace logo that is available in the Jira API. We got you covered by providing the header logo as well.",
         "label": "Workspace logos"
       }
     },
@@ -170,7 +170,7 @@
     "toggleMobileMenu": "Toggle mobile menu"
   },
   "heroShineTop": {
-    "description": "Use the Chronos app to manage your daily Jira worklogs in an easy and intuitiv way. Stop the time waste of time tracking.",
+    "description": "Use the Chronos app to manage your daily Jira worklogs in an easy and intuitive way. Stop the time waste of time tracking.",
     "headlineAfterIcon": "for Jira",
     "headlineBeforeIcon": "Easy and fast time tracking",
     "pillLabel": "Release changelog"

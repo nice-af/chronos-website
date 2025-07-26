@@ -1,1 +1,202 @@
-{}
+{
+  "configurator": {
+    "description": "Chronos ermöglicht es dir, die App mit einem eleganten dunklen und hellen Theme sowie flexiblen Seitenleistenlayouts zu personalisieren.",
+    "headline": "Wunderschön minimalistisch"
+  },
+  "ctaSection": {
+    "description": "Du trackst bereits deine Zeiten in Jira? Mit Chronos geht das einfacher und schneller. Starte noch heute!",
+    "headline": "Starte mit Chronos"
+  },
+  "faq": {
+    "appAndFeatures": {
+      "adminPermissions": {
+        "answer": "<p>Chronos verbindet sich direkt mit deinem Jira-Konto, daher sind keine Administratorrechte erforderlich. Jira-Arbeitsprotokolle müssen jedoch aktiviert sein und bestimmte Administrator-Einstellungen könnten die Nutzung der App einschränken. Wenn du auf Probleme stößt, lass es uns wissen und wir helfen dir. Rückerstattungen können auch über <a href='https://support.apple.com/118223' target='_blank' rel='noopener noreferrer'>Apples „Problem melden“-Plattform</a> angefordert werden.</p>",
+        "question": "Benötigt Chronos Administratorrechte in Jira?"
+      },
+      "builtWith": {
+        "answer": "<p>Chronos wurde mit <a href='https://github.com/microsoft/react-native-macos' target='_blank' rel='noopener noreferrer'>React Native macOS</a> entwickelt und bietet ein natives Erlebnis mit geringem Ressourcenverbrauch.</p>",
+        "question": "Mit welchen Technologien wurde Chronos entwickelt?"
+      },
+      "freeAlternative": {
+        "answer": "<p>Während es kostenlose Alternativen wie Timkee gibt, wurde Chronos entwickelt, um ein comfortableres Erlebnis zu bieten, mit Funktionen wie Unterstützung für mehrere Konten und einer eleganten, intuitiven Benutzeroberfläche. Als Nebenprojekt von zwei Entwicklern hilft unser Umsatz, wesentliche Kosten wie Apple-Entwicklerlizenzen und Hosting zu decken. Wenn du technisch versiert bist, kannst du auch unser <a href='{SOURCE_CODE_URL}' target='_blank' rel='noopener noreferrer'>GitHub-Repository</a> klonen und selbst builden.</p>",
+        "question": "Warum Chronos gegenüber kostenlosen Zeiterfassungs-Apps wählen?"
+      },
+      "freeTrial": {
+        "answer": "<p>Wir bieten keine kostenlose Testversion an. Du kannst das Projekt selbst builden, indem du unser <a href='{SOURCE_CODE_URL}' target='_blank' rel='noopener noreferrer'>GitHub-Repository</a> klonst und lokal ausführst, aber das erfordert technisches Wissen.</p>",
+        "question": "Gibt es eine kostenlose Testversion?"
+      },
+      "headline": "App & Funktionen",
+      "offlineUsage": {
+        "answer": "<p>Chronos benötigt eine Internetverbindung, um sich mit Jira zu synchronisieren. Du kannst jedoch offline Zeit erfassen und diese dann synchronisieren, sobald du wieder online bist.</p>",
+        "question": "Kann ich Chronos offline nutzen?"
+      },
+      "otherThenJira": {
+        "answer": "<p>Chronos wurde speziell für Jira entwickelt und unterstützt keine anderen Dienste. Wir denken darüber nach, in Zukunft andere Dienste hinzuzufügen, aber im Moment konzentrieren wir uns auf Jira.</p>",
+        "question": "Kann ich Chronos mit anderen Diensten als Jira verwenden?"
+      },
+      "supportedPlatforms": {
+        "answer": "<p>Chronos ist ausschließlich auf macOS verfügbar. Wir haben zwar eine Windows-Version, aber es gibt keine konkreten Pläne für andere Plattformen. Wenn du an einer bestimmten Plattform interessiert bist, lass es uns bitte wissen.</p>",
+        "question": "Welche Plattformen werden unterstützt?"
+      },
+      "whatIsChronos": {
+        "answer": "<p>Chronos ist eine Zeiterfassungs-App für Jira, die entwickelt wurde, um die Verwaltung deiner täglichen Worklogs einfach und intuitiv zu gestalten.</p>",
+        "question": "Was ist Chronos?"
+      }
+    },
+    "headline": "FAQ",
+    "securityAndPrivacy": {
+      "dataHandling": {
+        "answer": "<p>Chronos verarbeitet deine Daten sicher, indem verschlüsselte Verbindungen zur Kommunikation mit Jira verwendet werden. Wir speichern deine Anmeldedaten oder Arbeitsprotokolle nicht auf unseren Servern.</p>",
+        "question": "Wie geht Chronos mit meinen Daten um?"
+      },
+      "headline": "Sicherheit & Datenschutz",
+      "jiraCredentials": {
+        "answer": "<p>Chronos verwendet OAuth, um sich mit deinem Jira-Konto zu verbinden. Deine Anmeldedaten werden niemals auf unseren Servern gespeichert, um maximale Sicherheit zu gewährleisten.</p>",
+        "question": "Speichert Chronos meine Jira-Anmeldedaten?"
+      }
+    },
+    "supportAndContact": {
+      "foundBug": {
+        "answer": "<p>Kontaktiere uns per E-Mail unter <a href='mailto:{SUPPORT_EMAIL}'>{SUPPORT_EMAIL}</a> oder über unser <a href='{SOURCE_CODE_URL}' target='_blank' rel='noopener noreferrer'>GitHub-Repository</a>.</p>",
+        "question": "Ich habe einen Fehler gefunden. Wo kann ich ihn melden und Hilfe erhalten?"
+      },
+      "headline": "Support & Kontakt",
+      "iWantToHelp": {
+        "answer": "<p>Wir schätzen dein Interesse, einen Beitrag zu leisten! Du kannst Fehler melden, Funktionen vorschlagen oder Code über unser <a href='{SOURCE_CODE_URL}' target='_blank' rel='noopener noreferrer'>GitHub-Repository</a> beitragen.</p>",
+        "question": "Ich möchte bei der Weiterentwicklung helfen. Wie kann ich beitragen?"
+      },
+      "loginError": {
+        "answer": "<p>Wenn du den Fehler <em>\"This app requires access to a Jira & User identity site which you don’t have or don’t have the permission to access.\"</em> erhältst, bedeutet dies normalerweise, dass dein Konto keinen Zugriff auf Jira hat oder der Zugriff auf externe Apps eingeschränkt ist. Bitte stelle sicher, dass du die richtige E-Mail-Adresse verwendest und überprüfe, ob du dich mit deinem Konto bei der Jira-Weboberfläche anmelden kannst. Wenn du auf Jira zugreifen kannst, aber weiterhin auf dieses Problem stößt, wende dich an deinen Jira-Administrator, da möglicherweise Einschränkungen vorliegen.</p>",
+        "question": "Warum erhalte ich beim Anmelden einen \"Jira & User identity access\" Fehler?"
+      },
+      "missingFeatures": {
+        "answer": "<p>Wir sind immer offen für Feedback und Funktionsanfragen. Bitte lass uns wissen, was dir fehlt, und wir werden es für zukünftige Updates in Betracht ziehen.</p>",
+        "question": "Mir fehlt eine bestimmte Funktion. Könnt ihr sie hinzufügen?"
+      },
+      "notWorkingRefund": {
+        "answer": "<p>Wenn Chronos für dich nicht funktioniert, <a href='mailto:{SUPPORT_EMAIL}'>kontaktiere uns</a>, und wir werden das Problem untersuchen. Rückerstattungen können auch über <a href='https://support.apple.com/118223' target='_blank' rel='noopener noreferrer'>Apples „Problem melden“-Plattform</a> angefordert werden.</p>",
+        "question": "Die App funktioniert nicht für mich. Kann ich eine Rückerstattung erhalten?"
+      }
+    }
+  },
+  "featureCarousel": {
+    "description": "Chronos ist vollgepackt mit durchdachten Funktionen, die die Zeiterfassung mühelos und angenehm machen. Von der intelligenten Suche bis hin zu Desktop-Widgets haben wir alles für dich.",
+    "entries": {
+      "desktopWidget": {
+        "infoPopup": "Ein Widget für deinen Desktop, dass die einen schnellen Überblick über deine Zeiten gibt.",
+        "label": "Desktop-Widget"
+      },
+      "fullscreenMode": {
+        "infoPopup": "Unsere App ist so designed, dass sie möglichst kompakt ist. Falls du jedoch mehr Platz benötigst, kannst du in den Vollbildmodus wechseln und ein produktiveres Layout verwenden.",
+        "label": "Vollbildmodus"
+      },
+      "germanTranslation": {
+        "infoPopup": "Chronos ist vollständig auf Deutsch verfügbar.",
+        "label": "Deutsche Übersetzung"
+      },
+      "menubarWidget": {
+        "infoPopup": "Ein Widget in der Menüleiste für schnellen Starten und Stoppen.",
+        "label": "Menüleisten-Widget"
+      },
+      "reminderNotification": {
+        "infoPopup": "Ein stressiger Arbeitstag? Wir können dir eine Erinnerungsbenachrichtigung senden, damit du das Zeiterfassen nicht vergisst.",
+        "label": "Erinnerungen"
+      },
+      "rightClickContextMenu": {
+        "infoPopup": "Du kannst unser schönes UI überspringen und das Rechtsklick-Kontextmenü verwenden, um deine Arbeitsprotokolle aufzuräumen.",
+        "label": "Rechtsklick-Kontextmenü"
+      },
+      "shortcuts": {
+        "infoPopup": "Wir haben ein paar Shortcuts, um dir das Leben zu erleichtern.",
+        "label": "Shortcuts"
+      },
+      "smartSearch": {
+        "infoPopup": "Unsere intelligente Suche ist optimiert, um aktuelle und kürzlich verwendete Issues, an denen du arbeitest, leicht zu finden.",
+        "label": "Intelligente Suche"
+      },
+      "workspaceLogos": {
+        "infoPopup": "Viele Jira-Arbeitsbereiche haben kein Logo eingerichtet, das über die Jira-API verfügbar ist. Wir haben das abgedeckt, indem wir auch das Header-Logo bereitstellen.",
+        "label": "Workspace-Logos"
+      }
+    },
+    "headline": "...und einige weitere nette Extras"
+  },
+  "features": {
+    "appOverview": {
+      "description": "Erhalte einen vollständigen Überblick über deine Arbeitsprotokolle mit unserer sauberen und intuitiven Benutzeroberfläche.",
+      "headline": "Deine Arbeit auf einen Blick"
+    },
+    "manualSubmit": {
+      "description": "Überprüfe und passe deine Arbeitsprotokolle an, bevor du sie einreichst. Reiche sie erst ein, wenn du bereit bist.",
+      "headline": "Manuelles Absenden"
+    },
+    "multipleAccounts": {
+      "description": "Verwalte Arbeitsprotokolle ganz einfach über mehrere Konten hinweg. Perfekt für Agenturen oder Freiberufler, die mit verschiedenen Kunden arbeiten.",
+      "headline": "Mehrere Konten verbinden"
+    },
+    "startStop": {
+      "description": "Starte und stoppe Timer für deine Aufgaben direkt in der App. Verfolge deine Zeit während der Arbeit, ohne Aufwand.",
+      "headline": "Echtzeit-Tracking"
+    }
+  },
+  "global": {
+    "by": "von",
+    "companion": "Companion",
+    "download": "Herunterladen",
+    "downloadForPlatform": "Herunterladen für {platform}",
+    "english": "Englisch",
+    "faq": "FAQ",
+    "features": "Funktionen",
+    "german": "Deutsch",
+    "iconForX": "Symbol für {x}",
+    "iconForXInDarkMode": "Symbol für {x} im Dunkelmodus",
+    "iconForXInLightMode": "Symbol für {x} im Hellmodus",
+    "legalInformation": "Rechtliche Informationen",
+    "legalNotice": "Impressum",
+    "linkedInAdrian": "LinkedIn Adrian",
+    "linkedInFlorian": "LinkedIn Florian",
+    "platformApp": "{platform} App",
+    "platformCompanion": "{platform} Extension",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "resources": "Ressourcen",
+    "selectX": "{x} auswählen",
+    "socials": "Soziale Netzwerke",
+    "sourceCode": "Source Code",
+    "support": "Support",
+    "toggleMobileMenu": "Mobiles Menü umschalten"
+  },
+  "heroShineTop": {
+    "description": "Verwende die Chronos-App, um deine täglichen Jira Worklogs einfach und intuitiv zu verwalten. Beende die Zeitverschwendung bei der Zeiterfassung.",
+    "headlineAfterIcon": "für Jira",
+    "headlineBeforeIcon": "Einfache und schnelle Zeiterfassung",
+    "pillLabel": "Release-Changelog"
+  },
+  "newsletter": {
+    "description": "Erhalte Benachrichtigungen über neue Nice A.F.-Veröffentlichungen!",
+    "errorMessage": {
+      "badRequest": "Etwas ist schief gelaufen. Bitte versuche es später erneut.",
+      "duplicate_parameter": "Du bist bereits für den Newsletter angemeldet.",
+      "invalid_email": "Bitte gib eine gültige E-Mail-Adresse an.",
+      "invalid_parameter": "Du bist bereits für den Newsletter angemeldet.",
+      "missing_parameter": "Bitte gib eine gültige E-Mail-Adresse an.",
+      "unauthorized": "Dienst vorübergehend nicht verfügbar. Bitte versuche es später erneut."
+    },
+    "headline": "Nice A.F.-Newsletter-Anmeldung",
+    "submitAriaLabel": "Für den Newsletter anmelden",
+    "successMessage": "Anmeldung erfolgreich! Du erhältst in Kürze eine Bestätigungs-E-Mail."
+  },
+  "screenshots": {
+    "overviewDarkAlt": "Ein Screenshot der Chronos-App im Dunkelmodus",
+    "overviewLightAlt": "Ein Screenshot der Chronos-App im Hellmodus",
+    "sidebarCompactDarkAlt": "Ein Screenshot der Chronos-App-Seitenleiste im kompakten Layout und Dunkelmodus",
+    "sidebarCompactLightAlt": "Ein Screenshot der Chronos-App-Seitenleiste im kompakten Layout und Hellmodus",
+    "sidebarMicroDarkAlt": "Ein Screenshot der Chronos-App-Seitenleiste im Mikro-Layout und Dunkelmodus",
+    "sidebarMicroLightAlt": "Ein Screenshot der Chronos-App-Seitenleiste im Mikro-Layout und Hellmodus"
+  },
+  "shapes": {
+    "titleCone": "Eine 3D-Animation eines Kegels",
+    "titleCylinder": "Eine 3D-Animation eines Zylinders",
+    "titleDodecahedron": "Eine 3D-Animation eines Dodekaeders",
+    "titleSphere": "Eine 3D-Animation einer Kugel"
+  }
+}
