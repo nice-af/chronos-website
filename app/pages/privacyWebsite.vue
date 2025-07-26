@@ -218,7 +218,7 @@ import { defineI18nRoute } from '#imports';
 
 defineI18nRoute({
   paths: {
-    en: '/privacy',
+    en: '/privacy-policy',
     de: '/datenschutzerklaerung',
   },
 });

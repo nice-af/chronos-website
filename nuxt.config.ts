@@ -38,21 +38,6 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     vueI18n: '../app/i18n.config.ts',
     strategy: 'prefix',
-    customRoutes: 'config',
-    pages: {
-      privacyWebsite: {
-        en: '/privacy-website',
-        de: '/datenschutz-webseite',
-      },
-      privacyApp: {
-        en: '/privacy-app',
-        de: '/datenschutz-app',
-      },
-      legalNotice: {
-        en: '/legal-notice',
-        de: '/impressum',
-      },
-    },
   },
 
   fonts: {
