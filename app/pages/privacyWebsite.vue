@@ -3,15 +3,23 @@
     <div class="legal-page">
       <h1>Privacy Policy</h1>
 
-      <section>
+      <section v-if="$i18n.locale === 'en'">
         <h2>Introduction</h2>
         <p>
           Welcome to our Privacy Policy. Your privacy is critically important to us. This document outlines how we
           collect, use, and protect your personal information when you interact with our website and services.
         </p>
       </section>
+      <section v-else>
+        <h2>Einleitung</h2>
+        <p>
+          Willkommen zu unserer Datenschutzerklärung. Ihre Privatsphäre ist uns äußerst wichtig. Dieses Dokument
+          beschreibt, wie wir Ihre persönlichen Daten erfassen, verwenden und schützen, wenn Sie mit unserer Website und
+          unseren Diensten interagieren.
+        </p>
+      </section>
 
-      <section>
+      <section v-if="$i18n.locale === 'en'">
         <h2>Information We Collect</h2>
         <p>
           <strong>Data You Provide:</strong> We collect your email address when you subscribe to our newsletter. This
@@ -31,8 +39,30 @@
           <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank">here</a>.
         </p>
       </section>
+      <section v-else>
+        <h2>Informationen, die wir sammeln</h2>
+        <p>
+          <strong>Daten, die Sie bereitstellen:</strong> Wir erfassen Ihre E-Mail-Adresse, wenn Sie unseren Newsletter
+          abonnieren. Diese Informationen werden von Brevo, unserem Newsletter-Management-Tool, gemäß Artikel 6(1)(a)
+          der DSGVO verarbeitet, der die Datenverarbeitung auf Grundlage Ihrer Einwilligung erlaubt. Sie können die
+          Datenschutzrichtlinie von Brevo <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank">hier</a>
+          einsehen.
+        </p>
+        <p>
+          <strong>Automatisch erfasste Daten:</strong> Vercel, unser Hosting-Anbieter, erfasst serverseitige Analysen,
+          einschließlich IP-Adressen und Browserdetails, um die Leistung und Sicherheit der Website zu gewährleisten.
+          Diese Daten werden gemäß Artikel 6(1)(f) der DSGVO verarbeitet, der die Verarbeitung für berechtigte
+          Interessen erlaubt. Sie können die Datenschutzrichtlinie von Vercel
+          <a href="https://vercel.com/legal/privacy-policy" target="_blank">hier</a> einsehen.
+        </p>
+        <p>
+          <strong>Daten von Drittanbietern:</strong> Wir stellen Links zu externen Plattformen wie LinkedIn bereit.
+          Bitte überprüfen Sie deren Datenschutzrichtlinien für weitere Informationen. Die Datenschutzrichtlinie von
+          LinkedIn finden Sie <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank">hier</a>.
+        </p>
+      </section>
 
-      <section>
+      <section v-if="$i18n.locale === 'en'">
         <h2>How We Use Information</h2>
         <ul>
           <li>To manage newsletter subscriptions and send updates.</li>
@@ -40,21 +70,41 @@
           <li>To improve user experience and provide relevant content.</li>
         </ul>
       </section>
-
-      <section>
-        <h2>Cookies and Tracking</h2>
-        <p>We do not use cookies on our website.</p>
+      <section v-else>
+        <h2>Wie wir Informationen verwenden</h2>
+        <ul>
+          <li>Um Newsletter-Abonnements zu verwalten und Updates zu senden.</li>
+          <li>Um die Leistung der Website zu analysieren und die Sicherheit zu gewährleisten.</li>
+          <li>Um die Benutzererfahrung zu verbessern und relevante Inhalte bereitzustellen.</li>
+        </ul>
       </section>
 
-      <section>
+      <section v-if="$i18n.locale === 'en'">
+        <h2>Cookies</h2>
+        <p>We do not use cookies on our website.</p>
+      </section>
+      <section v-else>
+        <h2>Cookies</h2>
+        <p>Wir verwenden keine Cookies auf unserer Website.</p>
+      </section>
+
+      <section v-if="$i18n.locale === 'en'">
         <h2>Third-Party Services</h2>
         <p>
           Our website is hosted on Vercel, which collects analytics data. We also provide links to LinkedIn profiles for
           your convenience. Please review the privacy policies of these services for more information.
         </p>
       </section>
+      <section v-else>
+        <h2>Drittanbieter-Dienste</h2>
+        <p>
+          Unsere Website wird auf Vercel gehostet, das Analysedaten sammelt. Wir stellen auch Links zu LinkedIn-Profilen
+          zu Ihrer Bequemlichkeit bereit. Bitte überprüfen Sie die Datenschutzrichtlinien dieser Dienste für weitere
+          Informationen.
+        </p>
+      </section>
 
-      <section>
+      <section v-if="$i18n.locale === 'en'">
         <h2>User Rights</h2>
         <p>As a user, you have the following rights regarding your personal data:</p>
         <ul>
@@ -87,8 +137,44 @@
           request.
         </p>
       </section>
+      <section v-else>
+        <h2>Benutzerrechte</h2>
+        <p>Als Benutzer haben Sie folgende Rechte in Bezug auf Ihre persönlichen Daten:</p>
+        <ul>
+          <li>
+            <strong>Auskunftsrecht:</strong> Sie können Informationen über die persönlichen Daten anfordern, die wir
+            über Sie speichern.
+          </li>
+          <li>
+            <strong>Recht auf Berichtigung:</strong> Sie haben das Recht, Korrekturen an ungenauen oder unvollständigen
+            persönlichen Daten zu verlangen.
+          </li>
+          <li>
+            <strong>Recht auf Löschung:</strong> Sie können die Löschung Ihrer persönlichen Daten verlangen,
+            vorbehaltlich gesetzlicher oder vertraglicher Verpflichtungen.
+          </li>
+          <li>
+            <strong>Recht auf Datenübertragbarkeit:</strong> Sie können eine Kopie Ihrer persönlichen Daten in einem
+            strukturierten, maschinenlesbaren Format anfordern.
+          </li>
+          <li>
+            <strong>Recht auf Widerruf der Einwilligung:</strong> Wenn Sie eine Einwilligung zur Datenverarbeitung
+            erteilt haben, können Sie diese jederzeit widerrufen.
+          </li>
+          <li>
+            <strong>Recht auf Beschwerde:</strong> Wenn Sie der Meinung sind, dass Ihre Datenschutzrechte verletzt
+            wurden, können Sie eine Beschwerde bei der zuständigen Datenschutzbehörde einreichen.
+          </li>
+        </ul>
+        <p>
+          Um diese Rechte auszuüben, kontaktieren Sie uns bitte über die im Abschnitt "Kontaktinformationen" angegebenen
+          Informationen. Wenn Sie sich von unserem Newsletter abmelden möchten, können Sie dies jederzeit tun, indem Sie
+          auf den Abmeldelink in jeder E-Mail klicken. Alternativ können Sie uns direkt kontaktieren, und wir werden
+          Ihre Anfrage umgehend bearbeiten.
+        </p>
+      </section>
 
-      <section>
+      <section v-if="$i18n.locale === 'en'">
         <h2>Contact Information</h2>
         <p>For privacy-related inquiries, please contact:</p>
         <p>
@@ -98,12 +184,29 @@
           Email: <a href="mailto:adrianfahrbach@me.com">adrianfahrbach@me.com</a>
         </p>
       </section>
+      <section v-else>
+        <h2>Kontaktinformationen</h2>
+        <p>Für datenschutzbezogene Anfragen kontaktieren Sie bitte:</p>
+        <p>
+          Adrian Fahrbach<br />
+          Filderstraße 71/1<br />
+          70771 Leinfelden-Echterdingen<br />
+          E-Mail: <a href="mailto:adrianfahrbach@me.com">adrianfahrbach@me.com</a>
+        </p>
+      </section>
 
-      <section>
+      <section v-if="$i18n.locale === 'en'">
         <h2>Changes to This Privacy Policy</h2>
         <p>
           We may update this policy from time to time. Please review it periodically to stay informed about how we
           protect your information.
+        </p>
+      </section>
+      <section v-else>
+        <h2>Änderungen dieser Datenschutzerklärung</h2>
+        <p>
+          Wir können diese Richtlinie von Zeit zu Zeit aktualisieren. Bitte überprüfen Sie sie regelmäßig, um informiert
+          zu bleiben, wie wir Ihre Informationen schützen.
         </p>
       </section>
     </div>
