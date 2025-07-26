@@ -45,6 +45,14 @@ const categories: FaqProps['categories'] = {
       question: t('faq.appAndFeatures.freeAlternative.question'),
       answer: t('faq.appAndFeatures.freeAlternative.answer', envs),
     },
+    {
+      question: t('faq.appAndFeatures.freeTrial.question'),
+      answer: t('faq.appAndFeatures.freeTrial.answer', envs),
+    },
+    {
+      question: t('faq.appAndFeatures.offlineUsage.question'),
+      answer: t('faq.appAndFeatures.offlineUsage.answer', envs),
+    },
   ],
   [t('faq.supportAndContact.headline')]: [
     {
@@ -66,6 +74,20 @@ const categories: FaqProps['categories'] = {
     {
       question: t('faq.supportAndContact.supportLanguage.question'),
       answer: t('faq.supportAndContact.supportLanguage.answer', envs),
+    },
+    {
+      question: t('faq.supportAndContact.loginError.question'),
+      answer: t('faq.supportAndContact.loginError.answer', envs),
+    },
+  ],
+  [t('faq.securityAndPrivacy.headline')]: [
+    {
+      question: t('faq.securityAndPrivacy.dataHandling.question'),
+      answer: t('faq.securityAndPrivacy.dataHandling.answer', envs),
+    },
+    {
+      question: t('faq.securityAndPrivacy.jiraCredentials.question'),
+      answer: t('faq.securityAndPrivacy.jiraCredentials.answer', envs),
     },
   ],
 };
