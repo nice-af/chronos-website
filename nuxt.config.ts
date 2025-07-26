@@ -35,6 +35,17 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     vueI18n: '../app/i18n.config.ts',
     strategy: 'prefix',
+    customRoutes: 'config',
+    pages: {
+      privacy: {
+        en: '/privacy',
+        de: '/datenschutz',
+      },
+      legalNotice: {
+        en: '/legal-notice',
+        de: '/impressum',
+      },
+    },
   },
 
   fonts: {

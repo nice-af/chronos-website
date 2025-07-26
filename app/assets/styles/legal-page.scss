@@ -1,0 +1,36 @@
+@use '~/assets/styles/mixins/typography';
+
+.legal-page {
+  max-width: 760px;
+  margin: 160px auto 120px;
+
+  h1,
+  h2,
+  h3 {
+    margin: 2.5em 0 0.75em !important;
+  }
+
+  h1 {
+    @include typography.headline-m;
+  }
+
+  h2 {
+    @include typography.headline-s;
+  }
+
+  p {
+    color: var(--text-secondary);
+  }
+
+  a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: 0.2s ease;
+
+    &:hover {
+      color: var(--text-secondary);
+    }
+  }
+}

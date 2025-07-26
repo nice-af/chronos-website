@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper"></div>
+  <div class="wrapper">oprvasy</div>
 </template>
 
 <script setup lang="ts">
