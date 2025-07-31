@@ -172,6 +172,13 @@ onMounted(() => {
   $shapeDodecahedron.value?.addEventListener('loadeddata', checkLoaded);
   $shapeCone.value?.addEventListener('loadeddata', checkLoaded);
   $logoIcon.value?.addEventListener('load', checkLoaded);
+
+  // Trigger animations after 1 second if not already triggered
+  setTimeout(() => {
+    if (!isLoaded.value) {
+      isLoaded.value = true;
+    }
+  }, 1000);
 });
 
 onUnmounted(() => {
