@@ -244,3 +244,21 @@ button {
     );
   }
 }
+
+.skip-to-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 8px;
+  color: #fff;
+  pointer-events: none;
+  background: #000;
+  transition: transform 0.25s;
+  transform: translateY(-110%);
+
+  &:focus {
+    pointer-events: all;
+    transform: translateY(0);
+  }
+}

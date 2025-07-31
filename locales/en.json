@@ -143,6 +143,11 @@
       "headline": "Real-time tracking"
     }
   },
+  "fourOhFour": {
+    "description": "The page you are looking for could not be found.",
+    "headline": "Page not found",
+    "linkText": "Back to homepage"
+  },
   "global": {
     "by": "by",
     "companion": "Companion",
@@ -165,6 +170,7 @@
     "privacyPolicyWebsite": "Privacy policy (website)",
     "resources": "Resources",
     "selectX": "Select {x}",
+    "skipToContent": "Skip to content",
     "socials": "Socials",
     "sourceCode": "Source code",
     "support": "Support",
