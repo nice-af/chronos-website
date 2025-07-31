@@ -1,9 +1,29 @@
 import { defineNuxtConfig } from 'nuxt/config';
 
+const IS_DEVELOPMENT = process.env.ENV === 'development';
+
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: ['@nuxt/eslint', '@nuxt/fonts', 'nuxt-svgo', '@nuxtjs/i18n'],
+  modules: ['@nuxt/eslint', '@nuxt/fonts', 'nuxt-svgo', '@nuxtjs/i18n', '@kgierke/nuxt-basic-auth'],
   imports: { autoImport: false },
+
+  basicAuth: {
+    users: [
+      {
+        username: process.env.BASIC_AUTH_USERNAME ?? '',
+        password: process.env.BASIC_AUTH_PASSWORD ?? '',
+      },
+    ],
+    enabled: !IS_DEVELOPMENT,
+    allowedRoutes: [
+      'privacy-policy',
+      'datenschutzerklaerung',
+      '/privacy-policy-app',
+      '/datenschutzerklaerung-app',
+      '/legal-notice',
+      '/impressum',
+    ],
+  },
 
   runtimeConfig: {
     public: {
