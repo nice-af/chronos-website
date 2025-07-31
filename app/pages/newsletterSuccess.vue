@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div :class="newsletterSuccess.container">
-      <PhCheck size="64" weight="light" :class="newsletterSuccess.icon" />
+      <Icon name="ph:check-light" size="64" :class="newsletterSuccess.icon" />
       <h1 :class="newsletterSuccess.headline">
         {{ t('newsletterSuccess.headline') }}
       </h1>
@@ -12,9 +12,8 @@
 </template>
 
 <script setup lang="ts">
-import { NuxtLink } from '#components';
+import { NuxtLink, Icon } from '#components';
 import { defineI18nRoute, useI18n } from '#imports';
-import { PhCheck } from '@phosphor-icons/vue';
 
 const { t } = useI18n();
 

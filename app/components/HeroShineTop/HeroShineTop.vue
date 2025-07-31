@@ -42,7 +42,7 @@
           href="https://github.com/nice-af/chronos-app/releases"
           isPill
           variant="secondary">
-          <template #icon><PhArrowRight size="16" weight="bold" /></template>
+          <template #icon><Icon name="ph:arrow-right-bold" size="16" /></template>
         </Button>
       </p>
       <h1 :class="[heroShineTop.headline, { [heroShineTop.runAnimation!]: isLoaded }]" class="headline-xl">
@@ -81,10 +81,10 @@
         :class="[heroShineTop.buttonsContainer, { [heroShineTop.runAnimation!]: isLoaded }]"
         :data-transition-delay="(headline1Array.length + headline2Array.length + 5).toString()">
         <Button :label="t('global.download')" :href="config.public.DOWNLOAD_MACOS_URL">
-          <template #icon><PhAppStoreLogo size="22" weight="bold" /></template>
+          <template #icon><Icon name="ph:app-store-logo-bold" size="22" /></template>
         </Button>
         <Button :label="t('global.sourceCode')" :href="config.public.SOURCE_CODE_URL" variant="secondary">
-          <template #icon><PhGithubLogo size="22" /></template>
+          <template #icon><Icon name="ph:github-logo" size="22" /></template>
         </Button>
       </p>
       <video
@@ -121,7 +121,7 @@
 
 <script setup lang="ts">
 import { useI18n, useRuntimeConfig } from '#imports';
-import { PhAppStoreLogo, PhArrowRight, PhGithubLogo } from '@phosphor-icons/vue';
+import { Icon } from '#components';
 import { computed, onMounted, onUnmounted, ref, useTemplateRef } from 'vue';
 import Button from '~/components/Button/Button.vue';
 import { useParallaxScrolling } from '~/composables/useParallaxScrolling';

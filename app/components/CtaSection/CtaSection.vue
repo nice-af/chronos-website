@@ -15,7 +15,7 @@
         <Button
           :label="t('global.downloadForPlatform', { platform: 'macOS' })"
           :href="config.public.DOWNLOAD_MACOS_URL">
-          <template #icon><PhAppStoreLogo size="22" weight="bold" /></template>
+          <template #icon><Icon name="ph:app-store-logo-bold" size="22" /></template>
         </Button>
       </p>
     </div>
@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import { useI18n, useRuntimeConfig } from '#imports';
-import { PhAppStoreLogo } from '@phosphor-icons/vue';
+import { Icon } from '#components';
 import { useTemplateRef } from 'vue';
 import Button from '~/components/Button/Button.vue';
 import { useTextLines } from '~/composables/useTextLines';
