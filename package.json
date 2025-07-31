@@ -12,6 +12,7 @@
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check",
+    "lint:stylelint": "stylelint '**/*.{css,scss}'",
     "lint:fix": "eslint . --fix && prettier --write --list-different ."
   },
   "dependencies": {

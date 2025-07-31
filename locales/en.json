@@ -196,6 +196,11 @@
     "submitAriaLabel": "Subscribe to the newsletter",
     "successMessage": "Signup successful! You will receive a confirmation email shortly."
   },
+  "newsletterSuccess": {
+    "description": "Thank you for subscribing to our newsletter!",
+    "headline": "Signup successful!",
+    "linkText": "Back to homepage"
+  },
   "screenshots": {
     "overviewDarkAlt": "A screenshot of the Chronos app and dark mode",
     "overviewLightAlt": "A screenshot of the Chronos app and light mode",

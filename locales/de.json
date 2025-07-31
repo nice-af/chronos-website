@@ -192,6 +192,11 @@
     "submitAriaLabel": "Für den Newsletter anmelden",
     "successMessage": "Anmeldung erfolgreich! Du erhältst in Kürze eine Bestätigungs-E-Mail."
   },
+  "newsletterSuccess": {
+    "description": "Vielen Dank für deine Anmeldung zu unserem Newsletter!",
+    "headline": "Anmeldung erfolgreich!",
+    "linkText": "Zurück zur Startseite"
+  },
   "screenshots": {
     "overviewDarkAlt": "Ein Screenshot der Chronos-App im Dunkelmodus",
     "overviewLightAlt": "Ein Screenshot der Chronos-App im Hellmodus",

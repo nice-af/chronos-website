@@ -1,6 +1,6 @@
 {
   "locales/*.json": "jsonsort",
-  "*.scss": "stylelint --fix",
+  "*.scss": "stylelint --fix --allow-empty-input",
   "*.{js,ts,vue,scss,json,yml}": "prettier --write",
   "*.{ts,vue}": "eslint --fix"
 }
