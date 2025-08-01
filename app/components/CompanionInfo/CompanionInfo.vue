@@ -35,6 +35,9 @@
       <hr :class="companionInfo.line" />
       <div :class="companionInfo.infoContainer">
         <img
+          :class="companionInfo.screenshot"
+          width="432"
+          height="242"
           src="/assets/images/companion-screenshot.png"
           srcset="/assets/images/companion-screenshot@2x.png 2x"
           :alt="t('companion.info.screenshotAlt')" />
