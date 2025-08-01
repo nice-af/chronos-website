@@ -10,7 +10,12 @@
         alt="" />
     </div>
     <div :class="heroCompanion.container">
-      <img src="/assets/images/companion-logo.svg" width="128" height="128" alt="Chronos Companion Logo" />
+      <img
+        :class="heroCompanion.logo"
+        src="/assets/images/companion-logo.svg"
+        width="128"
+        height="128"
+        alt="Chronos Companion Logo" />
       <h1 :class="heroCompanion.headlineContainer">
         <span :class="heroCompanion.headlineLarge" class="headline-gradient" data-lines="1">
           {{ t('companion.hero.headlineLarge') }}

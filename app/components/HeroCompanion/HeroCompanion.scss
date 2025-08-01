@@ -26,10 +26,19 @@
 
 .container {
   position: relative;
-  padding: 130px 0 92px;
+  padding: 130px 0 80px;
   text-align: center;
   @media (min-width: 768px) {
     padding: 180px 0 130px;
+  }
+}
+
+.logo {
+  width: 96px;
+  height: 96px;
+  @media (min-width: 768px) {
+    width: 128px;
+    height: 128px;
   }
 }
 
@@ -39,21 +48,32 @@
 
 .headlineLarge {
   margin: 0;
-  font-size: 48px;
+  font-size: 28px;
   line-height: 1;
+  @media (min-width: 576px) {
+    font-size: 32px;
+  }
+  @media (min-width: 768px) {
+    font-size: 48px;
+  }
 }
 
 .headlineSmall {
+  display: inline-block;
   margin: 0;
-  font-size: 28px;
+  font-size: 20px;
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
 }
 
 .description {
   max-width: 780px;
-  margin: 28px auto 0;
+  margin: 20px 6px 0;
   font-size: 18px;
   color: var(--text-secondary);
   @media (min-width: 576px) {
+    margin: 28px auto 0;
     font-size: 20px;
   }
 }
