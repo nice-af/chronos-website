@@ -8,6 +8,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       COMPANION_CHROME_URL: 'https://chromewebstore.google.com/detail/ffabeiojbdhkmllfadkidohlkjochcan',
+      COMPANION_FIREFOX_URL: '',
+      COMPANION_EDGE_URL: '',
       DOWNLOAD_MACOS_URL: 'https://github.com/nice-af/chronos-app',
       SOURCE_CODE_URL: 'https://github.com/nice-af/chronos-app',
       SUPPORT_EMAIL: 'mailto:support@chronos-for-jira.com',

@@ -58,7 +58,7 @@
           ref="logoIcon"
           :class="heroShineTop.icon"
           src="/assets/images/hero-icon.png"
-          srcset="/assets/images/hero-icon@2x.png 2x"
+          srcset="/assets/images/hero-icon@2x.png 2x, /assets/images/hero-icon@3x.png 3x"
           width="82"
           height="82"
           alt="Chronos app icon"
