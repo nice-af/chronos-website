@@ -1,4 +1,11 @@
 {
+  "companion": {
+    "hero": {
+      "description": "Die Chronos Companion-Browsererweiterung fügt in Jira einen Button hinzu, mit dem du Worklogs direkt aus deinem Browser heraus starten kannst.",
+      "headlineLarge": "Chronos Companion",
+      "headlineSmall": "Browsererweiterung"
+    }
+  },
   "configurator": {
     "description": "Chronos ermöglicht es dir, die App mit einem eleganten dunklen und hellen Theme sowie flexiblen Seitenleistenlayouts zu personalisieren.",
     "headline": "Wunderschön minimalistisch"

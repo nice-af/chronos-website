@@ -1,4 +1,11 @@
 {
+  "companion": {
+    "hero": {
+      "description": "The Chronos Companion browser extension adds a button to your Jira interface, allowing you to start tasks directly from your browser.",
+      "headlineLarge": "Chronos Companion",
+      "headlineSmall": "Browser extension"
+    }
+  },
   "configurator": {
     "description": "Chronos lets you personalize your experience with a sleek dark and light theme, as well as flexible sidebar layouts.",
     "headline": "Beautifully minimal"

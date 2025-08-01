@@ -24,7 +24,7 @@
             <NuxtLink to="#download">{{ t('global.download') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink :to="config.public.COMPANION_CHROME_URL">{{ t('global.companion') }}</NuxtLink>
+            <NuxtLink :to="localePath('companion')">{{ t('global.companion') }}</NuxtLink>
           </li>
           <li>
             <NuxtLink :to="localePath('faq')">{{ t('global.faq') }}</NuxtLink>
@@ -40,12 +40,10 @@
 </template>
 
 <script setup lang="ts">
-import { nextTick, ref, useTemplateRef } from 'vue';
-import { useRuntimeConfig } from '#app';
 import { NuxtLink } from '#components';
 import { useI18n, useLocalePath } from '#imports';
+import { nextTick, ref, useTemplateRef } from 'vue';
 
-const config = useRuntimeConfig();
 const { t } = useI18n();
 const localePath = useLocalePath();
 const menuIsOpen = ref(false);
