@@ -10,6 +10,8 @@
       "downloadHeadline": "Download the extension for your browser:",
       "downloadListLabel": "Browser extension download links",
       "featureInfo": "The Chronos Companion browser extension adds a button to your Jira interface, allowing you to start tasks directly from your browser.",
+      "preinstalledForSafari": "Preinstalled for<br />Safari",
+      "safariFloatingInfo": "Installing the Chronos macOS app automatically installs the Safari Companion extension as well.",
       "screenshotAlt": "A screenshot of the Chronos Companion browser extension showing where the Chronos button is added in Jira."
     }
   },

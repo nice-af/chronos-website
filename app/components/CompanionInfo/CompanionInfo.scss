@@ -96,6 +96,72 @@
   color: var(--text-secondary);
 }
 
+.safariEntry {
+  position: relative;
+  cursor: help;
+
+  .downloadLink {
+    &:hover {
+      background-color: var(--neutral-700);
+    }
+
+    &:active {
+      background-color: var(--neutral-700);
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    .infoPopup {
+      opacity: 1;
+      transform: translateY(-84%);
+      @media (min-width: 1024px) {
+        transform: translateX(-50%) translateY(-84%);
+      }
+    }
+  }
+}
+
+.infoPopup {
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  width: 280px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  pointer-events: none;
+  background: var(--popup-background);
+  border-radius: 4px;
+  opacity: 0;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+  transform: translateY(-78%);
+  @media (min-width: 1024px) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-78%);
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 100%;
+  left: 24%;
+  width: 16px;
+  height: 8px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background: var(--popup-background);
+  transform: translateX(-50%);
+  @media (min-width: 420px) {
+    left: 29%;
+  }
+  @media (min-width: 1024px) {
+    left: 50%;
+  }
+}
+
 .line {
   width: 100%;
   height: 1px;

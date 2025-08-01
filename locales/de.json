@@ -10,6 +10,8 @@
       "downloadHeadline": "Lade die Erweiterung für deinen Browser herunter:",
       "downloadListLabel": "Browser Erweiterung Download-Links",
       "featureInfo": "Die Chronos Companion Browsererweiterung fügt deinem Jira einen Button hinzu, mit dem du Aufgaben direkt aus deinem Browser heraus starten kannst.",
+      "preinstalledForSafari": "Vorinstalliert für<br />Safari",
+      "safariFloatingInfo": "Mit der Installation der Chronos MacOS App wird automatisch auch die Safari Companion Erweiterung installiert.",
       "screenshotAlt": "Ein Screenshot der Chronos Companion Browsererweiterung, der zeigt wo der Chronos Button in Jira eingefügt wird."
     }
   },

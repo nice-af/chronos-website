@@ -4,15 +4,19 @@
       <div :class="companionInfo.downloadContainer">
         <p :class="companionInfo.downloadHeadline">{{ t('companion.info.downloadHeadline') }}</p>
         <ul :class="companionInfo.downloadList" :aria-label="t('companion.info.downloadListLabel')">
-          <li>
-            <div :class="companionInfo.downloadLink">
+          <li :class="companionInfo.safariEntry">
+            <div :class="companionInfo.downloadLink" tabindex="0">
               <img
                 :class="companionInfo.browserIcon"
                 :src="`/assets/images/browsers/safari.png`"
                 :srcset="`/assets/images/browsers/safari@2x.png 2x, /assets/images/browsers/safari@3x.png 3x`"
                 alt="Safari Logo" />
             </div>
-            <p :class="companionInfo.downloadText" v-html="t('companion.info.downloadForX', { browser: 'Safari' })"></p>
+            <p :class="companionInfo.downloadText" v-html="t('companion.info.preinstalledForSafari')"></p>
+            <div :class="companionInfo.infoPopup">
+              {{ t('companion.info.safariFloatingInfo') }}
+              <div :class="companionInfo.arrow"></div>
+            </div>
           </li>
           <li v-for="browser in browsers" :key="browser.name">
             <a
