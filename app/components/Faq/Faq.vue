@@ -1,7 +1,7 @@
 <template>
   <section :class="faq.wrapper">
-    <div :class="faq.headlineContainer">
-      <h2 ref="headline" class="headline-l headline-gradient" :data-lines="headlineLines?.toString() ?? undefined">
+    <div :class="faq.titleContainer">
+      <h2 :class="faq.title" class="headline-l headline-gradient" data-lines="1">
         {{ headline }}
       </h2>
     </div>
@@ -28,10 +28,8 @@
 </template>
 
 <script setup lang="ts">
-import { useTemplateRef } from 'vue';
 import type { FaqEntryProps } from '~/components/FaqEntry/FaqEntry.vue';
 import FaqEntry from '~/components/FaqEntry/FaqEntry.vue';
-import { useTextLines } from '~/composables/useTextLines';
 
 export interface FaqProps {
   headline: string;
@@ -39,9 +37,6 @@ export interface FaqProps {
 }
 
 defineProps<FaqProps>();
-
-const $headline = useTemplateRef('headline');
-const { headlineLines } = useTextLines($headline);
 </script>
 
 <style module="faq" lang="scss" src="./Faq.scss" />

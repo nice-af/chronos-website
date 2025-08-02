@@ -1,6 +1,29 @@
-.headlineContainer {
+.titleContainer {
   margin: 220px 0 40px;
   text-align: center;
+  perspective: 1000px;
+}
+
+.title {
+  filter: blur(6px);
+  opacity: 0;
+  transform: translateY(30%) rotateX(-30deg);
+  transform-origin: center top;
+  animation: title-fade-in 0.65s ease forwards;
+}
+
+@keyframes title-fade-in {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+    transform: translateY(30%) rotateX(-30deg);
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
 }
 
 .entriesContainer {

@@ -28,6 +28,7 @@
   position: relative;
   padding: 130px 0 80px;
   text-align: center;
+  perspective: 1000px;
   @media (min-width: 768px) {
     padding: 180px 0 130px;
   }
@@ -47,9 +48,11 @@
 }
 
 .headlineLarge {
+  display: inline-block;
   margin: 0;
   font-size: 28px;
   line-height: 1;
+  animation-delay: 0.1s;
   @media (min-width: 576px) {
     font-size: 32px;
   }
@@ -62,8 +65,33 @@
   display: inline-block;
   margin: 0;
   font-size: 20px;
+  animation-delay: 0.2s;
   @media (min-width: 768px) {
     font-size: 28px;
+  }
+}
+
+.logo,
+.headlineLarge,
+.headlineSmall {
+  filter: blur(6px);
+  opacity: 0;
+  transform: translateY(30%) rotateX(-30deg);
+  transform-origin: center top;
+  animation: headline-fade-in 0.65s ease forwards;
+}
+
+@keyframes headline-fade-in {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+    transform: translateY(30%) rotateX(-30deg);
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
   }
 }
 
@@ -72,8 +100,24 @@
   margin: 20px 6px 0;
   font-size: 18px;
   color: var(--text-secondary);
+  filter: blur(6px);
+  opacity: 0;
+  animation: text-fade-in 0.65s ease forwards;
+  animation-delay: 0.35s;
   @media (min-width: 576px) {
     margin: 28px auto 0;
     font-size: 20px;
+  }
+}
+
+@keyframes text-fade-in {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
   }
 }
