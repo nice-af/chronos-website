@@ -30,6 +30,23 @@ export default defineNuxtConfig({
     },
   },
 
+  app: {
+    head: {
+      meta: [
+        { name: 'theme-color', content: '#181819' },
+        { name: 'description', content: 'Chronos for Jira - Time Tracking made easy' },
+        { name: 'keywords', content: 'chronos, jira, time tracking, time management, productivity' },
+      ],
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/assets/favicons/favicon-96x96.png', sizes: '96x96' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/assets/favicons/favicon.svg' },
+        { rel: 'shortcut icon', href: '/assets/favicons/favicon.ico' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/assets/favicons/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/assets/favicons/site.webmanifest' },
+      ],
+    },
+  },
+
   routeRules: {
     '/**': process.env.ENV === 'development' ? { cache: false } : { swr: 600 },
     '/api/**': { cache: false },
