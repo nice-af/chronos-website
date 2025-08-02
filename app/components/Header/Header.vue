@@ -18,10 +18,10 @@
         :style="mobileMenuForcedHeight !== null ? { height: `${mobileMenuForcedHeight}px` } : undefined">
         <ul :class="header.navList">
           <li>
-            <NuxtLink to="#features">{{ t('global.features') }}</NuxtLink>
+            <NuxtLink to="/#features">{{ t('global.features') }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="#download">{{ t('global.download') }}</NuxtLink>
+            <NuxtLink to="/#download">{{ t('global.download') }}</NuxtLink>
           </li>
           <li>
             <NuxtLink :to="localePath('companion')">{{ t('global.companion') }}</NuxtLink>
