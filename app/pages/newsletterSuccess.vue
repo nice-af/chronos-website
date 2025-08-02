@@ -12,8 +12,9 @@
 </template>
 
 <script setup lang="ts">
-import { NuxtLink, Icon } from '#components';
+import { Icon, NuxtLink } from '#components';
 import { defineI18nRoute, useI18n } from '#imports';
+import { useJsonld } from '#jsonld';
 
 const { t } = useI18n();
 
@@ -22,6 +23,32 @@ defineI18nRoute({
     en: '/newsletter-success',
     de: '/newsletter-success',
   },
+});
+
+/**
+ * Add breadcrumb schema to the page
+ */
+useJsonld({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      item: {
+        '@id': '/',
+        name: t('global.home'),
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      item: {
+        '@id': '/newsletter-success',
+        name: t('global.newsletterSuccess'),
+      },
+    },
+  ],
 });
 </script>
 

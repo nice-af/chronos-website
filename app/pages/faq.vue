@@ -93,6 +93,9 @@ const categories: FaqProps['categories'] = {
   ],
 };
 
+/**
+ * Add faq schema to the page
+ */
 useJsonld({
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -106,5 +109,31 @@ useJsonld({
       },
     }))
   ),
+});
+
+/**
+ * Add breadcrumb schema to the page
+ */
+useJsonld({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      item: {
+        '@id': '/',
+        name: t('global.home'),
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      item: {
+        '@id': '/faq',
+        name: t('global.faq'),
+      },
+    },
+  ],
 });
 </script>

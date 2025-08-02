@@ -214,13 +214,42 @@
 </template>
 
 <script setup lang="ts">
-import { defineI18nRoute } from '#imports';
+import { defineI18nRoute, useI18n } from '#imports';
+import { useJsonld } from '#jsonld';
+
+const { t } = useI18n();
 
 defineI18nRoute({
   paths: {
     en: '/privacy-policy',
     de: '/datenschutzerklaerung',
   },
+});
+
+/**
+ * Add breadcrumb schema to the page
+ */
+useJsonld({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      item: {
+        '@id': '/',
+        name: t('global.home'),
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      item: {
+        '@id': '/privacy-policy',
+        name: t('global.privacyPolicyWebsite'),
+      },
+    },
+  ],
 });
 </script>
 
