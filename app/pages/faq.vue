@@ -10,6 +10,7 @@ import type { FaqProps } from '~/components/Faq/Faq.vue';
 import CtaSection from '~/components/CtaSection/CtaSection.vue';
 import Faq from '~/components/Faq/Faq.vue';
 import { useI18n, useRuntimeConfig } from '#imports';
+import { useJsonld } from '#jsonld';
 
 const { t } = useI18n();
 const config = useRuntimeConfig();
@@ -91,4 +92,19 @@ const categories: FaqProps['categories'] = {
     },
   ],
 };
+
+useJsonld({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: Object.entries(categories).flatMap(([_category, items]) =>
+    items.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    }))
+  ),
+});
 </script>
