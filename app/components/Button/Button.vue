@@ -1,6 +1,7 @@
 <template>
   <component
     :is="props.href ? NuxtLink : 'button'"
+    :to="props.href"
     :class="{
       [button.container!]: true,
       [button.isSecondary!]: variant === 'secondary',
