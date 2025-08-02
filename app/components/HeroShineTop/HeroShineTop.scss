@@ -24,7 +24,7 @@
   @for $i from 1 through 4 {
     &:global.is-shine-#{$i} {
       img:nth-child(#{$i}) {
-        opacity: 1;
+        opacity: 0.9;
       }
     }
   }
