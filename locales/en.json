@@ -200,6 +200,10 @@
     "headlineBeforeIcon": "Easy and fast time tracking",
     "pillLabel": "Release changelog"
   },
+  "meta": {
+    "description": "Chronos is a time tracking app for Jira, designed to make managing your daily worklogs simple and intuitive. With features like real-time tracking, manual submission, and support for multiple accounts, Chronos is the perfect companion for your Jira workflow.",
+    "title": "Chronos for Jira - Time Tracking made easy"
+  },
   "newsletter": {
     "description": "Get notified on new Nice A.F. releases!",
     "errorMessage": {

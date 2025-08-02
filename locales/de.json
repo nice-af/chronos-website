@@ -196,6 +196,10 @@
     "headlineBeforeIcon": "Einfache und schnelle Zeiterfassung",
     "pillLabel": "Release-Changelog"
   },
+  "meta": {
+    "description": "Chronos ist eine Zeiterfassungs-App für Jira, die entwickelt wurde, um die Verwaltung deiner täglichen Arbeitsprotokolle einfach und intuitiv zu gestalten. Mit Funktionen wie Echtzeit-Tracking, manueller Einreichung und Unterstützung für mehrere Konten ist Chronos der perfekte Begleiter für deinen Jira-Workflow.",
+    "title": "Chronos für Jira - Zeiterfassung leicht gemacht"
+  },
   "newsletter": {
     "description": "Erhalte Benachrichtigungen über neue Nice A.F.-Veröffentlichungen!",
     "errorMessage": {

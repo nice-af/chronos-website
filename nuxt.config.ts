@@ -14,6 +14,7 @@ export default defineNuxtConfig({
       SOURCE_CODE_URL: 'https://github.com/nice-af/chronos-app',
       SUPPORT_EMAIL: 'mailto:support@chronos-for-jira.com',
       SUPPORT_URL: 'mailto:support@chronos-for-jira.com',
+      BASE_URL: process.env.BASE_URL ?? '',
     },
     BREVO_API_KEY: process.env.BREVO_API_KEY,
     BREVO_LIST_ID: process.env.BREVO_LIST_ID,
@@ -34,7 +35,6 @@ export default defineNuxtConfig({
     head: {
       meta: [
         { name: 'theme-color', content: '#181819' },
-        { name: 'description', content: 'Chronos for Jira - Time Tracking made easy' },
         { name: 'keywords', content: 'chronos, jira, time tracking, time management, productivity' },
       ],
       link: [
