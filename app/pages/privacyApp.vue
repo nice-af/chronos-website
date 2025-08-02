@@ -97,6 +97,38 @@
       </section>
 
       <section v-if="$i18n.locale === 'en'">
+        <h2>OAuth URL Requests</h2>
+        <p>
+          The app communicates with our website to generate OAuth URLs for login. These requests are sent to our website
+          hosted on Vercel. As part of its server-side analytics, Vercel may log these requests, including details such
+          as IP addresses and request metadata. For more information, please review Vercel's privacy policy
+          <a
+            href="https://vercel.com/legal/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Read Vercel's privacy policy"
+            >here</a
+          >.
+        </p>
+      </section>
+      <section v-else>
+        <h2>OAuth-URL-Anfragen</h2>
+        <p>
+          Die App kommuniziert mit unserer Website, um OAuth-URLs für die Anmeldung zu generieren. Diese Anfragen werden
+          an unsere auf Vercel gehostete Website gesendet. Im Rahmen seiner serverseitigen Analysen kann Vercel diese
+          Anfragen protokollieren, einschließlich Details wie IP-Adressen und Anfragemetadaten. Weitere Informationen
+          finden Sie in der Datenschutzrichtlinie von Vercel
+          <a
+            href="https://vercel.com/legal/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Read Vercel's privacy policy"
+            >hier</a
+          >.
+        </p>
+      </section>
+
+      <section v-if="$i18n.locale === 'en'">
         <h2>User Consent</h2>
         <p>
           The app includes user-facing prompts to obtain your consent for connecting your Jira account and enabling

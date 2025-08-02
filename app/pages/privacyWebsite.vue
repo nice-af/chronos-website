@@ -25,18 +25,38 @@
           <strong>Data You Provide:</strong> We collect your email address when you subscribe to our newsletter. This
           information is processed by Brevo, our newsletter management tool, in compliance with GDPR Article 6(1)(a),
           which allows data processing based on your consent. You can review Brevo's privacy policy
-          <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank">here</a>.
+          <a
+            href="https://www.brevo.com/legal/privacypolicy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Read Brevo's privacy policy"
+            >here</a
+          >. Brevo maintains an opt-out list to ensure that no further emails are sent to unsubscribed users.
         </p>
         <p>
           <strong>Data Collected Automatically:</strong> Vercel, our hosting provider, collects server-side analytics,
-          including IP addresses and browser details, to ensure website performance and security. This data is processed
-          under GDPR Article 6(1)(f), which allows processing for legitimate interests. You can review Vercel's privacy
-          policy <a href="https://vercel.com/legal/privacy-policy" target="_blank">here</a>.
+          including IP addresses, browser details, referrer and exit pages, and usage statistics such as time spent on
+          the site. Vercel does not collect precise location data but determines city and country based on IP address.
+          This data is processed under GDPR Article 6(1)(f), which allows processing for legitimate interests. You can
+          review Vercel's privacy policy
+          <a
+            href="https://vercel.com/legal/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Read Vercel's privacy policy"
+            >here</a
+          >.
         </p>
         <p>
           <strong>Third-Party Data:</strong> We provide links to external platforms like LinkedIn. Please review their
           privacy policies for more information. LinkedIn's privacy policy can be found
-          <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank">here</a>.
+          <a
+            href="https://www.linkedin.com/legal/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Read LinkedIn's privacy policy"
+            >here</a
+          >.
         </p>
       </section>
       <section v-else>
@@ -45,20 +65,43 @@
           <strong>Daten, die Sie bereitstellen:</strong> Wir erfassen Ihre E-Mail-Adresse, wenn Sie unseren Newsletter
           abonnieren. Diese Informationen werden von Brevo, unserem Newsletter-Management-Tool, gemäß Artikel 6(1)(a)
           der DSGVO verarbeitet, der die Datenverarbeitung auf Grundlage Ihrer Einwilligung erlaubt. Sie können die
-          Datenschutzrichtlinie von Brevo <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank">hier</a>
-          einsehen.
+          Datenschutzrichtlinie von Brevo
+          <a
+            href="https://www.brevo.com/legal/privacypolicy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Read Brevo's privacy policy"
+            >hier</a
+          >
+          einsehen. Brevo führt eine Opt-out-Liste, um sicherzustellen, dass keine weiteren E-Mails an abgemeldete
+          Nutzer gesendet werden.
         </p>
         <p>
           <strong>Automatisch erfasste Daten:</strong> Vercel, unser Hosting-Anbieter, erfasst serverseitige Analysen,
-          einschließlich IP-Adressen und Browserdetails, um die Leistung und Sicherheit der Website zu gewährleisten.
-          Diese Daten werden gemäß Artikel 6(1)(f) der DSGVO verarbeitet, der die Verarbeitung für berechtigte
-          Interessen erlaubt. Sie können die Datenschutzrichtlinie von Vercel
-          <a href="https://vercel.com/legal/privacy-policy" target="_blank">hier</a> einsehen.
+          einschließlich IP-Adressen, Browserdetails, Referrer- und Exit-Seiten sowie Nutzungsstatistiken wie die auf
+          der Website verbrachte Zeit. Vercel erfasst keine präzisen Standortdaten, sondern bestimmt Stadt und Land
+          basierend auf der IP-Adresse. Diese Daten werden gemäß Artikel 6(1)(f) der DSGVO verarbeitet, der die
+          Verarbeitung für berechtigte Interessen erlaubt. Sie können die Datenschutzrichtlinie von Vercel
+          <a
+            href="https://vercel.com/legal/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Read Vercel's privacy policy"
+            >hier</a
+          >
+          einsehen.
         </p>
         <p>
           <strong>Daten von Drittanbietern:</strong> Wir stellen Links zu externen Plattformen wie LinkedIn bereit.
           Bitte überprüfen Sie deren Datenschutzrichtlinien für weitere Informationen. Die Datenschutzrichtlinie von
-          LinkedIn finden Sie <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank">hier</a>.
+          LinkedIn finden Sie
+          <a
+            href="https://www.linkedin.com/legal/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Read LinkedIn's privacy policy"
+            >hier</a
+          >.
         </p>
       </section>
 
