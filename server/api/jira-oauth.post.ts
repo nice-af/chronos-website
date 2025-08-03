@@ -19,6 +19,7 @@ export default defineEventHandler(async event => {
   const config = useRuntimeConfig();
 
   if (
+    !body ||
     !body.grant_type ||
     (body.grant_type === 'authorization_code' && !body.code) ||
     (body.grant_type === 'refresh_token' && !body.refresh_token)
