@@ -1,17 +1,19 @@
 <template>
-  <Analytics />
-  <SpeedInsights />
-  <a href="#main" class="skip-to-content">{{ t('global.skipToContent') }}</a>
-  <Header />
-  <main id="main">
-    <NuxtPage />
-  </main>
-  <Footer />
+  <Html :lang="head.htmlAttrs.lang" :dir="head.htmlAttrs.dir">
+    <Analytics />
+    <SpeedInsights />
+    <a href="#main" class="skip-to-content">{{ t('global.skipToContent') }}</a>
+    <Header />
+    <main id="main">
+      <NuxtPage />
+    </main>
+    <Footer />
+  </Html>
 </template>
 
 <script setup lang="ts">
-import { NuxtPage } from '#components';
-import { useI18n, useRuntimeConfig, useSeoMeta } from '#imports';
+import { Html, NuxtPage } from '#components';
+import { useI18n, useLocaleHead, useRuntimeConfig, useSeoMeta } from '#imports';
 import { useJsonld } from '#jsonld';
 import { Analytics } from '@vercel/analytics/nuxt';
 import Footer from '~/components/Footer/Footer.vue';
@@ -20,6 +22,7 @@ import { SpeedInsights } from '@vercel/speed-insights/nuxt';
 
 const { t } = useI18n();
 const config = useRuntimeConfig();
+const head = useLocaleHead();
 
 useSeoMeta({
   title: t('meta.title'),
