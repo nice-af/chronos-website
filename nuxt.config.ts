@@ -58,6 +58,7 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     vueI18n: '../app/i18n.config.ts',
     strategy: 'prefix',
+    baseUrl: process.env.BASE_URL,
   },
 
   fonts: {
