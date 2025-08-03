@@ -1,3 +1,4 @@
+import { useRuntimeConfig } from '#imports';
 import { defineEventHandler, readBody, setResponseStatus } from 'h3';
 
 interface GetOauthTokenResponse {
@@ -15,6 +16,7 @@ interface GetOauthTokenErrorResponse {
 
 export default defineEventHandler(async event => {
   const body = await readBody(event);
+  const config = useRuntimeConfig();
 
   if (
     !body.grant_type ||
@@ -27,13 +29,13 @@ export default defineEventHandler(async event => {
 
   const payload: Record<string, string> = {
     grant_type: body.grant_type,
-    client_id: process.env.JIRA_CLIENT_ID!,
-    client_secret: process.env.JIRA_SECRET!,
+    client_id: config.JIRA_CLIENT_ID,
+    client_secret: config.JIRA_SECRET,
   };
 
   if (body.grant_type === 'authorization_code') {
     payload.code = body.code;
-    payload.redirect_uri = process.env.APP_OAUTH_REDIRECT_URI!;
+    payload.redirect_uri = config.APP_OAUTH_REDIRECT_URI;
   } else if (body.grant_type === 'refresh_token') {
     payload.refresh_token = body.refresh_token;
   }
