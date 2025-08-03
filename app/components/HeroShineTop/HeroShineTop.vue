@@ -148,7 +148,7 @@ function checkLoaded() {
   const videosLoaded = $shapeDodecahedron.value?.readyState === 4 && $shapeCone.value?.readyState === 4;
   const logoIconLoaded = $logoIcon.value?.complete;
   if (videosLoaded && logoIconLoaded) {
-    isLoaded.value = true;
+    // isLoaded.value = true;
   }
 }
 

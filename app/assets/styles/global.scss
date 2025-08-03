@@ -190,7 +190,7 @@ button {
 
 .headline-gradient {
   --gradient-start: var(--text);
-  --gradient-stop: color-mix(in srgb, var(--text), transparent 23%);
+  --gradient-stop: color-mix(in srgb, var(--text), transparent 32%);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
