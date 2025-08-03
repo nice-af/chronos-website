@@ -1,5 +1,6 @@
 <template>
   <Analytics />
+  <SpeedInsights />
   <a href="#main" class="skip-to-content">{{ t('global.skipToContent') }}</a>
   <Header />
   <main id="main">
@@ -15,6 +16,7 @@ import { useJsonld } from '#jsonld';
 import { Analytics } from '@vercel/analytics/nuxt';
 import Footer from '~/components/Footer/Footer.vue';
 import Header from '~/components/Header/Header.vue';
+import { SpeedInsights } from '@vercel/speed-insights/nuxt';
 
 const { t } = useI18n();
 const config = useRuntimeConfig();
