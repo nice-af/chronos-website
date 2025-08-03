@@ -41,6 +41,8 @@ export default defineEventHandler(async event => {
     payload.refresh_token = body.refresh_token;
   }
 
+  console.log('Jira OAuth payload:', payload);
+
   try {
     const response = await $fetch<GetOauthTokenResponse | GetOauthTokenErrorResponse>(
       'https://auth.atlassian.com/oauth/token',
