@@ -18,8 +18,8 @@
     padding: 8px 24px;
   }
 
-  > svg,
-  > img {
+  svg,
+  img {
     display: block;
     width: 22px;
     height: 22px;
@@ -28,9 +28,12 @@
 
   &:hover {
     text-shadow: var(--button-text-shadow);
+    @supports (-webkit-backdrop-filter: none) {
+      text-shadow: var(--button-text-shadow-safari);
+    }
 
-    > svg,
-    > img {
+    svg,
+    img {
       filter: drop-shadow(var(--button-text-shadow));
     }
   }
@@ -38,8 +41,8 @@
   &:active {
     text-shadow: var(--button-text-shadow-invisible);
 
-    > svg,
-    > img {
+    svg,
+    img {
       filter: drop-shadow(var(--button-text-shadow-invisible));
     }
 

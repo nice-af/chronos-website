@@ -73,5 +73,9 @@ export default defineNuxtConfig({
     ],
   },
 
+  icon: {
+    mode: 'svg',
+  },
+
   compatibilityDate: '2025-07-14',
 });
