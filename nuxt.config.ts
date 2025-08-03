@@ -49,7 +49,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/**': process.env.ENV === 'development' ? { cache: false } : { prerender: true },
+    '/**': process.env.ENV === 'development' ? { cache: false } : { isr: 60 * 60 * 24 }, // Cache for 1 day in production
     '/api/**': { cache: false },
   },
 
