@@ -98,7 +98,6 @@
         muted
         playsinline
         poster="/assets/videos/shape-dodecahedron-poster.jpg"
-        role="presentation"
         :title="t('shapes.titleDodecahedron')"
         :data-transition-delay="(headline1Array.length + headline2Array.length + 8).toString()"></video>
       <video
@@ -112,7 +111,6 @@
         muted
         playsinline
         poster="/assets/videos/shape-cone-poster.jpg"
-        role="presentation"
         :title="t('shapes.titleCone')"
         :data-transition-delay="(headline1Array.length + headline2Array.length + 10).toString()"></video>
     </div>

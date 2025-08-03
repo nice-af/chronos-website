@@ -47,7 +47,6 @@
     muted
     playsinline
     poster="/assets/videos/shape-sphere-poster.jpg"
-    role="presentation"
     :title="t('shapes.titleSphere')"></video>
 </template>
 
