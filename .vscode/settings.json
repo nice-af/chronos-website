@@ -55,7 +55,8 @@
       "description": "Publish a release"
     }
   ],
-  "vue.complete.casing.props": "camel",
+  "vue.suggest.propNameCasing": "alwaysCamelCase",
+  "vue.suggest.componentNameCasing": "alwaysPascalCase",
   "i18n-ally.localesPaths": ["locales"],
   "i18n-ally.keystyle": "nested"
 }
