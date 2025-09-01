@@ -4,34 +4,17 @@
       ref="shineContainer"
       :class="[heroShineTop.shineContainer, 'is-shine-1', { [heroShineTop.runAnimation!]: isLoaded }]"
       :data-transition-delay="(headline1Array.length + headline2Array.length).toString()">
-      <img
-        :class="heroShineTop.shine"
-        src="/assets/images/shine-1.png"
-        width="1114"
-        height="634"
-        role="presentation"
-        alt="" />
-      <img
-        :class="heroShineTop.shine"
-        src="/assets/images/shine-2.png"
-        width="1114"
-        height="634"
-        role="presentation"
-        alt="" />
-      <img
-        :class="heroShineTop.shine"
-        src="/assets/images/shine-3.png"
-        width="1114"
-        height="634"
-        role="presentation"
-        alt="" />
-      <img
-        :class="heroShineTop.shine"
-        src="/assets/images/shine-4.png"
-        width="1114"
-        height="634"
-        role="presentation"
-        alt="" />
+      <picture v-for="i in 4" :key="`shine-${i}`">
+        <source :srcset="`/assets/images/shine-${i}.avif`" type="image/avif" />
+        <source :srcset="`/assets/images/shine-${i}.webp`" type="image/webp" />
+        <img
+          :class="heroShineTop.shine"
+          :src="`/assets/images/shine-${i}.png`"
+          width="1114"
+          height="634"
+          role="presentation"
+          alt="" />
+      </picture>
     </div>
     <div :class="heroShineTop.container">
       <p
