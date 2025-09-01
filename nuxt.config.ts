@@ -10,7 +10,7 @@ export default defineNuxtConfig({
       COMPANION_CHROME_URL: 'https://chromewebstore.google.com/detail/ffabeiojbdhkmllfadkidohlkjochcan',
       COMPANION_FIREFOX_URL: 'https://addons.mozilla.org/de/firefox/addon/chronos-for-jira-companion/',
       COMPANION_EDGE_URL: 'https://microsoftedge.microsoft.com/addons/detail/ckmipjkigiadcccieflbhpmoffbpjhmb',
-      DOWNLOAD_MACOS_URL: 'https://github.com/nice-af/chronos-app',
+      DOWNLOAD_MACOS_URL: 'https://apps.apple.com/de/app/chronos-for-jira/id6749211630?mt=12',
       SOURCE_CODE_URL: 'https://github.com/nice-af/chronos-app',
       SUPPORT_EMAIL: 'support@chronos-for-jira.com',
       SUPPORT_URL: 'mailto:support@chronos-for-jira.com',
