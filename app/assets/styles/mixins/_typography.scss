@@ -15,7 +15,7 @@
 @mixin headline-l() {
   margin: 0.17em 0 0.3em;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.1;
   @media (min-width: 321px) {
     font-size: 32px;
@@ -34,7 +34,7 @@
 @mixin headline-xl() {
   margin: 0.17em 0 0.3em;
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.1;
   @media (min-width: 321px) {
     font-size: 40px;
