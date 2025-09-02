@@ -41,8 +41,6 @@ export default defineEventHandler(async event => {
     payload.refresh_token = body.refresh_token;
   }
 
-  console.log('Jira OAuth payload:', payload);
-
   try {
     const response = await $fetch<GetOauthTokenResponse | GetOauthTokenErrorResponse>(
       'https://auth.atlassian.com/oauth/token',
@@ -55,12 +53,14 @@ export default defineEventHandler(async event => {
 
     if ('error' in response) {
       setResponseStatus(event, 400);
+      console.error(response);
       return response;
     }
 
     return response;
   } catch (error: unknown) {
     setResponseStatus(event, 500);
+    console.error(error);
     return { error: 'Internal Server Error', error_description: (error as Error).message };
   }
 });
