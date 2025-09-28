@@ -21,16 +21,16 @@
   opacity: 0.2;
   transform: translateX(-50%);
 
-  &.runAnimation {
-    animation: shine-fade-in 2s linear forwards;
-  }
-
   @for $i from 1 through 4 {
     &:global.is-shine-#{$i} {
       picture:nth-child(#{$i}) img {
         opacity: 0.9;
       }
     }
+  }
+
+  &.runAnimation {
+    animation: shine-fade-in 2s linear forwards;
   }
 }
 
