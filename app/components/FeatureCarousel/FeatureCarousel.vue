@@ -134,8 +134,8 @@ const rowsData: Entry[][] = [
       infoPopup: t('featureCarousel.entries.shortcuts.infoPopup'),
     },
     {
-      label: t('featureCarousel.entries.rightClickContextMenu.label'),
-      infoPopup: t('featureCarousel.entries.rightClickContextMenu.infoPopup'),
+      label: t('featureCarousel.entries.desktopWidget.label'),
+      infoPopup: t('featureCarousel.entries.desktopWidget.infoPopup'),
     },
   ],
   [
@@ -154,10 +154,6 @@ const rowsData: Entry[][] = [
     {
       label: t('featureCarousel.entries.fullscreenMode.label'),
       infoPopup: t('featureCarousel.entries.fullscreenMode.infoPopup'),
-    },
-    {
-      label: t('featureCarousel.entries.desktopWidget.label'),
-      infoPopup: t('featureCarousel.entries.desktopWidget.infoPopup'),
     },
   ],
 ];
