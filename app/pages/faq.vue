@@ -27,6 +27,10 @@ const categories: FaqProps['categories'] = {
       answer: t('faq.appAndFeatures.whatIsChronos.answer', envs),
     },
     {
+      question: t('faq.appAndFeatures.selfHostedJira.question'),
+      answer: t('faq.appAndFeatures.selfHostedJira.answer', envs),
+    },
+    {
       question: t('faq.appAndFeatures.adminPermissions.question'),
       answer: t('faq.appAndFeatures.adminPermissions.answer', envs),
     },

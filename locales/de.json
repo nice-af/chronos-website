@@ -50,6 +50,10 @@
         "answer": "<p>Chronos wurde speziell für Jira entwickelt und unterstützt keine anderen Dienste. Wir denken darüber nach, in Zukunft andere Dienste hinzuzufügen, aber im Moment konzentrieren wir uns auf Jira.</p>",
         "question": "Kann ich Chronos mit anderen Diensten als Jira verwenden?"
       },
+      "selfHostedJira": {
+        "answer": "<p>Chronos unterstützt aktuell nur Jira Cloud. Wir haben keine konkreten Pläne, Unterstützung für selbst gehostete Jira-Instanzen hinzuzufügen.</p>",
+        "question": "Unterstützt Chronos selbst gehostete Jira-Instanzen?"
+      },
       "supportedPlatforms": {
         "answer": "<p>Chronos ist ausschließlich auf macOS verfügbar. Wir haben zwar eine Windows-Version, aber es gibt keine konkreten Pläne für andere Plattformen. Wenn du an einer bestimmten Plattform interessiert bist, lass es uns bitte wissen.</p>",
         "question": "Welche Plattformen werden unterstützt?"
